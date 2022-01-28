@@ -1,13 +1,18 @@
 Package: BRVM
+Type: Package
 Title: What the Package Does (One Line, Title Case)
 Version: 0.0.0.9000
 Authors@R: c(
     person("SESSIE","Koffi Frederic", email = "koffisessie@gmail.com", role = c("aut","cre","cph")),
-    person("Abdoul","Oudouss Diakité", role = c("aut","cre","cph")),
-    person("Steven","Sanderson", email = "spsanderson@gmail.com", role = c("aut","cre","cph"))
-)
+    person("Abdoul","Oudouss Diakité", email = "spsanderson@gmail.com", role = "aut"),
+    person("Steven","Sanderson", email = "spsanderson@gmail.com", role = "aut"))
 Description: What the package does (one paragraph).
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
+Imports: 
+    magrittr,
+    rlang (>= 0.4.11)
+Suggests: 
+    roxygen2
