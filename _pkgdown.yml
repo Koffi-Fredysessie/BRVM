@@ -20,4 +20,4 @@ reference:
   -  title: Functions That Get Data
      desc: Functions that get ticker data
      contents:
-     -  has_concept("Ticker Data Retreival")
+     -  has_concept("Ticker Data Retrieval")

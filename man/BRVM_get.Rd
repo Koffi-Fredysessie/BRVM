@@ -24,7 +24,7 @@ allowed tickers.
 }
 \examples{
 symbols <- c("BiCc","XOM","SlbC")
-data_tbl <- BRVM_get(symbol = symbols)
+data_tbl <- BRVM_get(.symbol = symbols)
 data_tbl
 
 }

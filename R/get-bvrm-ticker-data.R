@@ -21,7 +21,7 @@
 #'
 #' @examples
 #' symbols <- c("BiCc","XOM","SlbC")
-#' data_tbl <- BRVM_get(symbol = symbols)
+#' data_tbl <- BRVM_get(.symbol = symbols)
 #' data_tbl
 #'
 #' @return
@@ -109,7 +109,7 @@ BRVM_get <- function(.symbol) {
         ## Turn date in format "%Y-%m-%d"
         data2$Date <- as.Date(as.POSIXct((data2$Date + 0.1) / 1000, origin = "1970-01-01"))
         ## Join data by date
-        final.data <- left_join(data1, data2, by = "Date")
+        final.data <- dplyr::left_join(data1, data2, by = "Date")
         final.data$Ticker <- Tick ## Add ticker identifier
         assign(Tick, dplyr::as_tibble(final.data))
         returns <- rbind(returns, final.data)
