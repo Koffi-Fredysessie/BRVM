@@ -76,7 +76,13 @@ BRVM_get <- function(.symbol, .from = Sys.Date() - 2, .to = Sys.Date() - 1) {
             symbol_vec <- append(symbol_vec, symb)
         }
     }
-
+# Check input parameters after filtering ----
+    if (length(symbol_vec) < 1){
+        rlang::abort(
+            "The '.symbol' parameter cannot be blank. Please enter at least one ticker.
+            If entering multiple please use .symbol = c(Tick_1, Tick_2, ...)"
+        )
+    }
     for (Tick in symbol_vec) {
         url <- paste0("https://www.richbourse.com/common/mouvements/technique/", Tick, "/status/200")
         Sys.sleep(1)
