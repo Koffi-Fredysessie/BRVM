@@ -13,6 +13,10 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.2
 Imports: 
     magrittr,
-    rlang (>= 0.4.11)
+    rlang (>= 0.4.11),
+    tidyr,
+    dplyr,
+    gsheet,
+    httr
 Suggests: 
     roxygen2
