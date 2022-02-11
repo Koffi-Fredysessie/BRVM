@@ -4,10 +4,16 @@
 \alias{BRVM_get}
 \title{BRVM Get - Get Ticker Data}
 \usage{
-BRVM_get(.symbol)
+BRVM_get(.symbol, .from = Sys.Date() - 2, .to = Sys.Date() - 1)
 }
 \arguments{
 \item{.symbol}{A vector of symbols, like: c("BICC","XOM","SlbC")}
+
+\item{.from}{A quoted start date, ie. "2020-01-01" or "2020/01/01". The data
+must be in ymd format "YYYY-MM-DD" or "YYYY/MM/DD".}
+
+\item{.to}{A quoted end date, ie. "2022-01-31" or "2022/01/31". The data must
+be in ymd format "YYYY-MM-DD" or "YYYY/MM/DD"}
 }
 \value{
 A tibble
