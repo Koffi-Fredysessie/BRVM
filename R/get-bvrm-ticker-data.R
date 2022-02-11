@@ -49,7 +49,7 @@ BRVM_get <- function(.symbol, .from = Sys.Date() - 2, .to = Sys.Date() - 1) {
         )
     }
 
-    if (start_date < end_date){
+    if (start_date > end_date){
         rlang::abort(
             "The '.from' parameter (start_date) must be equal to or less than .to (end_date)"
         )

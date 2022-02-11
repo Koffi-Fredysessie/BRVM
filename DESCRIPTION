@@ -17,7 +17,8 @@ Imports:
     tidyr,
     dplyr,
     gsheet,
-    httr
+    httr,
+    lubridate
 Suggests: 
     rmarkdown,
     knitr,
