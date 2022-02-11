@@ -18,6 +18,10 @@
 #' @description This function will get data from the Rich Bourse exchange.
 #'
 #' @param .symbol A vector of symbols, like: c("BICC","XOM","SlbC")
+#' @param .from A quoted start date, ie. "2020-01-01" or "2020/01/01". The data
+#' must be in ymd format "YYYY-MM-DD" or "YYYY/MM/DD".
+#' @param .to A quoted end date, ie. "2022-01-31" or "2022/01/31". The data must
+#' be in ymd format "YYYY-MM-DD" or "YYYY/MM/DD"
 #'
 #' @examples
 #' symbols <- c("BiCc","XOM","SlbC")
@@ -30,10 +34,26 @@
 #' @export
 #'
 
-BRVM_get <- function(.symbol) {
+BRVM_get <- function(.symbol, .from = Sys.Date() - 2, .to = Sys.Date() - 1) {
 
-    # Get symbol list, make all upper case
+    # Evaluate input parameters ----
     tickers <- unique(toupper(.symbol))
+    start_date <- lubridate::parse_date_time(.from, orders = "ymd")
+    end_date <- lubridate::parse_date_time(.to, orders = "ymd")
+
+    # Check input parameters ----
+    if (length(tickers) < 1){
+        rlang::abort(
+            "The '.symbol' parameter cannot be blank. Please enter at least one ticker.
+            If entering multiple please use .symbol = c(Tick_1, Tick_2, ...)"
+        )
+    }
+
+    if (start_date < end_date){
+        rlang::abort(
+            "The '.from' parameter (start_date) must be equal to or less than .to (end_date)"
+        )
+    }
 
     returns <- as.data.frame(matrix(NA, ncol = 7, nrow = 0))
     names(returns) <- c("Date", "Open", "High", "Low", "Close", "Volume", "Ticker")
@@ -115,6 +135,9 @@ BRVM_get <- function(.symbol) {
         returns <- rbind(returns, final.data)
     }
 
-    returns <- dplyr::as_tibble(returns)
+    returns <- dplyr::as_tibble(returns) %>%
+        dplyr::filter(Date >= start_date) %>%
+        dplyr::filter(Date <= end_date)
+
     return(returns)
 }
