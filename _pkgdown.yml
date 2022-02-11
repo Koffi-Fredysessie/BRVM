@@ -1,3 +1,23 @@
 template:
-  bootstrap: 5
+  boostrap: 5
+  params:
+    #ganalytics:
+    bootswatch: flatly
 
+navbar:
+  title: "BRVM"
+  left:
+    - icon: "fa-home"
+      href: index.html
+    - text: "Getting Started"
+      href: articles/getting-started.html
+    - text: "API"
+      href: reference/index.html
+    - text: "News"
+      href: news/index.html
+
+reference:
+  -  title: Functions That Get Data
+     desc: Functions that get ticker data
+     contents:
+     -  has_concept("Ticker Data Retreival")
