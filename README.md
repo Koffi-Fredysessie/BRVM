@@ -43,6 +43,35 @@ This is a basic example which shows you how to solve a common problem:
 
 ``` r
 library(BRVM)
+#> 
+#> == Welcome to BRVM ===========================================================================
+#> If you find this package useful, please leave a star: 
+#>    https://github.com/Koffi-Fredysessie/BRVM
+#> 
+#> If you encounter a bug or want to request an enhancement please file an issue at:
+#>    https://github.com/Koffi-Fredysessie/BRVM/issues
+#> 
+#> Thank you for using BRVM!
+```
+
+Lets take a look at a simple function that will get any n number of
+records based on whether they are ‘Top’ or ‘Bottom’ ranked.
+
+``` r
+BRVM_rank("Top", 10)
+#> # A tibble: 10 x 3
+#>    Symbole Nom                                     `Variation (%)`
+#>    <chr>   <chr>                                             <dbl>
+#>  1 SCRC    SUCRIVOIRE COTE D'IVOIRE                           7.5 
+#>  2 STAC    SETAO COTE D'IVOIRE                                7.44
+#>  3 PALC    PALM COTE D'IVOIRE                                 7.43
+#>  4 SAFC    SAFCA COTE D'IVOIRE                                7.21
+#>  5 BOAB    BANK OF AFRICA BENIN                               7.05
+#>  6 BOAM    BANK OF AFRICA MALI                                6.51
+#>  7 BOAN    BANK OF AFRICA NIGER                               6.31
+#>  8 BOAC    BANK OF AFRICA COTE D'IVOIRE                       5.67
+#>  9 NEIC    NEI-CEDA COTE D'IVOIRE                             5.59
+#> 10 ETIT    Ecobank Transnational Incorporated TOGO            5.26
 ```
 
 You’ll still need to render `README.Rmd` regularly, to keep `README.md`

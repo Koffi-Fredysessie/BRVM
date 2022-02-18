@@ -36,6 +36,9 @@ data_tbl
 }
 \seealso{
 \url{https://www.richbourse.com}
+
+Other Ticker Data Retrieval: 
+\code{\link{BRVM_rank}()}
 }
 \author{
 Koffi Frederic SESSIE

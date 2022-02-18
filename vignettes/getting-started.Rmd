@@ -24,3 +24,10 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(BRVM)
 ```
+
+Lets take a look at a simple function that will get any n number of records based
+on whether they are 'Top' or 'Bottom' ranked.
+
+```{r brvm_rank}
+BRVM_rank("Top", 10)
+```
