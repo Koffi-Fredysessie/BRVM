@@ -3,6 +3,7 @@
 export("%>%")
 export(":=")
 export(.data)
+export(BRVM_direction)
 export(BRVM_get)
 export(BRVM_rank)
 export(as_label)

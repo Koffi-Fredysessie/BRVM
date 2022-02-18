@@ -38,6 +38,7 @@ data_tbl
 \url{https://www.richbourse.com}
 
 Other Ticker Data Retrieval: 
+\code{\link{BRVM_direction}()},
 \code{\link{BRVM_rank}()}
 }
 \author{
