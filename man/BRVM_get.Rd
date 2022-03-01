@@ -39,6 +39,7 @@ data_tbl
 
 Other Ticker Data Retrieval: 
 \code{\link{BRVM_direction}()},
+\code{\link{BRVM_index}()},
 \code{\link{BRVM_rank}()}
 }
 \author{

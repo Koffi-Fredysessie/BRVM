@@ -18,7 +18,8 @@ Imports:
     dplyr,
     gsheet,
     httr,
-    lubridate
+    lubridate,
+    janitor
 Suggests: 
     rmarkdown,
     knitr,

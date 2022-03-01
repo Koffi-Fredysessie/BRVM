@@ -35,7 +35,8 @@ Other Ranking:
 
 Other Ticker Data Retrieval: 
 \code{\link{BRVM_direction}()},
-\code{\link{BRVM_get}()}
+\code{\link{BRVM_get}()},
+\code{\link{BRVM_index}()}
 }
 \author{
 Koffi Frederic SESSIE

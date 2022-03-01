@@ -30,6 +30,7 @@ Other Ranking:
 
 Other Ticker Data Retrieval: 
 \code{\link{BRVM_get}()},
+\code{\link{BRVM_index}()},
 \code{\link{BRVM_rank}()}
 }
 \author{
