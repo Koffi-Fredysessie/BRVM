@@ -34,7 +34,7 @@
 #' @export
 #'
 
-BRVM_get <- function(.symbol, .from = Sys.Date() - 2, .to = Sys.Date() - 1) {
+BRVM_get <- function(.symbol, .from = NULL, .to = NULL) {
 
     # Evaluate input parameters ----
     tickers <- unique(toupper(.symbol))
@@ -42,6 +42,10 @@ BRVM_get <- function(.symbol, .from = Sys.Date() - 2, .to = Sys.Date() - 1) {
     end_date <- lubridate::parse_date_time(.to, orders = "ymd")
 
     # Check input parameters ----
+    if (is.null(end_date)){
+        end_date <- lubridate::ymd(Sys.Date())
+    }
+
     if (length(tickers) < 1){
         rlang::abort(
             "The '.symbol' parameter cannot be blank. Please enter at least one ticker.
@@ -49,10 +53,15 @@ BRVM_get <- function(.symbol, .from = Sys.Date() - 2, .to = Sys.Date() - 1) {
         )
     }
 
-    if (start_date > end_date){
-        rlang::abort(
-            "The '.from' parameter (start_date) must be equal to or less than .to (end_date)"
-        )
+
+    if (inherits(start_date, "Date") & inherits(end_date, "Date") &
+        length(start_date) != 0 &
+        length(end_date) != 0){
+        if(start_date > end_date){
+            rlang::abort(
+                "The '.from' parameter (start_date) must be equal to or less than .to (end_date)"
+            )
+        }
     }
 
     returns <- as.data.frame(matrix(NA, ncol = 7, nrow = 0))
@@ -141,9 +150,15 @@ BRVM_get <- function(.symbol, .from = Sys.Date() - 2, .to = Sys.Date() - 1) {
         returns <- rbind(returns, final.data)
     }
 
-    returns <- dplyr::as_tibble(returns) %>%
-        dplyr::filter(Date >= start_date) %>%
-        dplyr::filter(Date <= end_date)
+    returns <- dplyr::as_tibble(returns)
+
+    if (length(start_date) != 0){
+        returns <- dplyr::filter(returns, Date >= start_date)
+    }
+
+    if (length(end_date) != 0){
+        returns <- dplyr::filter(returns, Date <= end_date)
+    }
 
     return(returns)
 }
