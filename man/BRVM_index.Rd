@@ -21,10 +21,11 @@ BRVM_index()
 \seealso{
 \url{https://www.brvm.org/en/indices/status/200}
 
-Other Ticker Data Retrieval: 
+Other Data Retrieval: 
 \code{\link{BRVM_direction}()},
 \code{\link{BRVM_get}()},
-\code{\link{BRVM_rank}()}
+\code{\link{BRVM_rank}()},
+\code{\link{BRVM_sector}()}
 }
 \author{
 Koffi Frederic SESSIE
@@ -34,4 +35,4 @@ Oudouss Diakité Abdoul
 Steven P. Sanderson II, MPH
 }
 \concept{BRVM}
-\concept{Ticker Data Retrieval}
+\concept{Data Retrieval}
