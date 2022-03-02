@@ -42,7 +42,7 @@ BRVM_get <- function(.symbol, .from = NULL, .to = NULL) {
     end_date <- lubridate::parse_date_time(.to, orders = "ymd")
 
     # Check input parameters ----
-    if (is.null(end_date)){
+    if (length(end_date) == 0){
         end_date <- lubridate::ymd(Sys.Date())
     }
 
