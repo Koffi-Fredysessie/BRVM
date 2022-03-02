@@ -15,7 +15,6 @@
 #'
 #' @examples
 #' BRVM_index()
-#'
 #' @return
 #' A tibble
 #'
@@ -59,5 +58,14 @@ BRVM_index <- function() {
       print("Make sure you have an active internet connection")
     }
   )
-  return(index)
+
+  # Clean names of tibble ----
+  index_tbl <- index %>%
+    purrr::set_names(
+      "index_name", "previous_close", "close", "percent_change",
+      "percent_ytd_change"
+    )
+
+  # Return ----
+  return(index_tbl)
 }
