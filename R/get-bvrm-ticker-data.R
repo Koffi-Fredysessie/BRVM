@@ -68,13 +68,13 @@ BRVM_get <- function(.symbol, .from = NULL, .to = NULL) {
     names(returns) <- c("Date", "Open", "High", "Low", "Close", "Volume", "Ticker")
     quotes <- gsheet::gsheet2tbl("https://docs.google.com/spreadsheets/d/1rdjGjlQg7cUzWAEJFikrxOnisk-yQQx-n652sJUL-qc/edit#gid=0")
     colnames(quotes) <- c(
-        "Symbole",
-        "Nom",
-        "Volume",
-        "Cours veille (FCFA)",
-        "Cours clôture (FCFA)",
-        "Cours Clôture(FCFA)",
-        "Variation(%)"
+        "ticker",
+        "company_name",
+        "volume",
+        "cours_veille_fcfa",
+        "cours_clôture_fcfa",
+        "cours_clôture_fcfa",
+        "pecent_change"
     )
 
     #### Create a definitive symbol vector
