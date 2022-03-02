@@ -1,6 +1,6 @@
 #' BRVM Get - Get Ticker Data
 #'
-#' @family Ticker Data Retrieval
+#' @family Data Retrieval
 #' @family BRVM
 #'
 #' @author Koffi Frederic SESSIE
