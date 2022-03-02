@@ -60,12 +60,12 @@ BRVM_index <- function() {
   )
 
   # Clean names of tibble ----
-  index_tbl <- index %>%
+  index <- index %>%
     purrr::set_names(
       "index_name", "previous_close", "close", "percent_change",
       "percent_ytd_change"
     )
 
   # Return ----
-  return(index_tbl)
+  return(index)
 }
