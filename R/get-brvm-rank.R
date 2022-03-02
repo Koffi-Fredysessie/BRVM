@@ -35,15 +35,24 @@ BRVM_rank <- function(.top_or_flop = "Top", .n = 10) {
     n <- as.integer(.n)
 
     # Check params ----
+    if (!top_flop %in% c("top","flop")){
+        rlang::abort(
+            message = "You must choose 'top' or 'flop' for the parameter '.top_of_flop'",
+            use_cli_format = TRUE
+        )
+    }
+
     if (!is.character(top_flop)){
         rlang::abort(
-            "The '.top_or_flop' parameters must be set to either top or flop."
+            "The '.top_or_flop' parameters must be set to either top or flop.",
+            use_cli_format = TRUE
         )
     }
 
     if (!is.numeric(n)){
         rlang::abort(
-            "The '.n' parameter must be an numeric integer like 1 or 10."
+            "The '.n' parameter must be an numeric integer like 1 or 10.",
+            use_cli_format = TRUE
         )
     }
 
