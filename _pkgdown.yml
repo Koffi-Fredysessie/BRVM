@@ -21,3 +21,7 @@ reference:
      desc: Functions that get ticker data
      contents:
      -  has_concept("Ticker Data Retrieval")
+  -  title: Functions That Get Sector Data
+     desc: Functions that get sector data
+     contents:
+     -  has_concept("Sector")
