@@ -1,6 +1,7 @@
 #' BRVM By Sector
 #'
 #' @family Sector
+#' @family Data Retrieval
 #'
 #' @author Koffi Frederic SESSIE
 #' @author Oudouss Diakité Abdoul
