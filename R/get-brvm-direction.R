@@ -32,7 +32,8 @@ BRVM_direction <- function(.up_or_down = "Up") {
     # Check params ----
     if (!is.character(up_down)){
         rlang::abort(
-            "The '.up_or_down' parameters must be set to either up or down."
+            message = "The '.up_or_down' parameters must be set to either up or down.",
+            use_cli_format = TRUE
         )
     }
 

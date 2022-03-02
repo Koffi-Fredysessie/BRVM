@@ -48,8 +48,9 @@ BRVM_get <- function(.symbol, .from = NULL, .to = NULL) {
 
     if (length(tickers) < 1){
         rlang::abort(
-            "The '.symbol' parameter cannot be blank. Please enter at least one ticker.
-            If entering multiple please use .symbol = c(Tick_1, Tick_2, ...)"
+            message = "The '.symbol' parameter cannot be blank. Please enter at least one ticker.
+            If entering multiple please use .symbol = c(Tick_1, Tick_2, ...)",
+            use_cli_format = TRUE
         )
     }
 
@@ -59,7 +60,8 @@ BRVM_get <- function(.symbol, .from = NULL, .to = NULL) {
         length(end_date) != 0){
         if(start_date > end_date){
             rlang::abort(
-                "The '.from' parameter (start_date) must be equal to or less than .to (end_date)"
+                message = "The '.from' parameter (start_date) must be equal to or less than .to (end_date)",
+                use_cli_format = TRUE
             )
         }
     }
@@ -80,8 +82,9 @@ BRVM_get <- function(.symbol, .from = NULL, .to = NULL) {
 # Check input parameters after filtering ----
     if (length(symbol_vec) < 1){
         rlang::abort(
-            "The '.symbol' parameter cannot be blank. Please enter at least one ticker.
-            If entering multiple please use .symbol = c(Tick_1, Tick_2, ...)"
+            message = "The '.symbol' parameter cannot be blank. Please enter at least one ticker.
+            If entering multiple please use .symbol = c(Tick_1, Tick_2, ...)",
+            use_cli_format = TRUE
         )
     }
     for (Tick in symbol_vec) {
