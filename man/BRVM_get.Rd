@@ -37,10 +37,11 @@ data_tbl
 \seealso{
 \url{https://www.richbourse.com}
 
-Other Ticker Data Retrieval: 
+Other Data Retrieval: 
 \code{\link{BRVM_direction}()},
 \code{\link{BRVM_index}()},
-\code{\link{BRVM_rank}()}
+\code{\link{BRVM_rank}()},
+\code{\link{BRVM_sector}()}
 }
 \author{
 Koffi Frederic SESSIE
@@ -49,5 +50,5 @@ Oudouss Diakité Abdoul
 
 Steven P. Sanderson II, MPH
 }
+\concept{Data Retrieval}
 \concept{Richbourse}
-\concept{Ticker Data Retrieval}
