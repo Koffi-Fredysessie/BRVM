@@ -67,15 +67,7 @@ BRVM_get <- function(.symbol, .from = NULL, .to = NULL) {
     returns <- as.data.frame(matrix(NA, ncol = 7, nrow = 0))
     names(returns) <- c("Date", "Open", "High", "Low", "Close", "Volume", "Ticker")
     quotes <- gsheet::gsheet2tbl("https://docs.google.com/spreadsheets/d/1rdjGjlQg7cUzWAEJFikrxOnisk-yQQx-n652sJUL-qc/edit#gid=0")
-    colnames(quotes) <- c(
-        "ticker",
-        "company_name",
-        "volume",
-        "cours_veille_fcfa",
-        "cours_clôture_fcfa",
-        "cours_clôture_fcfa",
-        "pecent_change"
-    )
+    colnames(quotes)<-c("Symbole","Nom","Volume","Cours veille (FCFA)","Cours clôture (FCFA)" ,"Cours Clôture(FCFA)","Variation(%)" )
 
     #### Create a definitive symbol vector
     symbol_vec <- NULL
@@ -150,15 +142,20 @@ BRVM_get <- function(.symbol, .from = NULL, .to = NULL) {
         returns <- rbind(returns, final.data)
     }
 
-    returns <- dplyr::as_tibble(returns)
+    # Set column names ----
+    returns <- dplyr::as_tibble(returns) %>%
+        purrr::set_names("date_col", "open","high","low","close","volume","ticker") %>%
+        dplyr::select(date_col, ticker, dplyr::everything())
 
+    # Time filtering ----
     if (length(start_date) != 0){
-        returns <- dplyr::filter(returns, Date >= start_date)
+        returns <- dplyr::filter(returns, date_col >= start_date)
     }
 
     if (length(end_date) != 0){
-        returns <- dplyr::filter(returns, Date <= end_date)
+        returns <- dplyr::filter(returns, date_col <= end_date)
     }
 
+    # Return ----
     return(returns)
 }
