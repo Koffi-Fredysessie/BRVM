@@ -34,6 +34,12 @@ BRVM_sector(.sectors = c("Other", "Agriculture"))
 \url{"https://www.richbourse.com/common/apprendre/liste-societes?page=2"}
 
 \url{"https://www.richbourse.com/common/apprendre/liste-societes?page=3"}
+
+Other Data Retrieval: 
+\code{\link{BRVM_direction}()},
+\code{\link{BRVM_get}()},
+\code{\link{BRVM_index}()},
+\code{\link{BRVM_rank}()}
 }
 \author{
 Koffi Frederic SESSIE
@@ -42,4 +48,5 @@ Oudouss Diakité Abdoul
 
 Steven P. Sanderson II, MPH
 }
+\concept{Data Retrieval}
 \concept{Sector}
