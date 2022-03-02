@@ -75,6 +75,14 @@ BRVM_rank <- function(.top_or_flop = "Top", .n = 10) {
         #assign(paste0("Flop", "_", n), quotes_tbl[-4][1:n, ])
     }
 
+    # Clean names ----
+    ret <- %>%
+        purrr::set_names(
+            "ticker",
+            "company_name",
+            "percentage_variation"
+        )
+
     # Return data ----
     return(ret)
 
