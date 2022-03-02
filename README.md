@@ -5,7 +5,7 @@
 
 <!-- badges: start -->
 
-[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/BRVM)](https://cran.r-project.org/package=BRVM)
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/BRVM)](https://cran.r-project.org/package=BRVM)
 ![](https://cranlogs.r-pkg.org/badges/BRVM)
 ![](https://cranlogs.r-pkg.org/badges/grand-total/BRVM) [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html##experimental)
@@ -60,22 +60,16 @@ records based on whether they are ‘Top’ or ‘Bottom’ ranked.
 ``` r
 BRVM_rank("Top", 10)
 #> # A tibble: 10 x 3
-#>    Symbole Nom                                     `Variation (%)`
-#>    <chr>   <chr>                                             <dbl>
-#>  1 SCRC    SUCRIVOIRE COTE D'IVOIRE                           7.5 
-#>  2 STAC    SETAO COTE D'IVOIRE                                7.44
-#>  3 PALC    PALM COTE D'IVOIRE                                 7.43
-#>  4 SAFC    SAFCA COTE D'IVOIRE                                7.21
-#>  5 BOAB    BANK OF AFRICA BENIN                               7.05
-#>  6 BOAM    BANK OF AFRICA MALI                                6.51
-#>  7 BOAN    BANK OF AFRICA NIGER                               6.31
-#>  8 BOAC    BANK OF AFRICA COTE D'IVOIRE                       5.67
-#>  9 NEIC    NEI-CEDA COTE D'IVOIRE                             5.59
-#> 10 ETIT    Ecobank Transnational Incorporated TOGO            5.26
+#>    ticker company_name                                percentage_variation
+#>    <chr>  <chr>                                                      <dbl>
+#>  1 ETIT   Ecobank Transnational Incorporated TOGO                     5   
+#>  2 SIBC   SOCIETE IVOIRIENNE DE BANQUE COTE D'IVOIRE                  5   
+#>  3 SIVC   AIR LIQUIDE COTE D'IVOIRE                                   4.65
+#>  4 CFAC   CFAO MOTORS COTE D'IVOIRE                                   3.45
+#>  5 FTSC   FILTISAC COTE D'IVOIRE                                      2.24
+#>  6 PRSC   TRACTAFRIC MOTORS COTE D'IVOIRE                             2.17
+#>  7 SDSC   BOLLORE TRANSPORT & LOGISTICS COTE D'IVOIRE                 2   
+#>  8 TTLC   TOTAL COTE D'IVOIRE                                         1.85
+#>  9 TTLS   TOTAL SENEGAL                                               0.48
+#> 10 SNTS   SONATEL SENEGAL                                             0.17
 ```
-
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this. You could also
-use GitHub Actions to re-render `README.Rmd` every time you push. An
-example workflow can be found here:
-<https://github.com/r-lib/actions/tree/v1/examples>.
