@@ -55,6 +55,14 @@ BRVM_direction <- function(.up_or_down = "Up") {
         ret <- dplyr::as_tibble(ret)
     }
 
+    # Set clean names ----
+    ret <- ret %>%
+        purrr::set_names(
+            "ticker",
+            "company_name",
+            "percentage_variation"
+        )
+
     # Return data ----
     return(ret)
 
