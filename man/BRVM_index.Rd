@@ -17,7 +17,6 @@ This function will get index data from \url{www.brvm.org}
 }
 \examples{
 BRVM_index()
-
 }
 \seealso{
 \url{https://www.brvm.org/en/indices/status/200}

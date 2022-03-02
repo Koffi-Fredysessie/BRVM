@@ -19,7 +19,6 @@ Imports:
     gsheet,
     httr,
     lubridate,
-    janitor,
     purrr
 Suggests: 
     rmarkdown,

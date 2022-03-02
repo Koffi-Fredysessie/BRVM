@@ -76,7 +76,7 @@ BRVM_rank <- function(.top_or_flop = "Top", .n = 10) {
     }
 
     # Clean names ----
-    ret <- %>%
+    ret <- ret %>%
         purrr::set_names(
             "ticker",
             "company_name",
