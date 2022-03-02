@@ -21,7 +21,7 @@ reference:
      desc: Functions that get ticker data
      contents:
      -  has_concept("Ticker Data Retrieval")
-  -  title: Functions That Get Sector Data
-     desc: Functions that get sector data
+  -  title: Utility Functions
+     desc: Functions that act as utilities
      contents:
-     -  has_concept("Sector")
+     -  has_concept("Utility")

@@ -1,6 +1,6 @@
-#' BRVM Sectors
+#' BRVM Available Sectors
 #'
-#' @family Sector
+#' @family Utility
 #'
 #' @author Koffi Frederic SESSIE
 #' @author Oudouss Diakité Abdoul

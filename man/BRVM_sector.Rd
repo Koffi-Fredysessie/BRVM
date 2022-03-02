@@ -34,9 +34,6 @@ BRVM_sector(.sectors = c("Other", "Agriculture"))
 \url{"https://www.richbourse.com/common/apprendre/liste-societes?page=2"}
 
 \url{"https://www.richbourse.com/common/apprendre/liste-societes?page=3"}
-
-Other Sector: 
-\code{\link{BRVM_available_sectors}()}
 }
 \author{
 Koffi Frederic SESSIE
