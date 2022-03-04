@@ -9,7 +9,7 @@
 #'
 #' @seealso \url{https://www.richbourse.com}
 #'
-#' @details This function will get data from the Rich Bourse exchange. The function
+#' @details This function will get data of the companies listed on the BVRM exchange through the Rich Bourse site. The function
 #' takes in a single parameter of `.symbol` The function will auto-format the
 #' tickers you input into all upper case by using `toupper()` The function will
 #' next make sure that the ticker passed is inside of a google spreadsheet of
