@@ -135,7 +135,7 @@ BRVM_get <- function(.symbol, .from = Sys.Date() - 2, .to = Sys.Date() - 1) {
         ## Turn date in format "%Y-%m-%d"
         data2$Date <- as.Date(as.POSIXct((data2$Date + 0.1) / 1000, origin = "1970-01-01"))
         ## Join data by date
-        final.data <- dplyr::left_join(data1, data2, by = "Date")
+        final.data <- dplyr::left_join(data1, data2, by = "Date") #Use merge()
         final.data$Ticker <- Tick ## Add ticker identifier
         assign(Tick, dplyr::as_tibble(final.data))
         returns <- rbind(returns, final.data)
