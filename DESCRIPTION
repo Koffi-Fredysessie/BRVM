@@ -4,7 +4,7 @@ Title: What the Package Does (One Line, Title Case)
 Version: 0.0.0.9000
 Authors@R: c(
     person("SESSIE","Koffi Frederic", email = "koffisessie@gmail.com", role = c("aut","cre","cph")),
-    person("Abdoul","Oudouss Diakité", email = "spsanderson@gmail.com", role = "aut"),
+    person("Abdoul","Oudouss Diakité", email = "abdouloudoussdiakite@gmail.com", role = "aut"),
     person("Steven","Sanderson", email = "spsanderson@gmail.com", role = "aut"))
 Description: What the package does (one paragraph).
 License: MIT + file LICENSE
