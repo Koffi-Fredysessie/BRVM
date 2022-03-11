@@ -4,7 +4,7 @@
 \alias{BRVM_rank}
 \title{BRVM Rank}
 \usage{
-BRVM_rank(.top_or_flop = "Top", .n = 10)
+BRVM_rank(.top_or_flop = "Top", .n = 10, .turn_off_warnings = TRUE)
 }
 \arguments{
 \item{.top_or_flop}{This is a character string set to "Top". It can either

@@ -4,7 +4,7 @@
 \alias{BRVM_index}
 \title{BRVM Get - Get Ticker Data}
 \usage{
-BRVM_index()
+BRVM_index(.turn_off_warnings = TRUE)
 }
 \value{
 A tibble

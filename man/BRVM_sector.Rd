@@ -4,10 +4,14 @@
 \alias{BRVM_sector}
 \title{BRVM By Sector}
 \usage{
-BRVM_sector(.sectors = "All")
+BRVM_sector(.sectors = "All", .turn_off_warnings = TRUE)
 }
 \arguments{
 \item{.sectors}{A vector of sectors you wish to have returned.}
+
+\item{.turn_off_warnings}{A boolean value of TRUE or FALSE. Should global warnings
+stay on or off. The default is off, after the function finishes running it will
+turn global warnings back on.}
 }
 \value{
 A tibble

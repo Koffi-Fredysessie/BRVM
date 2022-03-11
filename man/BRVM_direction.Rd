@@ -4,7 +4,7 @@
 \alias{BRVM_direction}
 \title{BRVM Rank}
 \usage{
-BRVM_direction(.up_or_down = "Up")
+BRVM_direction(.up_or_down = "Up", .turn_off_warnings = TRUE)
 }
 \arguments{
 \item{.up_or_down}{This is a character string set to "Up" It can either be

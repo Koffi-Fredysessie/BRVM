@@ -4,7 +4,7 @@
 \alias{BRVM_get}
 \title{BRVM Get - Get Ticker Data}
 \usage{
-BRVM_get(.symbol, .from = NULL, .to = NULL)
+BRVM_get(.symbol, .from = NULL, .to = NULL, .turn_off_warnings = TRUE)
 }
 \arguments{
 \item{.symbol}{A vector of symbols, like: c("BICC","XOM","SlbC")}
@@ -14,6 +14,10 @@ must be in ymd format "YYYY-MM-DD" or "YYYY/MM/DD".}
 
 \item{.to}{A quoted end date, ie. "2022-01-31" or "2022/01/31". The data must
 be in ymd format "YYYY-MM-DD" or "YYYY/MM/DD"}
+
+\item{.turn_off_warnings}{A boolean value of TRUE or FALSE. Should global warnings
+stay on or off. The default is off, after the function finishes running it will
+turn global warnings back on.}
 }
 \value{
 A tibble
