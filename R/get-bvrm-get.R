@@ -9,7 +9,7 @@
 #'
 #' @seealso \url{https://www.richbourse.com}
 #'
-#' @details This function will get data from the Rich Bourse exchange. The function
+#' @details This function will get data of the companies listed on the BVRM exchange through the Rich Bourse site. The function
 #' takes in a single parameter of `.symbol` The function will auto-format the
 #' tickers you input into all upper case by using `toupper()` The function will
 #' next make sure that the ticker passed is inside of a google spreadsheet of
@@ -159,6 +159,17 @@ BRVM_get <- function(.symbol, .from = NULL, .to = NULL, .turn_off_warnings = TRU
         data2$Date <- as.Date(as.POSIXct((data2$Date + 0.1) / 1000, origin = "1970-01-01"))
         ## Join data by date
         final.data <- dplyr::left_join(data1, data2, by = "Date")
+        ###Group data by date if they exist
+        ifelse (any(duplicated(final.data$Date)),
+            final.data<-final.data%>%
+                group_by(Date)%>%
+                summarise(Open=ceiling(mean(Open)),
+                          High= ceiling(mean(High)),
+                          Low= ceiling(mean(Low)),
+                          Close= ceiling(mean(Close)),
+                          Volume= ceiling(mean(Volume))),
+             final.data)
+
         final.data$Ticker <- Tick ## Add ticker identifier
         assign(Tick, dplyr::as_tibble(final.data))
         returns <- rbind(returns, final.data)
