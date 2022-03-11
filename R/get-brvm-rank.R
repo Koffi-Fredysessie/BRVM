@@ -28,11 +28,12 @@
 #' @export
 #'
 
-BRVM_rank <- function(.top_or_flop = "Top", .n = 10) {
+BRVM_rank <- function(.top_or_flop = "Top", .n = 10, .turn_off_warnings = TRUE) {
 
     # Set params ----
     top_flop <- tolower(as.character(.top_or_flop))
     n <- as.integer(.n)
+    turn_off_warnings <- as.logical(.turn_off_warnings)
 
     # Check params ----
     if (!top_flop %in% c("top","flop")){
@@ -54,6 +55,21 @@ BRVM_rank <- function(.top_or_flop = "Top", .n = 10) {
             "The '.n' parameter must be an numeric integer like 1 or 10.",
             use_cli_format = TRUE
         )
+    }
+
+    if (!is.logical(turn_off_warnings)){
+        rlang::warn(
+            message = paste0("A non-boolean value was passed to '.turn_off_warnings',
+                             it will be set to TRUE. The value passed is: ", turn_of_warnings),
+            use_cli_format = TRUE
+        )
+        turn_off_warnings <- TRUE
+    } else {
+        turn_off_warnings <- turn_off_warnings
+    }
+
+    if (turn_off_warnings){
+        options(warn = -1)
     }
 
     # get data ----
@@ -93,6 +109,7 @@ BRVM_rank <- function(.top_or_flop = "Top", .n = 10) {
         )
 
     # Return data ----
+    options(warn = 0)
     return(ret)
 
 }

@@ -21,7 +21,25 @@
 #' @export
 #'
 
-BRVM_index <- function() {
+BRVM_index <- function(.turn_off_warnings = TRUE) {
+
+    turn_off_warnings <- as.logical(.turn_off_warnings)
+
+    if (!is.logical(turn_off_warnings)){
+        rlang::warn(
+            message = paste0("A non-boolean value was passed to '.turn_off_warnings',
+                             it will be set to TRUE. The value passed is: ", turn_of_warnings),
+            use_cli_format = TRUE
+        )
+        turn_off_warnings <- TRUE
+    } else {
+        turn_off_warnings <- turn_off_warnings
+    }
+
+    if (turn_off_warnings){
+        options(warn = -1)
+    }
+
   tryCatch(
     {
       index <- rvest::read_html("https://www.brvm.org/en/indices/status/200") %>%
@@ -67,5 +85,6 @@ BRVM_index <- function() {
     )
 
   # Return ----
+  options(warn = 0)
   return(index)
 }

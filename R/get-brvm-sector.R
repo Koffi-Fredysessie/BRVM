@@ -17,6 +17,9 @@
 #' @description
 #'
 #' @param .sectors A vector of sectors you wish to have returned.
+#' @param .turn_off_warnings A boolean value of TRUE or FALSE. Should global warnings
+#' stay on or off. The default is off, after the function finishes running it will
+#' turn global warnings back on.
 #'
 #' @examples
 #'
@@ -32,7 +35,24 @@
 #' @export
 #'
 
-BRVM_sector <-function(.sectors = "All"){
+BRVM_sector <-function(.sectors = "All", .turn_off_warnings = TRUE){
+
+    turn_off_warnings <- as.logical(.turn_off_warnings)
+
+    if (!is.logical(turn_off_warnings)){
+        rlang::warn(
+            message = paste0("A non-boolean value was passed to '.turn_off_warnings',
+                             it will be set to TRUE. The value passed is: ", turn_of_warnings),
+            use_cli_format = TRUE
+        )
+        turn_off_warnings <- TRUE
+    } else {
+        turn_off_warnings <- turn_off_warnings
+    }
+
+    if (turn_off_warnings){
+        options(warn = -1)
+    }
 
     # Get sector list ----
     if (is.null(.sectors)){
@@ -176,6 +196,7 @@ BRVM_sector <-function(.sectors = "All"){
         dplyr::filter(sector %in% sector_vec)
 
     # Return ----
+    options(warn = 0)
     return(brvm_all)
 
 }

@@ -22,6 +22,9 @@
 #' must be in ymd format "YYYY-MM-DD" or "YYYY/MM/DD".
 #' @param .to A quoted end date, ie. "2022-01-31" or "2022/01/31". The data must
 #' be in ymd format "YYYY-MM-DD" or "YYYY/MM/DD"
+#' @param .turn_off_warnings A boolean value of TRUE or FALSE. Should global warnings
+#' stay on or off. The default is off, after the function finishes running it will
+#' turn global warnings back on.
 #'
 #' @examples
 #' symbols <- c("BiCc","XOM","SlbC")
@@ -34,12 +37,13 @@
 #' @export
 #'
 
-BRVM_get <- function(.symbol, .from = NULL, .to = NULL) {
+BRVM_get <- function(.symbol, .from = NULL, .to = NULL, .turn_off_warnings = TRUE) {
 
     # Evaluate input parameters ----
     tickers <- unique(toupper(.symbol))
     start_date <- lubridate::parse_date_time(.from, orders = "ymd")
     end_date <- lubridate::parse_date_time(.to, orders = "ymd")
+    turn_off_warnings <- as.logical(.turn_off_warnings)
 
     # Check input parameters ----
     if (length(end_date) == 0){
@@ -66,6 +70,21 @@ BRVM_get <- function(.symbol, .from = NULL, .to = NULL) {
         }
     }
 
+    if (!is.logical(turn_off_warnings)){
+        rlang::warn(
+            message = paste0("A non-boolean value was passed to '.turn_off_warnings',
+                             it will be set to TRUE. The value passed is: ", turn_of_warnings),
+            use_cli_format = TRUE
+        )
+        turn_off_warnings <- TRUE
+    } else {
+        turn_off_warnings <- turn_off_warnings
+    }
+
+    if (turn_off_warnings){
+        options(warn = -1)
+    }
+
     returns <- as.data.frame(matrix(NA, ncol = 7, nrow = 0))
     names(returns) <- c("Date", "Open", "High", "Low", "Close", "Volume", "Ticker")
     quotes <- gsheet::gsheet2tbl("https://docs.google.com/spreadsheets/d/1rdjGjlQg7cUzWAEJFikrxOnisk-yQQx-n652sJUL-qc/edit#gid=0")
@@ -79,7 +98,7 @@ BRVM_get <- function(.symbol, .from = NULL, .to = NULL) {
             symbol_vec <- append(symbol_vec, symb)
         }
     }
-# Check input parameters after filtering ----
+    # Check input parameters after filtering ----
     if (length(symbol_vec) < 1){
         rlang::abort(
             message = "The '.symbol' parameter cannot be blank. Please enter at least one ticker.
@@ -160,5 +179,6 @@ BRVM_get <- function(.symbol, .from = NULL, .to = NULL) {
     }
 
     # Return ----
+    options(warn = 0)
     return(returns)
 }
