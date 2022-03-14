@@ -146,6 +146,17 @@ BRVM_get <- function(.symbol =c("BiCc","XOM","SlbC") , .from = Sys.Date() - 10, 
     #data2$Date <- as.Date(as.POSIXct((data2$Date + 0.1) / 1000, origin = "1970-01-01"))
     ## Join data by date
     final.data <- merge(data1, data2, by = "Date")
+    ###Group data by date if they exist
+    ###Will be helpful to remove duplicated date elements
+    ifelse (any(duplicated(final.data$Date)),
+            final.data<-final.data%>%
+              group_by(Date)%>%
+              summarise(Open=ceiling(mean(Open)),
+                        High= ceiling(mean(High)),
+                        Low= ceiling(mean(Low)),
+                        Close= ceiling(mean(Close)),
+                        Volume= ceiling(mean(Volume))),
+            final.data)
     final.data$Ticker <- Tick ## Add ticker identifier
     assign(Tick, dplyr::as_tibble(final.data),envir = globalenv())
     returns <- rbind(returns, final.data)
