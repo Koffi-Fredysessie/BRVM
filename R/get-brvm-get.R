@@ -112,7 +112,7 @@ BRVM_get <- function(.symbol, .from = NULL, .to = NULL, .turn_off_warnings = TRU
         page <- httr::GET(url)
         page <- httr::content(page, as = "text", encoding = "UTF-8")
         page <- unlist(strsplit(page, split = "\n"))
-        data1 <- unlist(strsplit(page[[641]], split = ":"))
+        data1 <- unlist(strsplit(page[[642]], split = ":"))
         data1 <- data1[2] # Show table 1 ##First 5 columns (Date, Open, High, Low, Close)
         data1 <- gsub(" ", "", data1)
         data1 <- strsplit(data1, split = "],")
@@ -136,7 +136,7 @@ BRVM_get <- function(.symbol, .from = NULL, .to = NULL, .turn_off_warnings = TRU
         data1$Date <- as.Date(as.POSIXct((data1$Date + 0.1) / 1000, origin = "1970-01-01"))
 
         ## Volume data Case (2 columns : Date and Volume)
-        data2 <- unlist(strsplit(page[[651]], split = ":"))
+        data2 <- unlist(strsplit(page[[652]], split = ":"))
         data2 <- data2[2]
         # Data Cleaning
         data2 <- gsub(" ", "", data2) # Volume
