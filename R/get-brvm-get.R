@@ -22,9 +22,6 @@
 #' must be in ymd format "YYYY-MM-DD" or "YYYY/MM/DD".
 #' @param .to A quoted end date, ie. "2022-01-31" or "2022/01/31". The data must
 #' be in ymd format "YYYY-MM-DD" or "YYYY/MM/DD"
-#' @param .turn_off_warnings A boolean value of TRUE or FALSE. Should global warnings
-#' stay on or off. The default is off, after the function finishes running it will
-#' turn global warnings back on.
 #'
 #' @examples
 #' symbols <- c("BiCc","XOM","SlbC")
