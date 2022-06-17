@@ -46,7 +46,7 @@
 #'
 #' @export
 #'
-```r{}
+
 BRVM_get1 <- function(ticker ='BICC',
                              Period = 0,
                              from = Sys.Date() - 89,
@@ -270,4 +270,4 @@ BRVM_get1 <- function(ticker ='BICC',
   )
   
 }
-```
+
