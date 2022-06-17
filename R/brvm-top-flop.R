@@ -17,11 +17,11 @@
 #' BRVM_rank("flop", 5)
 #' @export
 
-BRVM_rank<-function(top_or_flop, n=10){
+BRVM_rank <-function(top_or_flop, n=10){
   if (n > 46) {
     print("Please choose a number lower than or equal to 46")
     # return("Please choose a number lower than or equal to 46")
-  } else if (str_to_title(top_or_flop) !="Top" && str_to_title(top_or_flop) !="Flop"){
+  } else if (stringr::str_to_title(top_or_flop) !="Top" && stringr::str_to_title(top_or_flop) !="Flop"){
     print("Please choose between Top and Flop")
     # return("Please choose between Top and Flop")
     
@@ -39,14 +39,14 @@ BRVM_rank<-function(top_or_flop, n=10){
         quotes.df <-quotes.df[-c(3:6)]
         names(quotes.df) <- c("Ticker", "Name", "Change (%)")
         
-        # if (str_to_title(top_or_flop) %in% c("Top","Flop")){
-          if (str_to_title(top_or_flop) == "Top"){
+        # if (stringr::str_to_title(top_or_flop) %in% c("Top","Flop")){
+          if (stringr::str_to_title(top_or_flop) == "Top"){
             quotes.df<-arrange(quotes.df, desc(quotes.df$`Change (%)`))
             assign(paste0("Top","_", n), quotes.df[1:n,])
             quotes.df <- tibble::as.tibble(quotes.df[1:n,])
             return(quotes.df)
             
-          } else if (str_to_title(top_or_flop) == "Flop"){
+          } else if (stringr::str_to_title(top_or_flop) == "Flop"){
             quotes.df$rank<-rank(quotes.df$`Change (%)`)
             quotes.df<- quotes.df[order(quotes.df$rank),]
             assign(paste0("Flop","_", n), quotes.df[-4][1:n,])
