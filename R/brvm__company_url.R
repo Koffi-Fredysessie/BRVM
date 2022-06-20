@@ -13,7 +13,7 @@
 #' @export
 #'
 #' @examples
-#' BRVM_company_url("BICC")
+#' \dontrun{BRVM_company_url("BICC")}
 #' 
 BRVM_company_url <- function(company){
   company<-toupper(company)
