@@ -12,9 +12,9 @@
 #' @author Oudouss Diakité Abdoul
 #' @author Steven P. Sanderson II, MPH
 #'
-#' @examples
+#' @examples \dontrun{
 #' BRVM_rank("top", 15)
-#' BRVM_rank("flop", 5)
+#' BRVM_rank("flop", 5)}
 #' @export
 
 BRVM_rank <-function(top_or_flop, n=10){
