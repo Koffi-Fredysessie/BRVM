@@ -24,10 +24,10 @@
 #' @param .to A quoted end date, ie. "2022-01-31" or "2022/01/31". The date must
 #' be in ymd format "YYYY-MM-DD" or "YYYY/MM/DD"
 #'
-#' @examples
+#' @examples \dontrun{
 #' symbols <- c("BiCc","XOM","SlbC")
 #' data_tbl <- BRVM_get(.symbol = symbols)
-#' data_tbl
+#' data_tbl}
 #'
 #' @return
 #' A tibble
