@@ -12,9 +12,9 @@
 #' @return A tibble
 #' @export
 #'
-#' @examples
+#' @examples \dontrun{
 #' BRVM_company_info("BOAS")
-#' BRVM_company_info("BoaM")
+#' BRVM_company_info("BoaM")}
 #' 
 BRVM_company_info<- function(ticker){
   ticker<-toupper(ticker)
