@@ -14,7 +14,7 @@
 #' @export
 #'
 #' @examples
-#' BRVM_market_activity()
+#' \dontrun{BRVM_market_activity()}
 #' 
 BRVM_market_activity <- function(){
   tryCatch(
