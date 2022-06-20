@@ -12,7 +12,7 @@
 #' @export
 #'
 #' @examples
-#' BRVM_traded_val()
+#' \dontrun{BRVM_traded_val()}
 #' 
 
 BRVM_traded_val <- function(){
