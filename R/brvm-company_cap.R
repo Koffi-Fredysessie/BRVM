@@ -12,7 +12,7 @@
 #' @export
 #'
 #' @examples
-#' BRVM_company_cap()
+#' \dontrun{BRVM_company_cap()}
 #' 
 BRVM_company_cap <- function(){
   tryCatch({
