@@ -15,13 +15,14 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' y <-ts(c(5353.08,5409.24,5315.57,5270.53, # one and a half week stock index
 #' 5211.66,NA,NA,5160.80,5172.37,5160.80,5172.37))  # data including a weekend
 #' normality_test(y ,"Shapiro-Wilk")
 #' 
 #' BICC <- BRVM_get("snts", .from = "2010-02-05", .to = "2022-02-05" )
 #' normality_test((BICC$Close), "Agostino")
-#' normality_test((BICC$Close[1:50]), "Jarque Bera")
+#' normality_test((BICC$Close[1:50]), "Jarque Bera")}
 #' 
 normality_test <- function(x, type.test) {
   if (length(unique(x)) != 1) {
