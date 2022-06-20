@@ -2,7 +2,7 @@
 #'
 #' @param .ticker Must be at least one index between c("BRVM10","BRVMAG","BRVMC","BRVMAS","BRVMDI","BRVMFI", "BRVMIN", "BRVMSP", "BRVMTR")
 #' @param Period Numeric number indicating time period. Valid entries are 0, 1, 5, 30, 91, and 365 representing respectively ‘daily’, 'one year', ‘weekly’, ‘monthly’, ‘quarterly’ and ‘yearly’ .
-#' @param from A quoted start date, ie. "2020-01-01" or "2020/01/01". The data
+#' @param from A quoted start date, ie. "2020-01-01" or "2020/01/01". The date
 #' must be in ymd format "YYYY-MM-DD" or "YYYY/MM/DD".
 #' @param to A quoted end date, ie. "2022-05-20" or "2022/05/20". The date must
 #' be in ymd format "YYYY-MM-DD" or "YYYY/MM/DD"
