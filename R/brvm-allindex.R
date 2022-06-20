@@ -12,7 +12,7 @@
 #' @export
 #' 
 #' @examples
-#' BRVM.index()
+#' \dontrun{BRVM.index()}
 #' 
 
 BRVM.index <- function(){
