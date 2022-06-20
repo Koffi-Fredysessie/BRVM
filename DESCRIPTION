@@ -1,6 +1,6 @@
 Package: BRVM
 Type: Package
-Title: Brvm Stock Exchange
+Title: PAckage to retrieve historical data of companies listed on Brvm Stock Exchange
 Version: 1.3.0
 Authors@R: c(
     person("SESSIE","Koffi Frederic", email = "koffisessie@gmail.com", role = c("aut","cre","cph")),
