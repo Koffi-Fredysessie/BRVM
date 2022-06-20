@@ -22,11 +22,11 @@
 #' turn global warnings back on.
 #'
 #' @examples
-#' sectors <- c("Industry","Administration","PUblic service", "AUtr", "FINANCE",
+#' \dontrun{sectors <- c("Industry","Administration","PUblic service", "AUtr", "FINANCE",
 #'             "distribution", 25)
 #' BRVM_sector(.sectors = sectors)
 #' BRVM_sector(.sectors = "All")
-#' BRVM_sector(.sectors = c("Other", "Agriculture"))
+#' BRVM_sector(.sectors = c("Other", "Agriculture"))}
 #'
 #' @return
 #' A tibble
