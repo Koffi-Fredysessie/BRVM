@@ -14,8 +14,8 @@
 #' @export
 #'
 #' @examples
-#' company_cap("BICC")
-#' company_cap("ontbf")
+#' \dontrun{company_cap("BICC")
+#' company_cap("ontbf")}
 #' 
 company_cap <- function(company){
   company<-toupper(company)
