@@ -14,7 +14,7 @@
 #' @description This function will get data from \url{www.brvm.org}.
 #'
 #' @examples
-#' BRVM_index()
+#' \dontrun{BRVM_index()}
 #' @return
 #' A tibble
 #'
