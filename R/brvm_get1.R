@@ -21,7 +21,7 @@
 #' @param to A quoted end date, ie. "2022-01-31" or "2022/01/31". The date must
 #' be in ymd format "YYYY-MM-DD" or "YYYY/MM/DD"
 #'
-#' @examples
+#' @examples \dontrun{
 #' symbols <- c("BiCc","XOM","SlbC")
 #' data_tbl <- BRVM_get1(ticker = symbols)
 #' data_tbl
@@ -40,7 +40,7 @@
 #' BRVM_get1("BRVM10", Period = 91 ) # To get quaterly data
 #' 
 #' BRVM_get1(c("brvmtr", "BiCc", "BOAS"), Period = 365 ) # To get yearly data
-#' 
+#' }
 #' @return
 #' A tibble
 #'
