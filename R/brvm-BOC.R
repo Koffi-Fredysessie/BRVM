@@ -12,9 +12,8 @@
 #' @return
 #' @export
 #'
-#' @examples
-#' BRVM_stock_market("2022-04-25")
-
+#' @examples \dontrun{BRVM_stock_market("2022-04-25")}
+#'
 BRVM_stock_market <- function(.weekday){
   the_date <- lubridate::parse_date_time(.weekday, orders = "ymd")
   #  the_date <- as.POSIXct(.weekday)
