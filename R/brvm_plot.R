@@ -23,10 +23,10 @@
 #' 
 #' @export
 #'
-#' @examples
+#' @examples \dontrun{
 #' BRVM_plot("BICC")
 #' BRVM_plot("BICC", up.col = "blue", down.col = "pink")
-#' BRVM_plot(c("BICC","ETIT", "BOAM"))
+#' BRVM_plot(c("BICC","ETIT", "BOAM"))}
 
 BRVM_plot<- function(.company,
                      from = Sys.Date() - 365,
