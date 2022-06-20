@@ -14,7 +14,7 @@
 #' @export
 #'
 #' @examples
-#' BRVM_cap()
+#' \dontrun{BRVM_cap()}
 #' 
 
 BRVM_cap <- function(){
