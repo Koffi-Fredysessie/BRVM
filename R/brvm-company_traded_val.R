@@ -15,8 +15,8 @@
 #' @export
 #'
 #' @examples
-#' company_traded_val("ETIT")
-#' company_traded_val("ontbf")
+#' \dontrun{company_traded_val("ETIT")
+#' company_traded_val("ontbf")}
 #' 
 company_traded_val<- function(company){
   company<-toupper(company)
