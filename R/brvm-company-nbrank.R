@@ -22,8 +22,8 @@
 #' @export
 #'
 #' @examples
-#' company_nbrank("BICC")
-#' company_nbrank("SNTS")
+#' \dontrun{company_nbrank("BICC")
+#' company_nbrank("SNTS")}
 
 company_nbrank<-function(.company){
   .company<-toupper(.company)
