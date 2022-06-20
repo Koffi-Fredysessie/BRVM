@@ -8,7 +8,7 @@
 #' @author Koffi Frederic SESSIE
 #' 
 #' @param .company is the Ticker(s) name(s)
-#' @param from A quoted start date, ie. "2020-01-01" or "2020/01/01". The data
+#' @param from A quoted start date, ie. "2020-01-01" or "2020/01/01". The date
 #' must be in ymd format "YYYY-MM-DD" or "YYYY/MM/DD".
 #' @param to A quoted end date, ie. "2022-01-31" or "2022/01/31". The date must
 #' be in ymd format "YYYY-MM-DD" or "YYYY/MM/DD"
