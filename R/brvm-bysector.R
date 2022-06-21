@@ -14,7 +14,7 @@
 #' @seealso \url{"https://www.richbourse.com/common/apprendre/liste-societes?page=2"}
 #' @seealso \url{"https://www.richbourse.com/common/apprendre/liste-societes?page=3"}
 #'
-#' @description
+#' @description This function will take in the name of sector(s) and returns data for companies belonging to that/those sector(s)
 #'
 #' @param .sectors A vector of sectors you wish to have returned.
 #' @param .turn_off_warnings A boolean value of TRUE or FALSE. Should global warnings
