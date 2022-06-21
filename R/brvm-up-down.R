@@ -10,7 +10,8 @@
 #' @details This function will get any n results for the top or flop ranking
 #' of the BRVM tickers.
 #'
-#' @description
+#' @description This function will take in 'Up' or 'Down' and returns respectively n results for the top or flop ranking
+#' of the BRVM tickers.
 #'
 #' @param .up_or_down This is a character string set to "Up" It can either be
 #' 'Up' or 'Down'.
