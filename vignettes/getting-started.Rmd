@@ -31,3 +31,9 @@ on whether they are 'Top' or 'Bottom' ranked.
 ```{r brvm_rank}
 BRVM_rank("Top", 10)
 ```
+
+Lets now take a look at a simple plot. We will use `BRVM_plot()`
+
+```{r brvm_plot}
+BRVM_plot("BICC", up.col = "blue", down.col = "pink")
+```
