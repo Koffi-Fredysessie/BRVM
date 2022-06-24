@@ -5,3 +5,16 @@
 ^_pkgdown\.yml$
 ^docs$
 ^pkgdown$
+^.*\.Rproj$
+^README-.*\.png$
+^doc$
+^cran-comments\.md$
+^CRAN-RELEASE$
+^.github$
+^CODE_OF_CONDUCT\.md$
+^revdep$
+img
+^logo\.png$
+^index\.Rmd$
+^Meta$
+^CRAN-SUBMISSION$
