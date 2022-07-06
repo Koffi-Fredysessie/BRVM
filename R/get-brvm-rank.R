@@ -30,86 +30,85 @@
 
 BRVM_rank <- function(.top_or_flop = "Top", .n = 10, .turn_off_warnings = TRUE) {
 
-    # Set params ----
-    top_flop <- tolower(as.character(.top_or_flop))
-    n <- as.integer(.n)
-    turn_off_warnings <- as.logical(.turn_off_warnings)
+  # Set params ----
+  top_flop <- tolower(as.character(.top_or_flop))
+  n <- as.integer(.n)
+  turn_off_warnings <- as.logical(.turn_off_warnings)
 
-    # Check params ----
-    if (!top_flop %in% c("top","flop")){
-        rlang::abort(
-            message = "You must choose 'top' or 'flop' for the parameter '.top_of_flop'",
-            use_cli_format = TRUE
-        )
-    }
+  # Check params ----
+  if (!top_flop %in% c("top", "flop")) {
+    rlang::abort(
+      message = "You must choose 'top' or 'flop' for the parameter '.top_of_flop'",
+      use_cli_format = TRUE
+    )
+  }
 
-    if (!is.character(top_flop)){
-        rlang::abort(
-            "The '.top_or_flop' parameters must be set to either top or flop.",
-            use_cli_format = TRUE
-        )
-    }
+  if (!is.character(top_flop)) {
+    rlang::abort(
+      "The '.top_or_flop' parameters must be set to either top or flop.",
+      use_cli_format = TRUE
+    )
+  }
 
-    if (!is.numeric(n)){
-        rlang::abort(
-            "The '.n' parameter must be an numeric integer like 1 or 10.",
-            use_cli_format = TRUE
-        )
-    }
+  if (!is.numeric(n)) {
+    rlang::abort(
+      "The '.n' parameter must be an numeric integer like 1 or 10.",
+      use_cli_format = TRUE
+    )
+  }
 
-    if (!is.logical(turn_off_warnings)){
-        rlang::warn(
-            message = paste0("A non-boolean value was passed to '.turn_off_warnings',
+  if (!is.logical(turn_off_warnings)) {
+    rlang::warn(
+      message = paste0("A non-boolean value was passed to '.turn_off_warnings',
                              it will be set to TRUE. The value passed is: ", turn_of_warnings),
-            use_cli_format = TRUE
-        )
-        turn_off_warnings <- TRUE
-    } else {
-        turn_off_warnings <- turn_off_warnings
-    }
+      use_cli_format = TRUE
+    )
+    turn_off_warnings <- TRUE
+  } else {
+    turn_off_warnings <- turn_off_warnings
+  }
 
-    if (turn_off_warnings){
-        options(warn = -1)
-    }
+  if (turn_off_warnings) {
+    options(warn = -1)
+  }
 
-    # get data ----
-    quotes_tbl <- gsheet::gsheet2tbl(" https://docs.google.com/spreadsheets/d/1rdjGjlQg7cUzWAEJFikrxOnisk-yQQx-n652sJUL-qc/edit#gid=0 ")
-    quotes_tbl$`Variation (%)` <- gsub(",", ".", quotes_tbl$`Variation (%)`)
-    quotes_tbl$`Variation (%)` <- as.numeric(quotes_tbl$`Variation (%)`)
-    quotes_tbl <- quotes_tbl[-c(3:6)]
+  # get data ----
+  quotes_tbl <- gsheet::gsheet2tbl(" https://docs.google.com/spreadsheets/d/1rdjGjlQg7cUzWAEJFikrxOnisk-yQQx-n652sJUL-qc/edit#gid=0 ")
+  quotes_tbl$`Variation (%)` <- gsub(",", ".", quotes_tbl$`Variation (%)`)
+  quotes_tbl$`Variation (%)` <- as.numeric(quotes_tbl$`Variation (%)`)
+  quotes_tbl <- quotes_tbl[-c(3:6)]
 
-    # Get nrow of quoats, if n > nrow(quotes_tbl) then error out ----
-    if(nrow(quotes_tbl) < n){
-        rlang::abort(
-            "You have chosen more records than exist in the Quotes Tibble."
-        )
-    }
+  # Get nrow of quoats, if n > nrow(quotes_tbl) then error out ----
+  if (nrow(quotes_tbl) < n) {
+    rlang::abort(
+      "You have chosen more records than exist in the Quotes Tibble."
+    )
+  }
 
-    if (top_flop == "top") {
-        ret <- dplyr::arrange(quotes_tbl, dplyr::desc(quotes_tbl$`Variation (%)`)) %>%
-            dplyr::slice(1:n)
-        ret <- dplyr::as_tibble(ret)
-        #assign(paste0("Top", "_", n), quotes_tbl[1:n, ])
-    } else if (top_flop == "flop") {
-        quotes_tbl$rank <- rank(quotes_tbl$`Variation (%)`)
-        quotes_tbl <- quotes_tbl[order(quotes_tbl$rank), ]
-        ret <- quotes_tbl %>%
-            dplyr::slice(1:n) %>%
-            dplyr::select(-rank)
-        ret <- dplyr::as_tibble(ret)
-        #assign(paste0("Flop", "_", n), quotes_tbl[-4][1:n, ])
-    }
+  if (top_flop == "top") {
+    ret <- dplyr::arrange(quotes_tbl, dplyr::desc(quotes_tbl$`Variation (%)`)) %>%
+      dplyr::slice(1:n)
+    ret <- dplyr::as_tibble(ret)
+    # assign(paste0("Top", "_", n), quotes_tbl[1:n, ])
+  } else if (top_flop == "flop") {
+    quotes_tbl$rank <- rank(quotes_tbl$`Variation (%)`)
+    quotes_tbl <- quotes_tbl[order(quotes_tbl$rank), ]
+    ret <- quotes_tbl %>%
+      dplyr::slice(1:n) %>%
+      dplyr::select(-rank)
+    ret <- dplyr::as_tibble(ret)
+    # assign(paste0("Flop", "_", n), quotes_tbl[-4][1:n, ])
+  }
 
-    # Clean names ----
-    ret <- ret %>%
-        purrr::set_names(
-            "ticker",
-            "company_name",
-            "percentage_variation"
-        )
+  # Clean names ----
+  ret <- ret %>%
+    purrr::set_names(
+      "ticker",
+      "company_name",
+      "percentage_variation"
+    )
 
-    # Return data ----
-    options(warn = 0)
-    return(ret)
-
+  # Return data ----
+  options(warn = 0)
+  return(ret)
 }

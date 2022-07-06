@@ -12,22 +12,23 @@
 #'
 #' @export
 #'
-#' @examples \dontrun{BRVM_tickers()
+#' @examples \dontrun{
+#' BRVM_tickers()
 #' ticks <- BRVM_tickers()
 #' dput(ticks$Ticker) ## Returns the name of all tickers
 #' }
-
-BRVM_tickers <- function(){
+BRVM_tickers <- function() {
   tryCatch(
     {
       all.tickers <- rvest::read_html("https://www.brvm.org/en/cours-actions/0/status/200") %>%
-        rvest::html_nodes('table') %>%
+        rvest::html_nodes("table") %>%
         rvest::html_table()
       all.tickers <- all.tickers[[4]][1:2]
       all.tickers <- tibble::as.tibble(all.tickers)
-      colnames(all.tickers)<-c(
+      colnames(all.tickers) <- c(
         "Ticker",
-        "Company name")
+        "Company name"
+      )
       return(all.tickers)
     },
     error = function(e) {
@@ -37,5 +38,4 @@ BRVM_tickers <- function(){
       print("Make sure you have an active internet connection")
     }
   )
-  
 }

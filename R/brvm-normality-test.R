@@ -5,79 +5,102 @@
 #' @family Test
 #' @family BRVM
 #' @author Koffi Frederic SESSIE
-#' 
+#'
 #' @seealso `stationarity_test`
-#' 
-#' @param x a numeric vector or time series.. 
+#'
+#' @param x a numeric vector or time series..
 #' @param type.test character such as "Anderson-Darling","Shapiro-Wilk","Jarque Bera","Cramer-von Mises","Shapiro-Francia","Lilliefors (Kolmogorov-Smirnov)","Pearson chi-square", "Agostino".
 #'
-#' @return a number that indicates the P-value of the normality test 
+#' @return a number that indicates the P-value of the normality test
 #' @export
 #'
 #' @examples
 #' \dontrun{
-#' y <-ts(c(5353.08,5409.24,5315.57,5270.53, # one and a half week stock index
-#' 5211.66,NA,NA,5160.80,5172.37,5160.80,5172.37))  # data including a weekend
-#' normality_test(y ,"Shapiro-Wilk")
-#' 
-#' BICC <- BRVM_get("snts", .from = "2010-02-05", .to = "2022-02-05" )
+#' y <- ts(c(
+#'   5353.08, 5409.24, 5315.57, 5270.53, # one and a half week stock index
+#'   5211.66, NA, NA, 5160.80, 5172.37, 5160.80, 5172.37
+#' )) # data including a weekend
+#' normality_test(y, "Shapiro-Wilk")
+#'
+#' BICC <- BRVM_get("snts", .from = "2010-02-05", .to = "2022-02-05")
 #' normality_test((BICC$Close), "Agostino")
-#' normality_test((BICC$Close[1:50]), "Jarque Bera")}
-#' 
+#' normality_test((BICC$Close[1:50]), "Jarque Bera")
+#' }
+#'
 normality_test <- function(x, type.test) {
   if (length(unique(x)) != 1) {
-    if (is.numeric(x)){
+    if (is.numeric(x)) {
       if (is.ts(x)) {
         x <- na.remove(x)
       } else {
         x <- na.omit(x)
       }
-      
-      if(type.test == "Anderson-Darling" ){
-        if (length(x)>= 8) {
-          pval <- ad.test(x)$p.value 
-        } else { pval <- "NA" }
-      } else if (type.test == "Shapiro-Wilk" ){
-        if (length(x)>= 3) {
-          pval <- shapiro.test(x)$p.value 
-        } else { pval <- "NA" }
-      } else if (type.test == "Jarque Bera"){
-        if (length(x)>= 3) {
-          pval <- jarque.bera.test(x)$p.value 
-        } else { pval <- "NA" }
-      } else if (type.test =="Cramer-von Mises"){
-        if (length(x)>= 1) {
-          pval <- goftest::cvm.test(x)$p.value 
-        } else { pval <- "NA" }
-      } else if ( type.test == "Shapiro-Francia"){
-        if (length(x)>= 5) {
-          pval <- sf.test(x)$p.value 
-        } else { pval <- "NA" }
-      } else if (type.test == "Lilliefors (Kolmogorov-Smirnov)" ){
-        if (length(x)>= 5) {
-          pval <- lillie.test(x)$p.value 
-        } else { pval <- "NA" }
-      } else if (type.test == "Pearson chi-square"){
-        if (length(x)>= 2) {
-          pval <- pearson.test(x)$p.value 
-        } else { pval <- "NA" }
-      } else if (type.test == "Agostino"){
-        if (length(x)>= 20) {
-          pval <- (dagoTest(x)@test$p.value)[[1]] 
-        } else { pval <- "NA" }
+
+      if (type.test == "Anderson-Darling") {
+        if (length(x) >= 8) {
+          pval <- ad.test(x)$p.value
+        } else {
+          pval <- "NA"
+        }
+      } else if (type.test == "Shapiro-Wilk") {
+        if (length(x) >= 3) {
+          pval <- shapiro.test(x)$p.value
+        } else {
+          pval <- "NA"
+        }
+      } else if (type.test == "Jarque Bera") {
+        if (length(x) >= 3) {
+          pval <- jarque.bera.test(x)$p.value
+        } else {
+          pval <- "NA"
+        }
+      } else if (type.test == "Cramer-von Mises") {
+        if (length(x) >= 1) {
+          pval <- goftest::cvm.test(x)$p.value
+        } else {
+          pval <- "NA"
+        }
+      } else if (type.test == "Shapiro-Francia") {
+        if (length(x) >= 5) {
+          pval <- sf.test(x)$p.value
+        } else {
+          pval <- "NA"
+        }
+      } else if (type.test == "Lilliefors (Kolmogorov-Smirnov)") {
+        if (length(x) >= 5) {
+          pval <- lillie.test(x)$p.value
+        } else {
+          pval <- "NA"
+        }
+      } else if (type.test == "Pearson chi-square") {
+        if (length(x) >= 2) {
+          pval <- pearson.test(x)$p.value
+        } else {
+          pval <- "NA"
+        }
+      } else if (type.test == "Agostino") {
+        if (length(x) >= 20) {
+          pval <- (dagoTest(x)@test$p.value)[[1]]
+        } else {
+          pval <- "NA"
+        }
       }
-    } else { pval <- "NA"}
-  } else { pval <- "NA"}
-  
+    } else {
+      pval <- "NA"
+    }
+  } else {
+    pval <- "NA"
+  }
+
   # if (pval != "NA"){
   #   pval <- round(as.numeric(pval), digits = 3)
   # }
-  
-  if (pval != "NA"){
+
+  if (pval != "NA") {
     pval <- as.numeric(pval)
   } else {
     pval <- "NA"
   }
-  
+
   return(pval)
 }

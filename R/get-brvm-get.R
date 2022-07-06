@@ -24,7 +24,7 @@
 #' be in ymd format "YYYY-MM-DD" or "YYYY/MM/DD"
 #'
 #' @examples
-#' symbols <- c("BiCc","XOM","SlbC")
+#' symbols <- c("BiCc", "XOM", "SlbC")
 #' data_tbl <- BRVM_get(.symbol = symbols, .from = Sys.Date() - 10)
 #' data_tbl
 #'
@@ -37,23 +37,25 @@
 BRVM_get <- function(.symbol, .from = Sys.Date() - 365, .to = Sys.Date() - 1) {
   # Evaluate input parameters ----
   tickers <- unique(toupper(.symbol))
-  Symbole <- c( "ABJC", "BICC", "BNBC", "BOAB", "BOABF", "BOAC", "BOAM", "BOAN", "BOAS", "CABC", "CBIBF", "CFAC", "CIEC", "ECOC", "ETIT", "FTSC", "NEIC", "NSBC", "NTLC", "ONTBF", "ORGT", "PALC", "PRSC", "SAFC", "SCRC", "SDCC", "SDSC", "SEMC", "SGBC", "SHEC", "SIBC", "SICC", "SIVC", "SLBC", "SMBC", "SNTS", "SOGC", "SPHC", "STAC", "STBC", "SVOC", "TTLC", "TTLS", "UNLC", "UNXC"
-                #, "TTRC"
+  Symbole <- c(
+    "ABJC", "BICC", "BNBC", "BOAB", "BOABF", "BOAC", "BOAM", "BOAN", "BOAS", "CABC", "CBIBF", "CFAC", "CIEC", "ECOC", "ETIT", "FTSC", "NEIC", "NSBC", "NTLC", "ONTBF", "ORGT", "PALC", "PRSC", "SAFC", "SCRC", "SDCC", "SDSC", "SEMC", "SGBC", "SHEC", "SIBC", "SICC", "SIVC", "SLBC", "SMBC", "SNTS", "SOGC", "SPHC", "STAC", "STBC", "SVOC", "TTLC", "TTLS", "UNLC", "UNXC"
+    # , "TTRC"
   )
-  ifelse(tickers=="ALL",
-         tickers<-Symbole,
-         tickers)
-  start_date <-  lubridate::parse_date_time(.from, orders = "ymd")
+  ifelse(tickers == "ALL",
+    tickers <- Symbole,
+    tickers
+  )
+  start_date <- lubridate::parse_date_time(.from, orders = "ymd")
   end_date <- lubridate::parse_date_time(.to, orders = "ymd")
   # Check input parameters ----
-  if (length(tickers) < 1){
+  if (length(tickers) < 1) {
     rlang::abort(
       "The '.symbol' parameter cannot be blank. Please enter at least one ticker.
             If entering multiple please use .symbol = c(Tick_1, Tick_2, ...)"
     )
   }
 
-  if (start_date > end_date){
+  if (start_date > end_date) {
     rlang::abort(
       "The '.from' parameter (start_date) must be equal to or less than .to (end_date)"
     )
@@ -71,7 +73,7 @@ BRVM_get <- function(.symbol, .from = Sys.Date() - 365, .to = Sys.Date() - 1) {
     }
   }
   # Check input parameters after filtering ----
-  if (length(symbol_vec) < 1){
+  if (length(symbol_vec) < 1) {
     rlang::abort(
       "The '.symbol' parameter cannot be blank. Please enter at least one ticker.
             If entering multiple please use .symbol = c(Tick_1, Tick_2, ...)"
@@ -85,29 +87,25 @@ BRVM_get <- function(.symbol, .from = Sys.Date() - 365, .to = Sys.Date() - 1) {
         page <- httr::GET(url)
         page <- httr::content(page, as = "text", encoding = "UTF-8")
         page <- unlist(strsplit(page, split = "\n"))
-        vect.data<- NULL
+        vect.data <- NULL
 
-        for (i in 600:650){
-          if (length(unlist(strsplit(page[[i]], split = ":")))==2) {
+        for (i in 600:650) {
+          if (length(unlist(strsplit(page[[i]], split = ":"))) == 2) {
             if ((unlist(strsplit(page[[i]], split = ":")))[[1]] == "                data") {
-              vect.data<- c(vect.data, i)
+              vect.data <- c(vect.data, i)
             }
-
           }
-
         }
         # vect.data[1]   #is the historical data
         # vect.data[2]  # is the volume data
         if (length(vect.data) < 2) {
-          vect.data<- NULL
-          for (i in 550:700){
-            if (length(unlist(strsplit(page[[i]], split = ":")))==2) {
+          vect.data <- NULL
+          for (i in 550:700) {
+            if (length(unlist(strsplit(page[[i]], split = ":"))) == 2) {
               if ((unlist(strsplit(page[[i]], split = ":")))[[1]] == "                data") {
-                vect.data<- c(vect.data, i)
+                vect.data <- c(vect.data, i)
               }
-
             }
-
           }
         }
 
@@ -132,7 +130,7 @@ BRVM_get <- function(.symbol, .from = Sys.Date() - 365, .to = Sys.Date() - 1) {
         # Transform date from character to numeric
         data1$Date <- as.numeric(data1$Date)
         ## Turn date in format "%Y-%m-%d"
-        #data1$Date <- as.Date(as.POSIXct((data1$Date + 0.1) / 1000, origin = "1970-01-01"))
+        # data1$Date <- as.Date(as.POSIXct((data1$Date + 0.1) / 1000, origin = "1970-01-01"))
         data1$Date <- as.Date.POSIXct((data1$Date + 0.1) / 1000)
 
         ## Volume data Case (2 columns : Date and Volume)
@@ -144,33 +142,36 @@ BRVM_get <- function(.symbol, .from = Sys.Date() - 365, .to = Sys.Date() - 1) {
         data2 <- strsplit(data2, split = "],") # Volume
         data2 <- as.data.frame(data2) # Volume
         ### Use a loop to remove the remaining square brackets in each row
-        #j <- 1
-        Date=NULL
-        Volume=NULL
+        # j <- 1
+        Date <- NULL
+        Volume <- NULL
         for (j in 1:nrow(data2)) {
           data2[j, 1] <- gsub("\\[|\\]", "", data2[j, 1])
-          Date <- c(Date,unlist(strsplit(data2[j, 1],split = ','))[1])
-          Volume <- c(Volume,unlist(strsplit(data2[j, 1],split = ','))[[2]])
+          Date <- c(Date, unlist(strsplit(data2[j, 1], split = ","))[1])
+          Volume <- c(Volume, unlist(strsplit(data2[j, 1], split = ","))[[2]])
         }
 
-        #Sys.sleep(1)
+        # Sys.sleep(1)
         Volume <- as.numeric(Volume)
         Date <- as.Date.POSIXct((as.numeric(Date) + 0.1) / 1000)
-        data2 <- data.frame(Date,Volume)
+        data2 <- data.frame(Date, Volume)
         ## Turn date in format "%Y-%m-%d"
-        #data2$Date <- as.Date(as.POSIXct((data2$Date + 0.1) / 1000, origin = "1970-01-01"))
+        # data2$Date <- as.Date(as.POSIXct((data2$Date + 0.1) / 1000, origin = "1970-01-01"))
         ## Join data by date
         final.data <- merge(data1, data2, by = "Date")
-        ifelse (any(duplicated(final.data$Date)),
-                final.data<-final.data%>%
-                  dplyr::group_by(Date)%>%
-                  summarise(Open=ceiling(mean(Open)),
-                            High= ceiling(mean(High)),
-                            Low= ceiling(mean(Low)),
-                            Close= ceiling(mean(Close)),
-                            Volume= ceiling(mean(Volume))),
-                final.data)
-        assign(Tick, dplyr::as_tibble(final.data),envir = globalenv())
+        ifelse(any(duplicated(final.data$Date)),
+          final.data <- final.data %>%
+            dplyr::group_by(Date) %>%
+            summarise(
+              Open = ceiling(mean(Open)),
+              High = ceiling(mean(High)),
+              Low = ceiling(mean(Low)),
+              Close = ceiling(mean(Close)),
+              Volume = ceiling(mean(Volume))
+            ),
+          final.data
+        )
+        assign(Tick, dplyr::as_tibble(final.data), envir = globalenv())
         final.data$Ticker <- Tick ## Add ticker identifier
         returns <- rbind(returns, final.data)
       }
@@ -181,7 +182,7 @@ BRVM_get <- function(.symbol, .from = Sys.Date() - 365, .to = Sys.Date() - 1) {
       if (length(unique(returns$Ticker)) > 1) {
         returns <- returns
       } else {
-        returns<- returns[, -7]
+        returns <- returns[, -7]
       }
       print(symbol_vec)
     },

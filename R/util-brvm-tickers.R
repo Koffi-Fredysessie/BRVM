@@ -22,15 +22,13 @@
 #' @export
 #'
 
-BRVM_available_tickers <- function(){
+BRVM_available_tickers <- function() {
+  tickers <- rvest::read_html("https://www.brvm.org/en/cours-actions/0") %>%
+    rvest::html_nodes("table") %>%
+    rvest::html_table()
 
-    tickers <- rvest::read_html("https://www.brvm.org/en/cours-actions/0") %>%
-        rvest::html_nodes("table") %>%
-        rvest::html_table()
+  tickers <- tickers[[4]][1:2] %>%
+    purrr::set_names("ticker", "company_name")
 
-    tickers <- tickers[[4]][1:2] %>%
-        purrr::set_names("ticker", "company_name")
-
-    return(tickers)
-
+  return(tickers)
 }

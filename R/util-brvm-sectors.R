@@ -24,14 +24,14 @@
 #' @export
 #'
 
-BRVM_available_sectors <- function(){
-
-    brvm_sectors_tbl <- dplyr::tibble(
-        sector = c("Agriculture", "Industry", "Distribution", "Finance", "Transport",
-                    "Public service", "Other")
+BRVM_available_sectors <- function() {
+  brvm_sectors_tbl <- dplyr::tibble(
+    sector = c(
+      "Agriculture", "Industry", "Distribution", "Finance", "Transport",
+      "Public service", "Other"
     )
+  )
 
-    # Return ----
-    return(brvm_sectors_tbl)
-
+  # Return ----
+  return(brvm_sectors_tbl)
 }
