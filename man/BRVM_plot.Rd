@@ -6,24 +6,24 @@
 \usage{
 BRVM_plot(
   .company,
-  from = Sys.Date() - 365,
-  to = Sys.Date() - 1,
-  up.col = "darkgreen",
-  down.col = "red"
+  .from = Sys.Date() - 365,
+  .to = Sys.Date() - 1,
+  .up_color = "darkgreen",
+  .down_color = "red"
 )
 }
 \arguments{
 \item{.company}{is the Ticker(s) name(s)}
 
-\item{from}{A quoted start date, ie. "2020-01-01" or "2020/01/01". The date
+\item{.from}{A quoted start date, ie. "2020-01-01" or "2020/01/01". The date
 must be in ymd format "YYYY-MM-DD" or "YYYY/MM/DD".}
 
-\item{to}{A quoted end date, ie. "2022-01-31" or "2022/01/31". The date must
+\item{.to}{A quoted end date, ie. "2022-01-31" or "2022/01/31". The date must
 be in ymd format "YYYY-MM-DD" or "YYYY/MM/DD"}
 
-\item{up.col}{is the up color}
+\item{.up_color}{is the up color}
 
-\item{down.col}{is down color}
+\item{.down_color}{is down color}
 }
 \value{
 An interactive chart
@@ -34,7 +34,7 @@ This function will get Ticker(s) data and then plot it.
 \examples{
 \dontrun{
 BRVM_plot("BICC")
-BRVM_plot("BICC", up.col = "blue", down.col = "pink")
+BRVM_plot("BICC", .up_color = "blue", .down_color = "pink")
 BRVM_plot(c("BICC", "ETIT", "BOAM"))
 }
 }

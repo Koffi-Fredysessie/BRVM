@@ -5,15 +5,16 @@
 #' @family Data Retrieval
 #' @family Plot
 #' @family BRVM
+#'
 #' @author Koffi Frederic SESSIE
 #'
 #' @param .company is the Ticker(s) name(s)
-#' @param from A quoted start date, ie. "2020-01-01" or "2020/01/01". The date
+#' @param .from A quoted start date, ie. "2020-01-01" or "2020/01/01". The date
 #' must be in ymd format "YYYY-MM-DD" or "YYYY/MM/DD".
-#' @param to A quoted end date, ie. "2022-01-31" or "2022/01/31". The date must
+#' @param .to A quoted end date, ie. "2022-01-31" or "2022/01/31". The date must
 #' be in ymd format "YYYY-MM-DD" or "YYYY/MM/DD"
-#' @param up.col is the up color
-#' @param down.col is down color
+#' @param .up_color is the up color
+#' @param .down_color is down color
 #'
 #' @seealso `BRVM_ticker_desc()`
 #' @seealso `BRVM_tickers()`
@@ -25,17 +26,20 @@
 #'
 #' @examples \dontrun{
 #' BRVM_plot("BICC")
-#' BRVM_plot("BICC", up.col = "blue", down.col = "pink")
+#' BRVM_plot("BICC", .up_color = "blue", .down_color = "pink")
 #' BRVM_plot(c("BICC", "ETIT", "BOAM"))
 #' }
 BRVM_plot <- function(.company,
-                      from = Sys.Date() - 365,
-                      to = Sys.Date() - 1,
-                      up.col = "darkgreen",
-                      down.col = "red") {
+                      .from = Sys.Date() - 365,
+                      .to = Sys.Date() - 1,
+                      .up_color = "darkgreen",
+                      .down_color = "red") {
+
   #  print('It possible to plot each sector chart line. You can use as argument .sectors$Agriculture to plot. Example BRVM_plot(.sector$Agriculture)')
-  date1 <- from
-  date2 <- to
+  date1 <- as.Date(.from, format = "%Y-%m-%d")
+  date2 <- as.Date(.to, format = "%Y-%m-%d")
+  up_color <- tolower(as.character(.up_color))
+  down_color <- tolower(as.character(.down_color))
 
   # Evaluate input parameters ----
   company <- unique(toupper(.company))
@@ -43,7 +47,7 @@ BRVM_plot <- function(.company,
   Global.returns <- BRVM_get(.symbol = company, .from = date1, .to = date2)
 
   if (length(Global.returns) == 6) {
-    ticker.name <- .company
+    ticker.name <- company
     Global.returns1 <- Global.returns
     Global.returns <- xts::as.xts(Global.returns[, -c(1)],
       order.by = Global.returns$Date
@@ -57,7 +61,7 @@ BRVM_plot <- function(.company,
       )
     }
 
-    brvm.plot <- highcharter::highchart(type = "stock") %>%
+    plt <- highcharter::highchart(type = "stock") %>%
       highcharter::hc_title(
         text = paste0(ticker.name, " chart : from ", date1, " to ", date2),
         style = list(fontWeight = "bold", fontSize = "25px"),
@@ -68,8 +72,8 @@ BRVM_plot <- function(.company,
         Global.returns,
         yAxis = 0,
         showInLegend = FALSE,
-        upColor = up.col,
-        color = down.col
+        upColor = up_color,
+        color = down_color
       ) %>%
       highcharter::hc_add_yAxis(
         nid = 1L,
@@ -109,13 +113,13 @@ BRVM_plot <- function(.company,
           text = "Volume"
         ), top = "80%", height = "20%")
       ) %>%
-      highcharter::hc_colors(colors = c(down.col, up.col)) %>%
-      hichcharter::hc_exporting(
+      highcharter::hc_colors(colors = c(down_color, up_color)) %>%
+      highcharter::hc_exporting(
         enabled = TRUE, # always enabled,
         filename = paste0(ticker.name, " chart : from ", date1, " to ", date2)
       )
   } else if (length(Global.returns) > 6) {
-    brvm.plot <- highcharter::highchart(type = "stock") %>%
+    plt <- highcharter::highchart(type = "stock") %>%
       highcharter::hc_add_series(
         data = Global.returns,
         type = "line",
@@ -128,5 +132,7 @@ BRVM_plot <- function(.company,
         filename = paste0("Tickers line chart from ", date1, " to ", date2)
       )
   }
-  return(brvm.plot)
+
+  # Return ----
+  return(plt)
 }

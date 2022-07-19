@@ -14,7 +14,8 @@ A tibble
 }
 \description{
 It receives the ticker of a company listed on the BRVM stock exchange,
-Turn to  upper case the input by using \code{toupper()} and returns informations about the company's RSI, Beta, Closing price, etc. .
+Turn to  upper case the input by using \code{toupper()} and returns information
+about the company's RSI, Beta, Closing price, etc.
 }
 \examples{
 \dontrun{

@@ -40,15 +40,21 @@ BRVM_get <- function(.symbol, .from = Sys.Date() - 365, .to = Sys.Date() - 1) {
   # Evaluate input parameters ----
   tickers <- unique(toupper(.symbol))
   Symbole <- c(
-    "ABJC", "BICC", "BNBC", "BOAB", "BOABF", "BOAC", "BOAM", "BOAN", "BOAS", "CABC", "CBIBF", "CFAC", "CIEC", "ECOC", "ETIT", "FTSC", "NEIC", "NSBC", "NTLC", "ONTBF", "ORGT", "PALC", "PRSC", "SAFC", "SCRC", "SDCC", "SDSC", "SEMC", "SGBC", "SHEC", "SIBC", "SICC", "SIVC", "SLBC", "SMBC", "SNTS", "SOGC", "SPHC", "STAC", "STBC", "SVOC", "TTLC", "TTLS", "UNLC", "UNXC"
-    # , "TTRC"
+    "ABJC", "BICC", "BNBC", "BOAB", "BOABF", "BOAC", "BOAM", "BOAN", "BOAS",
+    "CABC", "CBIBF", "CFAC", "CIEC", "ECOC", "ETIT", "FTSC", "NEIC", "NSBC",
+    "NTLC", "ONTBF", "ORGT", "PALC", "PRSC", "SAFC", "SCRC", "SDCC", "SDSC",
+    "SEMC", "SGBC", "SHEC", "SIBC", "SICC", "SIVC", "SLBC", "SMBC", "SNTS",
+    "SOGC", "SPHC", "STAC", "STBC", "SVOC", "TTLC", "TTLS", "UNLC", "UNXC"
   )
+
   ifelse(tickers == "ALL",
     tickers <- Symbole,
     tickers
   )
+
   start_date <- lubridate::parse_date_time(.from, orders = "ymd")
   end_date <- lubridate::parse_date_time(.to, orders = "ymd")
+
   # Check input parameters ----
   if (length(tickers) < 1) {
     rlang::abort(
@@ -68,12 +74,14 @@ BRVM_get <- function(.symbol, .from = Sys.Date() - 365, .to = Sys.Date() - 1) {
 
   #### Create a definitive symbol vector
   symbol_vec <- NULL
+
   ## Filter symbol in quote symbol list
   for (symb in tickers) {
     if (symb %in% Symbole) {
       symbol_vec <- c(symbol_vec, symb)
     }
   }
+
   # Check input parameters after filtering ----
   if (length(symbol_vec) < 1) {
     rlang::abort(
@@ -81,7 +89,8 @@ BRVM_get <- function(.symbol, .from = Sys.Date() - 365, .to = Sys.Date() - 1) {
             If entering multiple please use .symbol = c(Tick_1, Tick_2, ...)"
     )
   }
-  tryCatch(
+
+  try(
     {
       for (Tick in symbol_vec) {
         url <- paste0("https://www.richbourse.com/common/mouvements/technique/", Tick, "/status/200")
@@ -119,8 +128,8 @@ BRVM_get <- function(.symbol, .from = Sys.Date() - 365, .to = Sys.Date() - 1) {
         for (i in 1:nrow(data1)) {
           data1[i, 1] <- gsub("\\[|\\]", "", data1[i, 1])
         }
-        ### Now transform one column to 5 columns
 
+        ### Now transform one column to 5 columns
         ## And change numbers in integer
         colnames(data1) <- c("unique")
         data1 <- tidyr::separate(data1, col = unique, into = c("Date", "Open", "High", "Low", "Close"), sep = ",")
@@ -163,16 +172,16 @@ BRVM_get <- function(.symbol, .from = Sys.Date() - 365, .to = Sys.Date() - 1) {
         ifelse(any(duplicated(final.data$Date)),
           final.data <- final.data %>%
             dplyr::group_by(Date) %>%
-            summarise(
+            dplyr::summarise(
               Open = ceiling(mean(Open)),
               High = ceiling(mean(High)),
               Low = ceiling(mean(Low)),
               Close = ceiling(mean(Close)),
               Volume = ceiling(mean(Volume))
             ),
-          final.data
+          final.data <- final.data
         )
-        assign(Tick, dplyr::as_tibble(final.data), envir = global_env())
+        assign(Tick, dplyr::as_tibble(final.data), envir = globalenv())
         final.data$Ticker <- Tick ## Add ticker identifier
         returns <- rbind(returns, final.data)
       }
@@ -185,14 +194,9 @@ BRVM_get <- function(.symbol, .from = Sys.Date() - 365, .to = Sys.Date() - 1) {
       } else {
         returns <- returns[, -7]
       }
-      print(symbol_vec)
+      #print(symbol_vec)
+
       return(returns)
-    },
-    error = function(e) {
-      print("Make sure you have an active internet connection")
-    },
-    warning = function(w) {
-      print("Make sure you have an active internet connection")
     }
   )
 }
