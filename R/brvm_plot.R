@@ -24,6 +24,14 @@
 #' @export
 #'
 #' @examples \dontrun{
+#' library(highcharter)
+#' library(lubridate)
+#' library(rlang)
+#' library(httr2)
+#' library(dplyr)
+#' library(stringr)
+#' library(xts)
+#'
 #' BRVM_plot("BICC")
 #' BRVM_plot("BICC", up.col = "blue", down.col = "pink")
 #' BRVM_plot(c("BICC","ETIT", "BOAM"))}
