@@ -1,16 +1,16 @@
 Package: BRVM
 Type: Package
-Title: PAckage to retrieve historical data of companies listed on Brvm Stock Exchange
-Version: 1.3.0
+Title: Retrieve Historical Data of Companies Listed on Brvm Stock Exchange
+Version: 2.0.0
 Authors@R: c(
     person("SESSIE","Koffi Frederic", email = "koffisessie@gmail.com", role = c("aut","cre","cph")),
     person("Abdoul","Oudouss Diakité", email = "spsanderson@gmail.com", role = "aut"),
     person("Steven","Sanderson", email = "spsanderson@gmail.com", role = "aut"))
-Description: BRVM is an R package that provides real-time data from the BRVM (“Regional Securities Exchange SA” call Bourse Régionale des Valeurs Mobilières in french). As a goal, we want to facilitate access to data for all users of the R programming language. This package includes a variety of data accessible just by function call.
+Description: Provides real-time data from the brvm (“Regional Securities Exchange SA”). As a goal, we want to facilitate access to data for all users of the R programming language. This package includes a variety of data accessible just by function call.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.3
 Imports: 
     magrittr,
     rlang (>= 0.4.11),
@@ -18,6 +18,10 @@ Imports:
     dplyr,
     gsheet,
     httr,
+    goftest,
+    stringr,
+    tibble,
+    rvest,
     lubridate
 Suggests: 
     rmarkdown,
