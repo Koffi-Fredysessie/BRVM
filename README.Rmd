@@ -55,7 +55,7 @@ BRVM_rank("Top", 10)
 
 The following function plot candlestick charts of ticker BICC
 
-```{r BRVM_plot("BICC")}
+```{r BRVM_plot}
  library(highcharter)
  library(lubridate)
  library(rlang)
