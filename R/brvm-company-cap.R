@@ -4,24 +4,30 @@
 #' @family BRVM
 #'
 #' @author Koffi Frederic SESSIE
-#' 
-#' @description It receives one company listed on the BRVM stock exchange, 
+#'
+#' @description It receives one company listed on the BRVM stock exchange,
 #' Turn to  upper case your input by using `toupper()`  and returns informations about the company's capitalization
-#' 
+#'
 #' @param company The name of company listed on the BRVM stock exchange
 #'
 #' @return "character"
-#' @export
+#'
+#'@importFrom rvest html_elements html_table read_html
 #'
 #' @examples
-#' \dontrun{company_cap("BICC")
-#' company_cap("ontbf")}
+#' \dontrun{
+#' library(rvest)
 #' 
+#' company_cap("BICC")
+#' company_cap("ontbf")}
+#'
+#' @export
+
 company_cap <- function(company){
   company<-toupper(company)
   tryCatch({
     brvm_cap_all <- rvest::read_html("https://www.brvm.org/en/capitalisations/0/status/200") %>%
-      rvest::html_nodes('table') %>%
+      rvest::html_elements('table') %>%
       rvest::html_table()
     brvm_cap_all <- brvm_cap_all[[4]]
     brvm_cap_all$`Global capitalization (%)`<-gsub(",", ".",brvm_cap_all$`Global capitalization (%)`)
@@ -30,9 +36,9 @@ company_cap <- function(company){
         the_cap<-paste0(brvm_cap_all[elm,6], "")
       }
     }
-    
+
     return(the_cap)
-    
+
   },
   error = function(e) {
     print("Make sure you have an active internet connection")
