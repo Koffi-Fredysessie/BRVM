@@ -12,7 +12,7 @@
 #' @return A tibble
 #' @export
 #'
-#'@importFrom rvest html_nodes html_table
+#'@importFrom rvest html_elements html_table
 #'@importFrom xml2 read_html
 #'
 #' @examples \dontrun{
@@ -32,6 +32,15 @@ BRVM_company_info<- function(ticker){
                     "TTLS", "UNLC", "UNXC"
                     #, "TTRC", "SVOC"
   )
+
+  Countries<-list(BENIN =c("BOAB"), "BURKINA FASO" = c("BOABF", "CBIBF", "ONTBF"),
+                  "IVORY COAST" = c("ABJC", "BICC", "BNBC","BOAC", "CABC", "CFAC", "CIEC", "ECOC", "FTSC", "NEIC",
+                                    "NSBC","NTLC", "ORAC", "PALC", "PRSC", "SAFC", "SCRC", "SDCC", "SDSC", "SEMC","SGBC",
+                                    "SHEC", "SIBC", "SICC", "SIVC", "SLBC", "SMBC", "SOGC","SPHC", "STAC", "STBC",
+                                    "SVOC", "TTLC", "TTRC", "UNLC","UNXC"),
+                  MALI = c("BOAM"), NIGER = c("BOAN"),
+                  SENEGAL = c("BOAS", "SNTS", "TTLS"),
+                  TOGO = c("ETIT", "ORGT"))
 
 
   if (ticker %in% all_tickers){
@@ -56,6 +65,7 @@ BRVM_company_info<- function(ticker){
       adn<- ".tg"
     }
     url<-paste0("https://www.sikafinance.com/marches/cotation_", ticker, adn)
+    print(url)
   }
 
 
@@ -63,7 +73,7 @@ BRVM_company_info<- function(ticker){
   ticker_info<-as.data.frame(matrix(NA, ncol = 2, nrow = 0))
   tryCatch({
     for (i in 2:4){
-      val<- (read_html(url) %>% html_nodes('table') %>% html_table())[[i]]
+      val<- (read_html(url) %>% html_elements('table') %>% html_table())[[i]]
       ticker_info<-rbind(ticker_info, val)
     }
     colnames(ticker_info)<- NULL
