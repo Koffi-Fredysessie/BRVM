@@ -21,6 +21,12 @@
 #' @param to A quoted end date, ie. "2022-01-31" or "2022/01/31". The date must
 #' be in ymd format "YYYY-MM-DD" or "YYYY/MM/DD"
 #'
+#'@importFrom httr2 req_body_json req_perform request resp_body_json
+#'@importFrom dplyr group_by summarise as_tibble
+#'@importFrom lubridate parse_date_time
+#'@importFrom rlang abort
+#'@importFrom stringr str_sub
+#'
 #' @examples
 #' \dontrun{
 #'
@@ -56,6 +62,7 @@
 #'
 #' @export
 #'
+
 
 BRVM_get1 <- function(ticker ='BICC',
                              Period = 0,
