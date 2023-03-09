@@ -74,6 +74,21 @@ BRVM_rank("Top", 10)
 #> 10 ETIT    Ecobank Transnational Incorporated TOGO            5.26
 ```
 
+The following function plot candlestick charts of ticker BICC
+
+```{r BRVM_plot("BICC")}
+ library(highcharter)
+ library(lubridate)
+ library(rlang)
+ library(httr2)
+ library(dplyr)
+ library(stringr)
+ library(xts)
+
+BRVM_plot("BICC")
+```
+
+
 You’ll still need to render `README.Rmd` regularly, to keep `README.md`
 up-to-date. `devtools::build_readme()` is handy for this. You could also
 use GitHub Actions to re-render `README.Rmd` every time you push. An
