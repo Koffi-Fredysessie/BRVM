@@ -24,6 +24,12 @@
 #' @param .to A quoted end date, ie. "2022-01-31" or "2022/01/31". The date must
 #' be in ymd format "YYYY-MM-DD" or "YYYY/MM/DD"
 #'
+#'@importFrom httr content GET
+#'@importFrom dplyr group_by summarise as_tibble filter
+#'@importFrom lubridate parse_date_time
+#'@importFrom rlang abort global_env
+#'@importFrom stringr str_sub
+#'
 #' @examples \dontrun{
 #' library(lubridate)
 #' library(rlang)
