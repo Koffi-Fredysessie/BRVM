@@ -12,6 +12,13 @@
 #' @return
 #' @export
 #'
+#'@importFrom formattable color_tile formattable formatter icontext style
+#'@importFrom httr content POST
+#'@importFrom lubridate parse_date_time
+#'@importFrom rvest html_table html_nodes
+#'@importFrom stringr str_sub
+#'@importFrom timeDate isWeekday
+#'
 #' @examples \dontrun{
 #' library(httr)
 #' library(lubridate)
