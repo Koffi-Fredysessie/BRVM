@@ -13,8 +13,8 @@
 #'
 #' @export
 #'
-#' @importFrom rvest html_elements html_table
-#' @importFrom tibble as.tibble read_html
+#' @importFrom rvest html_elements html_table read_html
+#' @importFrom tibble as.tibble
 #'
 #' @examples
 #' \dontrun{BRVM_cap()}
