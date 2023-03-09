@@ -16,7 +16,8 @@
 #' 
 
 BRVM.index <- function(){
-  all_tick <- c("BRVM10", "BRVMAG", "BRVMC", "BRVMAS", "BRVMDI", "BRVMFI", 
-                "BRVMIN", "BRVMSP", "BRVMTR")
+  all_tick <- c("BRVMAG", "BRVMC", "BRVMAS", "BRVMDI",
+                "BRVMFI", "BRVMIN", "BRVMSP", "BRVMTR", "BRVMPR",
+                "BRVMPA", "BRVM30")
   return(all_tick)
 }
