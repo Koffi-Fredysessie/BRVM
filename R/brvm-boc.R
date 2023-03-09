@@ -9,13 +9,14 @@
 #' @param .weekday A quoted date, ie. "2022-01-31" or "2022/01/31". The date must
 #' be in ymd format "YYYY-MM-DD" or "YYYY/MM/DD". Must not be a weekend or a holiday
 #'
-#' @return
+#' @return a formatabble table
+#'
 #' @export
 #'
 #'@importFrom formattable color_tile formattable formatter icontext style
 #'@importFrom httr content POST
 #'@importFrom lubridate parse_date_time
-#'@importFrom rvest html_table html_nodes
+#'@importFrom rvest html_table html_elements
 #'@importFrom stringr str_sub
 #'@importFrom timeDate isWeekday
 #'
@@ -45,7 +46,7 @@ BRVM_stock_market <- function(.weekday){
                      encode = "form")
 
           stock_data<- content(res, encoding = "UTF-8") %>%
-            rvest::html_nodes('table') %>%
+            rvest::html_elements('table') %>%
             rvest::html_table()
 
           if (length(stock_data)!=0) {
