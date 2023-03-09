@@ -11,6 +11,8 @@
 #' A tibble
 #' @export
 #'
+#' @importFrom rvest html_elements html_table read_html
+#'
 #' @examples
 #' \dontrun{BRVM_company_cap()}
 #'
