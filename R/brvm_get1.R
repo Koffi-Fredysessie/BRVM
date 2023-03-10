@@ -122,6 +122,7 @@ BRVM_get1 <- function(ticker ='BICC',
                  "PUBLIC SERVICES" = c("BRVMSP"),
                  TRANSPORT = c("BRVMTR"),
                  "BRVM PRESTIGE" = c("BRVMPR"),
+                 "BRVM PRINCIPAL" = c("BRVMPA"),
                  "BRVM 30" = c("BRVM30"),
                  CAPITALISATION = c("CAPIBRVM"))
 
