@@ -12,8 +12,7 @@
 #' @return A tibble
 #' @export
 #'
-#'@importFrom rvest html_elements html_table
-#'@importFrom xml2 read_html
+#' @importFrom rvest html_elements read_html
 #'
 #' @examples \dontrun{
 #' BRVM_company_info("BOAS")
@@ -44,39 +43,47 @@ BRVM_company_info<- function(ticker){
 
 
   if (ticker %in% all_tickers){
-    url<-paste0("https://www.sikafinance.com/marches/cotation_", ticker)
-  }
-
-
-  else if (company_country(ticker) %in% names(Countries)){
-    if (company_country(ticker) == "BENIN") {
-      adn<- ".bj"
-    } else if (company_country(ticker) == "BURKINA FASO") {
-      adn<- ".bf"
-    } else if (company_country(ticker) == "IVORY COAST") {
-      adn<- ".ci"
-    } else if (company_country(ticker) == "MALI") {
-      adn<- ".ml"
-    } else if (company_country(ticker) == "NIGER") {
-      adn<- ".ne"
-    } else if (company_country(ticker) == "SENEGAL") {
-      adn<- ".sn"
-    } else if (company_country(ticker) == "TOGO") {
-      adn<- ".tg"
+    # url<-paste0("https://www.sikafinance.com/marches/cotation_", ticker)
+    if (company_country(ticker) %in% names(Countries)){
+        if (company_country(ticker) == "BENIN") {
+            adn<- ".bj"
+        } else if (company_country(ticker) == "BURKINA FASO") {
+            adn<- ".bf"
+        } else if (company_country(ticker) == "IVORY COAST") {
+            adn<- ".ci"
+        } else if (company_country(ticker) == "MALI") {
+            adn<- ".ml"
+        } else if (company_country(ticker) == "NIGER") {
+            adn<- ".ne"
+        } else if (company_country(ticker) == "SENEGAL") {
+            adn<- ".sn"
+        } else if (company_country(ticker) == "TOGO") {
+            adn<- ".tg"
+        }
+        url <-paste0("https://www.sikafinance.com/marches/cotation_", ticker, adn)
+        # print(url)
+    } else {
+        print(paste0("Be sure that ", ticker, " belong's to BRVM stock market"))
     }
-    url<-paste0("https://www.sikafinance.com/marches/cotation_", ticker, adn)
-    print(url)
-  }
 
+  } else {
+      print(paste0("Be sure that ", ticker, " belong's to BRVM stock market"))
+  }
 
   ##Create empty dataframe
   ticker_info<-as.data.frame(matrix(NA, ncol = 2, nrow = 0))
   tryCatch({
-    for (i in 2:4){
-      val<- (read_html(url) %>% html_elements('table') %>% html_table())[[i]]
-      ticker_info<-rbind(ticker_info, val)
-    }
-    colnames(ticker_info)<- NULL
+    val<- read_html(url) %>% html_elements('table') %>% html_table()
+    # for (i in 2:4){
+    #   # val<- (read_html(url) %>% html_elements('table') %>% html_table())[[i]]
+    #
+    #
+    #   ticker_info<-rbind(ticker_info, val[[i]])
+    # }
+    ticker_info <- rbind(val[[2]], val[[3]], val[[3]])
+
+    # colnames(ticker_info) <- NULL
+    colnames(ticker_info) <- c("Informations", "Values")
     return(ticker_info)
   },
   error = function(e) {
