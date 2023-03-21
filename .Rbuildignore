@@ -6,3 +6,5 @@
 ^docs$
 ^pkgdown$
 ^README-.*\.png$
+^cran-comments\.md$
+^CRAN-SUBMISSION$

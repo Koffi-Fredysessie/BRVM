@@ -6,24 +6,32 @@
 #' @family Plot
 #' @family BRVM
 #' @author Koffi Frederic SESSIE
-#' 
+#'
 #' @param .company is the Ticker(s) name(s)
 #' @param from A quoted start date, ie. "2020-01-01" or "2020/01/01". The date
 #' must be in ymd format "YYYY-MM-DD" or "YYYY/MM/DD".
 #' @param to A quoted end date, ie. "2022-01-31" or "2022/01/31". The date must
 #' be in ymd format "YYYY-MM-DD" or "YYYY/MM/DD"
 #' @param up.col is the up color
-#' @param down.col is down color 
+#' @param down.col is down color
 #'
 #' @seealso `BRVM_ticker_desc()`
 #' @seealso `BRVM_tickers()`
 #'
 #' @return
 #' An interactive chart
-#' 
+#'
 #' @export
 #'
 #' @examples \dontrun{
+#' library(highcharter)
+#' library(lubridate)
+#' library(rlang)
+#' library(httr2)
+#' library(dplyr)
+#' library(stringr)
+#' library(xts)
+#'
 #' BRVM_plot("BICC")
 #' BRVM_plot("BICC", up.col = "blue", down.col = "pink")
 #' BRVM_plot(c("BICC","ETIT", "BOAM"))}
@@ -40,13 +48,13 @@ BRVM_plot<- function(.company,
   .company <- unique(toupper(.company))
   # companies <- c( "ABJC", "BICC", "BNBC", "BOAB", "BOABF", "BOAC", "BOAM", "BOAN", "BOAS", "CABC", "CBIBF", "CFAC", "CIEC", "ECOC", "ETIT", "FTSC", "NEIC", "NSBC", "NTLC", "ONTBF", "ORGT", "PALC", "PRSC", "SAFC", "SCRC", "SDCC", "SDSC", "SEMC", "SGBC", "SHEC", "SIBC", "SICC", "SIVC", "SLBC", "SMBC", "SNTS", "SOGC", "SPHC", "STAC", "STBC", "SVOC", "TTLC", "TTLS", "UNLC", "UNXC"
   #               #, "TTRC"
-  # )  
-  # ifelse(.company == "ALL", 
+  # )
+  # ifelse(.company == "ALL",
   #        .company<- companies,
   #        .company)
-  
+
   Global.returns<- BRVM_get(.symbol = .company, .from = date1, .to = date2 )
-  
+
   if (length(Global.returns)== 6){
     ticker.name <- .company
     Global.returns1 <- Global.returns
@@ -59,12 +67,12 @@ BRVM_plot<- function(.company,
               Global.returns1[i, "direction"] <- "up",
               Global.returns1[i, "direction"] <- "down")
     }
-    
-    brvm.plot<-     highchart (type="stock") %>% 
-      hc_title(text = paste0(ticker.name," chart : from ", date1, " to ", date2), 
+
+    brvm.plot<-     highchart (type="stock") %>%
+      hc_title(text = paste0(ticker.name," chart : from ", date1, " to ", date2),
                style = list(fontWeight = "bold", fontSize = "25px"),
                align = "center") %>%
-      hc_add_series (name = "Prices", 
+      hc_add_series (name = "Prices",
                      Global.returns,
                      yAxis = 0,
                      showInLegend = FALSE,
@@ -98,14 +106,14 @@ BRVM_plot<- function(.company,
       hc_exporting(
         enabled = TRUE, # always enabled,
         filename = paste0(ticker.name," chart : from ", date1, " to ", date2))
-    
-  } 
-  
+
+  }
+
   else if (length(Global.returns) > 6) {
-    
+
     brvm.plot<- highchart(type = "stock") %>%
       hc_add_series(data = Global.returns,
-                    type = "line", 
+                    type = "line",
                     hcaes(x =Date, y= Close, group= Ticker))%>%
       hc_xAxis(title = list(text = ""))%>%
       hc_title(text = paste0("Tickers line chart from ", date1, " to ", date2)) %>%

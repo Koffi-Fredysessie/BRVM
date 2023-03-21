@@ -5,7 +5,7 @@
 
 <!-- badges: start -->
 
-[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/BRVM)](https://cran.r-project.org/package=BRVM)
+[![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/BRVM)](https://cran.r-project.org/package=BRVM)
 ![](https://cranlogs.r-pkg.org/badges/BRVM)
 ![](https://cranlogs.r-pkg.org/badges/grand-total/BRVM) [![Lifecycle:
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html##experimental)
@@ -43,35 +43,59 @@ This is a basic example which shows you how to solve a common problem:
 
 ``` r
 library(BRVM)
-#> 
-#> == Welcome to BRVM ===========================================================================
-#> If you find this package useful, please leave a star: 
-#>    https://github.com/Koffi-Fredysessie/BRVM
-#> 
-#> If you encounter a bug or want to request an enhancement please file an issue at:
-#>    https://github.com/Koffi-Fredysessie/BRVM/issues
-#> 
-#> Thank you for using BRVM!
 ```
 
-Lets take a look at a simple function that will get any n number of
-records based on whether they are ‘Top’ or ‘Bottom’ ranked.
+Lets take a look at a simple function that receives no argument and
+returns informations about BRVM market activities
 
 ``` r
-BRVM_rank("Top", 10)
-#> # A tibble: 10 x 3
-#>    Symbole Nom                                     `Variation (%)`
-#>    <chr>   <chr>                                             <dbl>
-#>  1 SCRC    SUCRIVOIRE COTE D'IVOIRE                           7.5 
-#>  2 STAC    SETAO COTE D'IVOIRE                                7.44
-#>  3 PALC    PALM COTE D'IVOIRE                                 7.43
-#>  4 SAFC    SAFCA COTE D'IVOIRE                                7.21
-#>  5 BOAB    BANK OF AFRICA BENIN                               7.05
-#>  6 BOAM    BANK OF AFRICA MALI                                6.51
-#>  7 BOAN    BANK OF AFRICA NIGER                               6.31
-#>  8 BOAC    BANK OF AFRICA COTE D'IVOIRE                       5.67
-#>  9 NEIC    NEI-CEDA COTE D'IVOIRE                             5.59
-#> 10 ETIT    Ecobank Transnational Incorporated TOGO            5.26
+BRVM_market_activity()
+#> # A tibble: 6 × 3
+#>   `Market Activities`     ``                      ``     
+#>   <chr>                   <chr>                   <chr>  
+#> 1 Value                   398 075 969 FCFA        ""     
+#> 2 Equities Capitalization 7 732 371 300 810 FCFA  ""     
+#> 3 Bonds Capitalization    10 153 091 190 084 FCFA ""     
+#> 4 BRVM-C                  207.85                  "0.42%"
+#> 5 BRVM-30                 104.07                  "0.60%"
+#> 6 BRVM-PRES               107,15                  "0,08%"
+```
+
+The following function plot candlestick charts of ticker BICC
+
+``` r
+ library(highcharter)
+ library(lubridate)
+ library(rlang)
+ library(httr2)
+ library(dplyr)
+ library(stringr)
+ library(xts)
+BRVM_plot("BICC")
+#> [1] "BICC"
+```
+
+<img src="man/figures/README-BRVM_plot-1.png" width="100%" />
+
+BRVM_ticker_desc function receives no argument and returns informations
+about BRVM exchange companies.
+
+``` r
+BRVM_ticker_desc()
+#> # A tibble: 47 × 4
+#>    Ticker `Company name`                 Sector       Country     
+#>    <chr>  <chr>                          <fct>        <fct>       
+#>  1 ABJC   SERVAIR ABIDJAN  COTE D'IVOIRE DISTRIBUTION IVORY COAST 
+#>  2 BICC   BICI COTE D'IVOIRE             FINANCE      IVORY COAST 
+#>  3 BNBC   BERNABE COTE D'IVOIRE          DISTRIBUTION IVORY COAST 
+#>  4 BOAB   BANK OF AFRICA BENIN           FINANCE      BENIN       
+#>  5 BOABF  BANK OF AFRICA BURKINA FASO    FINANCE      BURKINA FASO
+#>  6 BOAC   BANK OF AFRICA COTE D'IVOIRE   FINANCE      IVORY COAST 
+#>  7 BOAM   BANK OF AFRICA MALI            FINANCE      MALI        
+#>  8 BOAN   BANK OF AFRICA NIGER           FINANCE      NIGER       
+#>  9 BOAS   BANK OF AFRICA SENEGAL         FINANCE      SENEGAL     
+#> 10 CABC   SICABLE COTE D'IVOIRE          INDUSTRY     IVORY COAST 
+#> # … with 37 more rows
 ```
 
 You’ll still need to render `README.Rmd` regularly, to keep `README.md`

@@ -9,9 +9,9 @@
 #'
 #' @seealso \url{https://www.brvm.org/en/indices/status/200}
 #'
-#' @details This function will get index data from \url{www.brvm.org}
+#' @details This function will get index data from \url{https://www.brvm.org/}
 #'
-#' @description This function will get data from \url{www.brvm.org}.
+#' @description This function will get data from \url{https://www.brvm.org/}.
 #'
 #' @examples
 #' \dontrun{BRVM_index()}
@@ -24,7 +24,7 @@
 BRVM_index <- function(){
   tryCatch(
     {
-      index <- read_html("https://www.brvm.org/en/indices/status/200") %>% 
+      index <- read_html("https://www.brvm.org/en/indices/status/200") %>%
         html_nodes('table') %>%
         html_table()
       index <- index[[4]][-6]
@@ -45,7 +45,7 @@ BRVM_index <- function(){
         "Previous closing",
         "Closing",
         "Change (%)",
-        "Year to Date Change") 
+        "Year to Date Change")
       index$Indexes<-str_replace(index$Indexes, "BRVM - INDUSTRIE", "BRVM - INDUSTRY")
       index$Indexes<-str_replace(index$Indexes, "BRVM - AUTRES SECTEURS", "BRVM - OTHER SECTOR")
       index$Indexes<-str_replace(index$Indexes, "SERVICES PUBLICS", "PUBLIC SERVICES")
@@ -58,5 +58,5 @@ BRVM_index <- function(){
       print("Make sure you have an active internet connection")
     }
   )
-  
+
 }

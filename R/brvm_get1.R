@@ -21,37 +21,48 @@
 #' @param to A quoted end date, ie. "2022-01-31" or "2022/01/31". The date must
 #' be in ymd format "YYYY-MM-DD" or "YYYY/MM/DD"
 #'
+#'@importFrom httr2 req_body_json req_perform request resp_body_json
+#'@importFrom dplyr group_by summarise as_tibble
+#'@importFrom lubridate parse_date_time
+#'@importFrom rlang abort
+#'@importFrom stringr str_sub
+#'
 #' @examples
+#' \dontrun{
+#'
+#' library(lubridate)
+#' library(rlang)
+#' library(httr2)
+#' library(dplyr)
+#' library(stringr)
+#'
 #' symbols <- c("BiCc","XOM","SlbC")
 #' data_tbl <- BRVM_get1(ticker = symbols)
 #' data_tbl
 #'
-#' BRVM_get1("ALL INDEXES", from = Sys.Date() - 252*3, to = Sys.Date()) #From three year ago to the present
+#'#From three year ago to the present
+#' BRVM_get1("ALL INDEXES", from = Sys.Date() - 252*3, to = Sys.Date())
 #' BRVM_get1(.ticker = "BRVMAG", from = "2010-01-04", to = "2022-01-04")
 #'
 #' BRVM_get1("ALL", Period = 0, from = "2010-01-04", to = "2022-01-04"  ) #To get daily data
 #'
 #' BRVM_get1("BrvmAS", Period = 1 ) # To get daily data for a whole year
 #'
-#' BRVM_get1(c("BRVM10", "BRVMAG"), Period = 5, from = "2021-01-04", to = "2022-01-04") # To get weekly data
+#' BRVM_get1(c("BRVMPR", "BRVMAG"), Period = 5) # To get weekly data
 #'
 #' BRVM_get1("BRVMAG", Period = 30 ) # To get monthly data
 #'
-#' BRVM_get1("BRVM10", Period = 91 ) # To get quaterly data
+#' BRVM_get1("BRVMPR", Period = 91 ) # To get quaterly data
 #'
 #' BRVM_get1(c("brvmtr", "BiCc", "BOAS"), Period = 365 ) # To get yearly data
 #'
+#'}
 #' @return
 #' A tibble
 #'
 #' @export
 #'
 
-library(lubridate)
-library(rlang)
-library(httr2)
-library(dplyr)
-library(stringr)
 
 BRVM_get1 <- function(ticker ='BICC',
                              Period = 0,
@@ -77,7 +88,7 @@ BRVM_get1 <- function(ticker ='BICC',
   all_tickers <- c( "ABJC", "BICC", "BNBC", "BOAB", "BOABF", "BOAC",
                 "BOAM", "BOAN", "BOAS", "CABC", "CBIBF", "CFAC",
                 "CIEC", "ECOC", "ETIT", "FTSC", "NEIC", "NSBC",
-                "NTLC", "ONTBF", "ORGT", "PALC", "PRSC", "SAFC",
+                "NTLC", "ONTBF", "ORGT", "ORAC", "PALC", "PRSC", "SAFC",
                 "SCRC", "SDCC", "SDSC", "SEMC", "SGBC", "SHEC",
                 "SIBC", "SICC", "SIVC", "SLBC", "SMBC", "SNTS",
                 "SOGC", "SPHC", "STAC", "STBC", "TTLC",
@@ -85,8 +96,9 @@ BRVM_get1 <- function(ticker ='BICC',
                 #, "TTRC", "SVOC"
   )
 
-  # idx <- c("BRVM10","BRVMAG", "BRVMC","BRVMAS",
-  #          "BRVMDI", "BRVMFI", "BRVMIN", "BRVMSP", "BRVMTR")
+ # idx <- c("BRVM10", "BRVMAG", "BRVMC", "BRVMAS", "BRVMDI",
+ #          "BRVMFI", "BRVMIN", "BRVMSP", "BRVMTR", "BRVMPR",
+ #          "BRVMPA", "BRVM30", "CAPIBRVM")
 
   all_indexes <- c("BRVM10", "BRVMAG", "BRVMC", "BRVMAS", "BRVMDI",
                 "BRVMFI", "BRVMIN", "BRVMSP", "BRVMTR", "BRVMPR",
@@ -110,6 +122,7 @@ BRVM_get1 <- function(ticker ='BICC',
                  "PUBLIC SERVICES" = c("BRVMSP"),
                  TRANSPORT = c("BRVMTR"),
                  "BRVM PRESTIGE" = c("BRVMPR"),
+                 "BRVM PRINCIPAL" = c("BRVMPA"),
                  "BRVM 30" = c("BRVM30"),
                  CAPITALISATION = c("CAPIBRVM"))
 
@@ -177,7 +190,7 @@ BRVM_get1 <- function(ticker ='BICC',
           my_data <- dplyr::as_tibble(my_data$lst)
           my_data$Date<-as.Date.character(my_data$Date, format = "%d/%m/%Y")
           my_data <- my_data[,-6]
-          assign(Tick1, my_data, envir = globalenv())
+          # assign(Tick1, my_data, envir = globalenv())
 
           # if (nchar(Tick) == 7) {
           #   my_data$Ticker <- str_sub(Tick, 1,4)
@@ -209,7 +222,7 @@ BRVM_get1 <- function(ticker ='BICC',
           } else {
             Tick1 <- Tick
           }
-          
+
           # ifelse(nchar(Tick) == 7,
           #        Tick1 <- str_sub(Tick, 1,4),
           #        Tick1 <- Tick)
@@ -255,7 +268,7 @@ BRVM_get1 <- function(ticker ='BICC',
                          max(stock.data$Date)))
 
             #        stock.data <- stock.data[, -6]
-            assign(Tick1, stock.data, envir = globalenv())
+            # assign(Tick1, stock.data, envir = globalenv())
             stock.data$Ticker <- Tick1
 
             index_stock <- rbind(index_stock, stock.data )
@@ -275,7 +288,8 @@ BRVM_get1 <- function(ticker ='BICC',
 
         if (length(unique(index_stock$Ticker)) > 1) {
           return(index_stock)
-        } else {
+        } else if (length(unique(index_stock$Ticker)) == 1){
+            index_stock <- index_stock[, -6]
           return(index_stock[, -6])
         }
 

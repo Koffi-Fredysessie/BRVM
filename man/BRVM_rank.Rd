@@ -2,36 +2,26 @@
 % Please edit documentation in R/brvm-top-flop.R
 \name{BRVM_rank}
 \alias{BRVM_rank}
-\title{BRVM Rank}
+\title{BRVM_rank - Get top or flop data of BRVM stock exchange}
 \usage{
-BRVM_rank(.top_or_flop = "Top", .n = 10)
+BRVM_rank(top_or_flop, n = 10)
 }
 \arguments{
-\item{.top_or_flop}{This is a character string set to "Top". It can either
-be "Top" or "Flop".}
+\item{top_or_flop}{Choose between "top" or "flop"}
 
-\item{.n}{How many records to return}
+\item{n}{is the number of companies in the classification}
 }
 \value{
-A tibble
+"tbl_df"     "tbl"        "data.frame"
 }
 \description{
-
-}
-\details{
-This function will get any n results for the top or flop ranking
-of the BRVM tickers.
+It receives "top" or "flop" and a number 'n' and
+returns table of companies classification
 }
 \examples{
-
-BRVM_rank("Top", 1)
-BRVM_rank("blahblah", 1)
-BRVM_rank("Flop", 1)
-
-}
-\seealso{
-Other Ticker Data Retrieval: 
-\code{\link{BRVM_get}()}
+\dontrun{
+BRVM_rank("top", 15)
+BRVM_rank("flop", 5)}
 }
 \author{
 Koffi Frederic SESSIE
@@ -40,5 +30,3 @@ Oudouss Diakité Abdoul
 
 Steven P. Sanderson II, MPH
 }
-\concept{Ranking}
-\concept{Ticker Data Retrieval}

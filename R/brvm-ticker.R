@@ -21,7 +21,7 @@ BRVM_tickers <- function(){
   tryCatch(
     {
       all.tickers <- rvest::read_html("https://www.brvm.org/en/cours-actions/0/status/200") %>%
-        rvest::html_nodes('table') %>%
+        rvest::html_elements('table') %>%
         rvest::html_table()
       all.tickers <- all.tickers[[4]][1:2]
       all.tickers <- tibble::as.tibble(all.tickers)
@@ -37,5 +37,5 @@ BRVM_tickers <- function(){
       print("Make sure you have an active internet connection")
     }
   )
-  
+
 }
