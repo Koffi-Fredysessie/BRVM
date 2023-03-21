@@ -23,6 +23,9 @@
 #'
 #' @export
 #'
+#' @importFrom xts as.xts
+#' @importFrom highcharter highchart hc_title hc_add_series hc_add_yAxis hc_add_series hc_yAxis_multiples hc_colors hc_exporting
+#'
 #' @examples \dontrun{
 #' library(highcharter)
 #' library(lubridate)
