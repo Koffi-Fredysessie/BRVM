@@ -4,7 +4,7 @@ Title: Retrieve Historical Data of Companies Listed on 'Brvm' Stock Exchange
 Version: 2.0.0
 Authors@R: c(
     person("SESSIE","Koffi Frederic", email = "koffisessie@gmail.com", role = c("aut","cre","cph")),
-    person("Abdoul","Oudouss Diakité", email = "spsanderson@gmail.com", role = "aut"),
+    person("Abdoul","Oudouss Diakité", email = "abdouloudoussdiakite@gmail.com", role = "aut"),
     person("Steven","Sanderson", email = "spsanderson@gmail.com", role = "aut"))
 Description: Provides real-time data from the 'BRVM' (“Regional Securities Exchange SA”). As a goal, we want to facilitate access to data for all users of the R programming language. This package includes a variety of data accessible just by function call.
 License: MIT + file LICENSE
