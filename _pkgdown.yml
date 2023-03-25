@@ -21,3 +21,7 @@ reference:
      desc: Functions that get ticker data
      contents:
      -  has_concept("Ticker Data Retrieval")
+
+header-includes:
+  - \usepackage{knitr}
+  - \usepackage{kableExtra}
