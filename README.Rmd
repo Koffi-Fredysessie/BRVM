@@ -6,8 +6,8 @@ output:
     toc: yes
     fig_caption: yes
     keep_md: yes
-    fig_width: 10
-    fig_height: 10
+    fig_width: 8
+    fig_height: 6
   word_document: 
     toc: yes
   pdf_document: 
@@ -61,6 +61,10 @@ devtools::install_github("Koffi-Fredysessie/BRVM")
 remotes::install_github("Koffi-Fredysessie/BRVM")
 ```
 
+## Html version of the Readme 
+Since the size of the readme is huge due to the charts, you can visit the html version of the readme on [RPubs](https://rpubs.com/Fredysessie/Readme_BRVM_Stock)
+
+
 ```{r}
 library(BRVM)
 ```
@@ -72,10 +76,13 @@ It receives no argument and returns two informations about BRVM exchange compani
 ```{r BRVM_tickers}
 library(gsheet)
 library(tibble)
+library(knitr)
+library(kableExtra)
 
 #' Show tickers
-ticks <- BRVM_tickers()
-dput(ticks[[1]]) # Returns the name of all tickers
+tickers <- BRVM_tickers()
+kable(tickers, "html") %>%
+  kable_styling(bootstrap_options = "striped")
 ```
 
 
@@ -93,8 +100,13 @@ It receives no argument and returns a table of updated data (with as table heade
 ```{r BRVM_index}
 library(rvest)
 library(stringr)
+library(knitr)
+library(kableExtra)
 
-BRVM_index() 
+the_index <- BRVM_index() 
+kable(the_index, "html") %>%
+  kable_styling(bootstrap_options = "striped")
+
 ```
 
 
@@ -230,6 +242,11 @@ library(xts)
 BRVM_plot("BICC") # The default colors for the up and down are green and red respectively.
 
 #You can specify your color like `BRVM_plot("boas", up.col = "blue", down.col = "pink")` for example
+
+#It is also possible to plot stock data chart for more than one ticker
+#Let's plot BICC, ETIT and BOAM stock data
+
+BRVM_plot(c("BICC","ETIT", "BOAM"))
 ```
 
 
