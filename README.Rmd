@@ -1,5 +1,17 @@
 ---
 title: "Library BRVM"
+
+authors :
+    - Koffi Frederic Sessie [email](mailto:koffisessie@gmail.com), [gitHub](https://github.com/Koffi-Fredysessie)
+    - Abdoul Oudouss Diakité [email](mailto:abdouloudoussdiakite@gmail.com), [gitHub](https://github.com/AODiakite)
+    - Sanderson Steven [email](mailto:spsanderson@gmail.com), [gitHub](https://github.com/spsanderson)
+
+creator :
+    - Koffi Frederic Sessie [email](mailto:koffisessie@gmail.com), [gitHub](https://github.com/Koffi-Fredysessie)
+
+cph (Copyright Holder) : 
+    - Koffi Frederic Sessie [email](mailto:koffisessie@gmail.com), [gitHub](https://github.com/Koffi-Fredysessie)
+
 date: "`r format(Sys.time(),'%d %B,%Y')`"
 output:
   html_document: 
@@ -72,7 +84,6 @@ It receives no argument and returns two informations about BRVM exchange compani
 ```{r BRVM_tickers}
 #' Show tickers
 ticks <- BRVM_tickers()
-invisible(Sys.sleep(10))
 dput(ticks[[1]]) # Returns the name of all tickers
 ```
 
@@ -89,8 +100,7 @@ BRVM_ticker_desc()
 It receives no argument and returns a table of updated data (with as table header: indexes, previous closing, closing, change (%), Year to Date Change) on all the indices available on the BRVM exchange.
 
 ```{r BRVM_index}
-BRVM_index()
-invisible(Sys.sleep(10)) 
+BRVM_index() 
 ```
 
 
@@ -288,18 +298,18 @@ company_traded_val("ontbf") # Traded value of ONATEL BURKINA FASO
 
 
 ## Authors
-    - Koffi Frederic Sessie ([email](mailto:koffisessie@gmail.com), [GitHub](https://github.com/Koffi-Fredysessie))
-    - Abdoul Oudouss Diakité ([email](mailto:abdouloudoussdiakite@gmail.com), [GitHub](https://github.com/AODiakite))
-    - Sanderson Steven ([email](mailto:spsanderson@gmail.com), [GitHub](https://github.com/spsanderson))
+    - Koffi Frederic Sessie [email](mailto:koffisessie@gmail.com), [GitHub](https://github.com/Koffi-Fredysessie)
+    - Abdoul Oudouss Diakité [email](mailto:abdouloudoussdiakite@gmail.com), [GitHub](https://github.com/AODiakite)
+    - Sanderson Steven [email](mailto:spsanderson@gmail.com), [GitHub](https://github.com/spsanderson)
 
 
 ## Creator
-    - Koffi Frederic Sessie ([email](mailto:koffisessie@gmail.com), [GitHub](https://github.com/Koffi-Fredysessie))
+    - Koffi Frederic Sessie [email](mailto:koffisessie@gmail.com), [GitHub](https://github.com/Koffi-Fredysessie)
 
     
 ## cph (Copyright Holder)
-    - Koffi Frederic Sessie ([email](mailto:koffisessie@gmail.com), [GitHub](https://github.com/Koffi-Fredysessie))
+    - Koffi Frederic Sessie [email](mailto:koffisessie@gmail.com), [GitHub](https://github.com/Koffi-Fredysessie)
     
     
-## License:
-* MIT 2023, BRVM authors. All rights reserved.
+## License
+    - MIT 2023, BRVM authors. All rights reserved.
