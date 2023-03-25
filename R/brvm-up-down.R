@@ -38,7 +38,7 @@ BRVM_direction <- function(.up_or_down = "Up") {
     }
 
     # get data ----
-    quotes_tbl <- gsheet::gsheet2tbl(" https://docs.google.com/spreadsheets/d/1rdjGjlQg7cUzWAEJFikrxOnisk-yQQx-n652sJUL-qc/edit#gid=0 ")
+    quotes_tbl <- gsheet::gsheet2tbl("https://docs.google.com/spreadsheets/d/1rdjGjlQg7cUzWAEJFikrxOnisk-yQQx-n652sJUL-qc/edit#gid=0")
     quotes_tbl$`Variation (%)` <- gsub(",", ".", quotes_tbl$`Variation (%)`)
     quotes_tbl$`Variation (%)` <- as.numeric(quotes_tbl$`Variation (%)`)
     quotes_tbl <- quotes_tbl[-c(3:6)]
