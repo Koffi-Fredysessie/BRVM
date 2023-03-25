@@ -1,0 +1,11 @@
+name: Publish Document
+title:
+username:
+account: rpubs
+server: rpubs.com
+hostUrl: rpubs.com
+appId: https://api.rpubs.com/api/v1/document/1019683/00aac546e2e543cd83df616e0ab3582f
+bundleId: https://api.rpubs.com/api/v1/document/1019683/00aac546e2e543cd83df616e0ab3582f
+url: http://rpubs.com/Fredysessie/1019683
+when: 1679714667.10749
+lastSyncTime: 1679714667.1075
