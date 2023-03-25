@@ -1,10 +1,31 @@
 ---
-output: github_document
+title: "Library BRVM"
+author:
+    - Koffi Frederic Sessie
+    - Abdoul Oudouss Diakité
+    - Sanderson Steven
+creator : "Koffi Frederic SESSIE"
+cph: "Koffi Frederic SESSIE"
+date: "`r format(Sys.time(),'%d %B,%Y')`"
+output:
+  html_document: 
+    toc: yes
+    fig_caption: yes
+    keep_md: yes
+    fig_width: 10
+    fig_height: 10
+  word_document: 
+    toc: yes
+  pdf_document: 
+    toc: yes
+    latex_engine: lualatex
+always_allow_html: true
 ---
+
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r ,include = FALSE}
+```{r,include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
@@ -16,7 +37,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# BRVM
+# BRVM <img src="man/figures/brvm-logo.png" width="147" height="170" align="right" />
 
 <!-- badges: start -->
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/BRVM)](https://cran.r-project.org/package=BRVM)
@@ -26,54 +47,223 @@ knitr::opts_chunk$set(
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://makeapullrequest.com)
 <!-- badges: end -->
 
-# BRVM
-BRVM is an R package that provides real-time data from the BRVM ("Regional Securities Exchange SA" call Bourse Régionale des Valeurs Mobilières in french).  As a goal, we want to facilitate access to data for all users of the R programming language. This package includes a variety of data accessible just by function call.
+## BRVM
 
-BRVM est un package R qui permet d’obtenir des données à temps réel de la BRVM (Bourse Régionale des Valeurs Mobilières). Comme objectif, nous voulons faciliter l’accès aux données à tous les utilisateurs du langage de programmation R. Ce package comporte une diversité de données accessibles juste par appel de fonction.
+`BRVM` is an R package that provides real-time data from the BRVM (“Regional Securities Exchange SA” call Bourse Régionale des Valeurs Mobilières in french). As a goal, we want to facilitate access to data for all users of the R programming language. This package includes a variety of data accessible just by function call.
 
+`BRVM` est un package R qui permet d’obtenir des données à temps réel de la BRVM (Bourse Régionale des Valeurs Mobilières). Comme objectif, nous voulons faciliter l’accès aux données à tous les utilisateurs du langage de programmation R. Ce package comporte une diversité de données accessibles juste par appel de fonction.
 
-## Installation
+## Installation guidelines
+You can install the development version of BRVM from [github](https://github.com/Koffi-Fredysessie/BRVM) with:
 
-You can install the development version of BRVM from [GitHub](https://github.com/) with:
-
-``` r
+```{r, eval=FALSE}
+# github dev version
+## We can use devtools
 # install.packages("devtools")
 devtools::install_github("Koffi-Fredysessie/BRVM")
+
+# Or use remotes
+# install.packages("remotes")
+remotes::install_github("Koffi-Fredysessie/BRVM")
 ```
 
-## Example
-
-This is a basic example which shows you how to solve a common problem:
-
-```{r example}
+```{r}
 library(BRVM)
 ```
 
-Lets take a look at a simple function that receives no argument and returns informations about BRVM market activities
+## The **BRVM_tickers()** function
+ 
+It receives no argument and returns two informations about BRVM exchange companies (ticker and company name). It is important to visualize the tickers. Indeed, they are used by the other functions of the package to obtain data and even plot the OHCL graph of their prices.
 
-```{r brvm_market_activity}
-BRVM_market_activity()
-
+```{r, BRVM_tickers}
+#' Show tickers
+ticks <- BRVM_tickers()
+dput(ticks[[1]]) # Returns the name of all tickers
 ```
 
-The following function plot candlestick charts of ticker BICC
 
-```{r BRVM_plot}
- library(highcharter)
- library(lubridate)
- library(rlang)
- library(httr2)
- library(dplyr)
- library(stringr)
- library(xts)
-BRVM_plot("BICC")
-```
+## The **BRVM_ticker_desc()** function
+ 
+It receives no argument and returns the BRVM ticker information such as its full name, sector and country.
 
-BRVM_ticker_desc function receives no argument and returns informations about BRVM exchange companies.
-
-```{r BRVM_ticker_desc}
+```{r}
 BRVM_ticker_desc()
 ```
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this. You could also use GitHub Actions to re-render `README.Rmd` every time you push. An example workflow can be found here: <https://github.com/r-lib/actions/tree/v1/examples>.
+## The **BRVM_index()** function :
+It receives no argument and returns a table of updated data (with as table header: indexes, previous closing, closing, change (%), Year to Date Change) on all the indices available on the BRVM exchange.
 
+```{r }
+BRVM_index()
+```
+
+
+## The ** BRVM_get(".symbol", ".from", ".to")** function
+ 
+This function will get data of the companies listed on the BVRM exchange through the Rich Bourse site. The function takes in a single parameter of .symbol(which represents the "Ticker".
+The function will auto-format the tickers you input into all upper case by using toupper() and will next make sure that the ticker passed is inside of a google spreadsheet of allowed tickers.
+
+* .symbol : A vector of symbols, like: c("BICC","XOM","SlbC") ;
+* .from : A quoted start date, ie. "2020-01-01" or "2020/01/01". The date must be in ymd format "YYYY-MM-DD" or "YYYY/MM/DD" ;
+* .to : A quoted end date, ie. "2022-01-31" or "2022/01/31". The date must be in ymd format "YYYY-MM-DD" or "YYYY/MM/DD".
+
+```{r BRVM_get}
+library(lubridate)
+library(rlang)
+library(httr2)
+library(dplyr)
+library(stringr)
+#' Displaying data of SONATEL Senegal stock
+BRVM_get(.symbol = "snts")
+
+symbols <- c("BiCc","XOM","SlbC")   # We use here three tickers
+data_tbl <- BRVM_get(.symbol = symbols, .from = "2020-01-01", .to = Sys.Date() - 1)
+head(data_tbl, 20) # display the first two tens elements of the table
+tail(data_tbl, 20) # display the two tens of the last elements of the table
+```
+
+## The **BRVM_get1("ticker ", "Period", "from", "to")** function
+
+This function will get data of the companies listed on the BVRM exchange through the sikafinance site.
+The function takes in a single parameter of ticker and will auto-format the tickers you input into all upper case by using toupper()
+
+* ticker : A vector of ticker, like: c("BICC","XOM","SlbC", "BRvm10");
+* Period : Numeric number indicating time period. Valid entries are 0, 1, 5, 30, 91, and 365 representing respectively 'daily', 'one year', 'weekly', 'monthly', 'quarterly' and 'yearly';
+* from : A quoted start date, ie. "2020-01-01" or "2020/01/01". The date must be in ymd format "YYYY-MM-DD" or "YYYY/MM/DD";
+* to : A quoted end date, ie. "2022-01-31" or "2022/01/31". The date must be in ymd format "YYYY-MM-DD" or "YYYY/MM/DD"
+
+** NB : There is a small difference between the BRVM_get and BRVM_get1 functions.
+* With BRVM_get it is only possible to download tickers' daily data.
+* But with BRVM_get1, you can download daily, weekly, monthly, annual tickers’ data, indices and even market capitalization.
+
+```{r BRVM_get1}
+library(lubridate)
+library(rlang)
+library(httr2)
+library(dplyr)
+library(stringr)
+#' Displaying data of SONATEL Senegal stock
+BRVM_get1("snts")
+
+# Get daily data of all indexes
+all_ind <- BRVM_get1("ALL INDEXES", Period = 0, from = "2010-01-04", to = "2022-01-04") 
+head(all_ind, 20) # display the first two tens elements of the table
+tail(all_ind, 20) # display the two tens of the last elements of the table
+
+# To get yearly data
+yearly_data <- BRVM_get1(c("brvmtr", "BiCc", "BOAS"), Period = 365 ) 
+head(yearly_data, 20) # display the first two tens elements of the table
+tail(yearly_data, 20) # display the two tens of the last elements of the table
+``` 
+
+## The **BRVM.index()** function :
+It receives no argument and returns the name of all indexes available on BRVM Stock Exchange.
+
+```{r }
+BRVM.index()
+```
+
+
+ 
+## The **BRVM_bySector(".sectors")** function :
+ 
+This function will take in the name of sector(s) and returns data for companies belonging to that/those sector(s)
+
+* .sectors : A vector of sectors you wish to have returned.
+
+```{r}
+# Get informations about brvm sectors like other and agriculture sectors
+BRVM_bySector(.sectors = c("Other", "Agriculture"))
+```
+
+ 
+## The **BRVM_stock_market(".weekday")** function :
+This function receives as input a day of the week (working day) and returns the official quotation revews of that day.
+* .weekday : A quoted date, ie. "2022-01-31" or "2022/01/31". The date must be in ymd format "YYYY-MM-DD" or "YYYY/MM/DD". Must not be a weekend or a holiday.
+
+```{r}
+# The BOC of 2022-02-23
+BRVM_stock_market("2022-02-23")
+```
+
+ 
+## The **BRVM_plot(".company",  "up.col", "down.col")** function:
+ This function will get Ticker(s) data and then plot it.
+
+* .company : is the Ticker(s) name(s)
+* from : A quoted start date, ie. "2020-01-01" or "2020/01/01". The date must be in ymd format "YYYY-MM-DD" or "YYYY/MM/DD".
+* to : A quoted end date, ie. "2022-01-31" or "2022/01/31". The date must be in ymd format "YYYY-MM-DD" or "YYYY/MM/DD"
+* up.col	 : is the up color
+* down.col : is down color
+
+```{r BRVM_plot}
+library(highcharter)
+library(lubridate)
+library(rlang)
+library(httr2)
+library(dplyr)
+library(stringr)
+library(xts)
+
+BRVM_plot("BICC") # The default colors for the up and down are green and red respectively.
+
+#You can specify your color like `BRVM_plot("boas", up.col = "blue", down.col = "pink")` for example
+```
+
+
+## The **BRVM_company_info("ticker")** function
+
+It receives the ticker of a company listed on the BRVM stock exchange, Turn to upper case the input by using toupper() and returns informations about the company's RSI, Beta, Closing price, etc. .
+
+```{r }
+# Get informations such us beta, RSI, Closing, Valorisation, etc. of Bank Of Africa Senegal
+
+BRVM_company_info("BOAS")
+```
+
+> -**BRVM_cap()** : receives no argument and returns informations about BRVM capitalization
+
+```{r}
+BRVM_cap()
+```
+
+> - **BRVM_company_rank()** : returns companies rank from the BRVM Bourse exchange according to their daily change (variation).
+
+
+```{r}
+comp.rank<-BRVM_company_rank() #Get compnies rank
+comp.rank%>%arrange(desc(percent_change)) #Describe in decreasing order
+```
+
+
+> - **BRVM_direction(".up_or_down")** : will take in 'Up' or 'Down' and returns respectively n results for the top or flop ranking of the BRVM tickers.
+
+* .up_or_down : This is a character string set to "Up" It can either be 'Up' or 'Down'.
+
+
+```{r}
+# Rank in descending order the price of shares listed on the BRVM according to daily variations.
+BRVM_direction("Up")
+```
+
+> - **BRVM_rank** : receives "top" or "flop" and a number 'n' and returns table of companies classification
+
+* top_or_flop : Choose between "top" or "flop"
+
+* n : is the number of companies in the classification
+
+```{r}
+BRVM_rank("top", 15) #To get top 15
+BRVM_rank("flop", 5) #To get flop 5
+```
+
+> - **company_traded_val("company")** : receives one company listed on the BRVM stock exchange, Turn to upper case the input by using toupper() and returns informations about the company's traded value
+
+* company : The name of company listed on the BRVM stock exchange
+
+```{r}
+company_traded_val("ontbf") # Traded value of ONATEL BURKINA FASO
+```
+
+**License:**
+- MIT 2023, BRVM authors. All rights reserved.
