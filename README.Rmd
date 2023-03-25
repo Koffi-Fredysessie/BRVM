@@ -6,8 +6,8 @@ output:
     toc: yes
     fig_caption: yes
     keep_md: yes
-    fig_width: 10
-    fig_height: 10
+    fig_width: 8
+    fig_height: 6
   word_document: 
     toc: yes
   pdf_document: 
@@ -76,10 +76,13 @@ It receives no argument and returns two informations about BRVM exchange compani
 ```{r BRVM_tickers}
 library(gsheet)
 library(tibble)
+library(knitr)
+library(kableExtra)
 
 #' Show tickers
-ticks <- BRVM_tickers()
-dput(ticks[[1]]) # Returns the name of all tickers
+tickers <- BRVM_tickers()
+kable(tickers, "html") %>%
+  kable_styling(bootstrap_options = "striped")
 ```
 
 
@@ -97,8 +100,13 @@ It receives no argument and returns a table of updated data (with as table heade
 ```{r BRVM_index}
 library(rvest)
 library(stringr)
+library(knitr)
+library(kableExtra)
 
-BRVM_index() 
+the_index <- BRVM_index() 
+kable(the_index, "html") %>%
+  kable_styling(bootstrap_options = "striped")
+
 ```
 
 
