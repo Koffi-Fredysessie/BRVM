@@ -69,29 +69,19 @@ Since the size of the readme is huge due to the charts, you can visit the html v
 library(BRVM)
 ```
 
-## The **BRVM_tickers()** function
- 
-It receives no argument and returns two informations about BRVM exchange companies (ticker and company name). It is important to visualize the tickers. Indeed, they are used by the other functions of the package to obtain data and even plot the OHCL graph of their prices.
-
-```{r BRVM_tickers}
-library(gsheet)
-library(tibble)
-library(knitr)
-library(kableExtra)
-
-#' Show tickers
-tickers <- BRVM_tickers()
-kable(tickers, "html") %>%
-  kable_styling(bootstrap_options = "striped")
-```
-
 
 ## The **BRVM_ticker_desc()** function
  
-It receives no argument and returns the BRVM ticker information such as its full name, sector and country.
+It receives no argument and returns BRVM tickers information such as its full name, sector and country.
 
 ```{r BRVM_ticker_desc}
-BRVM_ticker_desc()
+library(knitr)
+library(kableExtra)
+
+tickers <- BRVM_ticker_desc()
+kable(tickers, "html") %>%
+  kable_styling(bootstrap_options = "striped")
+
 ```
 
 ## The **BRVM_index()** function :
@@ -255,23 +245,40 @@ BRVM_plot(c("BICC","ETIT", "BOAM"))
 It receives the ticker of a company listed on the BRVM stock exchange, Turn to upper case the input by using toupper() and returns informations about the company's RSI, Beta, Closing price, etc. .
 
 ```{r BRVM_company_info}
+library(knitr)
+library(kableExtra)
+
 # Get informations such us beta, RSI, Closing, Valorisation, etc. of Bank Of Africa Senegal
 
-BRVM_company_info("BOAS")
+inform <- BRVM_company_info("BOAS")
+kable(inform, "html") %>%
+    kable_styling(bootstrap_options = "striped")
 ```
 
 > - **BRVM_cap()** : receives no argument and returns informations about BRVM capitalization
 
 ```{r BRVM_cap}
-BRVM_cap()
+library(knitr)
+library(kableExtra)
+
+capit_ <- BRVM_cap()
+kable(capit_, "html") %>%
+    kable_styling(bootstrap_options = "striped")
 ```
 
 > - **BRVM_company_rank()** : returns companies rank from the BRVM Bourse exchange according to their daily change (variation).
 
 
 ```{r BRVM_company_rank}
+library(knitr)
+library(kableExtra)
+
 comp.rank <- BRVM_company_rank() #Get companies rank
-comp.rank%>%arrange(desc(percent_change)) #Describe in decreasing order
+comp.rank <- comp.rank%>%
+    arrange(desc(percent_change)) #Describe in decreasing order
+
+kable(comp.rank, "html")%>%
+    kable_styling(bootstrap_options = "striped")
 ```
 
 
@@ -281,8 +288,15 @@ comp.rank%>%arrange(desc(percent_change)) #Describe in decreasing order
 
 
 ```{r BRVM_direction}
-# Rank in descending order the price of shares listed on the BRVM according to daily variations.
-BRVM_direction("Up")
+library(knitr)
+library(kableExtra)
+
+# Rank in increasing order the price of shares listed on the BRVM according to daily variations.
+brvm_down <- BRVM_direction("Down")
+kable(brvm_down, "html") %>%
+    kable_styling(bootstrap_options = "striped")
+
+
 ```
 
 > - **BRVM_rank** : receives "top" or "flop" and a number 'n' and returns table of companies classification
