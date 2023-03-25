@@ -10,8 +10,8 @@
 #'
 #' @return A tibble
 #'
-#' @importFrom rvest html_table html_elements read_html
 #' @importFrom tibble as.tibble
+#' @importFrom gsheet gsheet2tbl
 #'
 #' @export
 #'
@@ -24,10 +24,12 @@
 BRVM_tickers <- function(){
   tryCatch(
     {
-      all.tickers <- rvest::read_html("https://www.brvm.org/en/cours-actions/0/status/200") %>%
-        rvest::html_elements('table') %>%
-        rvest::html_table()
-      all.tickers <- all.tickers[[4]][1:2]
+      all.tickers <- gsheet::gsheet2tbl("https://docs.google.com/spreadsheets/d/1RZ4uh4O8klBgo14eL-JyRL-UbbcAVkC_UY5Ouk4FNRE/edit#gid=581510196")
+      # all.tickers <- xml2::read_html("https://www.brvm.org/en/cours-actions/0/") %>%
+      #   rvest::html_elements('table') %>%
+      #   rvest::html_table()
+      # all.tickers <- all.tickers[[4]][1:2]
+      all.tickers <- all.tickers[1:2]
       all.tickers <- tibble::as.tibble(all.tickers)
       colnames(all.tickers)<-c(
         "Ticker",

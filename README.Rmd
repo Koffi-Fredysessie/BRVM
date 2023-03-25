@@ -70,7 +70,7 @@ library(BRVM)
 It receives no argument and returns two informations about BRVM exchange companies (ticker and company name). It is important to visualize the tickers. Indeed, they are used by the other functions of the package to obtain data and even plot the OHCL graph of their prices.
 
 ```{r BRVM_tickers}
-library(rvest)
+library(gsheet)
 library(tibble)
 
 #' Show tickers
@@ -291,7 +291,8 @@ company_traded_val("ontbf") # Traded value of ONATEL BURKINA FASO
 ```
 
 
-> - **Authors** :
+**Authors** : <br>
+
 * [Koffi Frederic Sessie](https://github.com/Koffi-Fredysessie) (<koffisessie@gmail.com>),
 
 * [Abdoul Oudouss Diakité](https://github.com/AODiakite) (<abdouloudoussdiakite@gmail.com>),
@@ -299,9 +300,9 @@ company_traded_val("ontbf") # Traded value of ONATEL BURKINA FASO
 * [Sanderson Steven](https://github.com/spsanderson)(<spsanderson@gmail.com>)<br>
 
 
-**Creator** : Koffi Frederic Sessie
+**Creator** : Koffi Frederic Sessie <br>
 
     
-**cph (Copyright Holder)** : Koffi Frederic Sessie
+**cph (Copyright Holder)** : Koffi Frederic Sessie <br>
     
 **License** : MIT 2023, BRVM authors. All rights reserved.
