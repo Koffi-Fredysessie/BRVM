@@ -16,7 +16,9 @@ This function will get data from \url{https://www.brvm.org/}.
 This function will get index data from \url{https://www.brvm.org/}
 }
 \examples{
-\dontrun{BRVM_index()}
+\dontrun{
+BRVM_index()
+}
 }
 \seealso{
 \url{https://www.brvm.org/en/indices/status/200}
