@@ -1,17 +1,5 @@
 ---
 title: "Library BRVM"
-
-authors :
-    - Koffi Frederic Sessie [email](mailto:koffisessie@gmail.com), [gitHub](https://github.com/Koffi-Fredysessie)
-    - Abdoul Oudouss Diakité [email](mailto:abdouloudoussdiakite@gmail.com), [gitHub](https://github.com/AODiakite)
-    - Sanderson Steven [email](mailto:spsanderson@gmail.com), [gitHub](https://github.com/spsanderson)
-
-creator :
-    - Koffi Frederic Sessie [email](mailto:koffisessie@gmail.com), [gitHub](https://github.com/Koffi-Fredysessie)
-
-cph (Copyright Holder) : 
-    - Koffi Frederic Sessie [email](mailto:koffisessie@gmail.com), [gitHub](https://github.com/Koffi-Fredysessie)
-
 date: "`r format(Sys.time(),'%d %B,%Y')`"
 output:
   html_document: 
@@ -82,6 +70,9 @@ library(BRVM)
 It receives no argument and returns two informations about BRVM exchange companies (ticker and company name). It is important to visualize the tickers. Indeed, they are used by the other functions of the package to obtain data and even plot the OHCL graph of their prices.
 
 ```{r BRVM_tickers}
+library(rvest)
+library(tibble)
+
 #' Show tickers
 ticks <- BRVM_tickers()
 dput(ticks[[1]]) # Returns the name of all tickers
@@ -100,6 +91,9 @@ BRVM_ticker_desc()
 It receives no argument and returns a table of updated data (with as table header: indexes, previous closing, closing, change (%), Year to Date Change) on all the indices available on the BRVM exchange.
 
 ```{r BRVM_index}
+library(rvest)
+library(stringr)
+
 BRVM_index() 
 ```
 
@@ -297,19 +291,17 @@ company_traded_val("ontbf") # Traded value of ONATEL BURKINA FASO
 ```
 
 
-## Authors
-    - Koffi Frederic Sessie [email](mailto:koffisessie@gmail.com), [GitHub](https://github.com/Koffi-Fredysessie)
-    - Abdoul Oudouss Diakité [email](mailto:abdouloudoussdiakite@gmail.com), [GitHub](https://github.com/AODiakite)
-    - Sanderson Steven [email](mailto:spsanderson@gmail.com), [GitHub](https://github.com/spsanderson)
+> - **Authors** :
+* [Koffi Frederic Sessie](https://github.com/Koffi-Fredysessie) (<koffisessie@gmail.com>),
+
+* [Abdoul Oudouss Diakité](https://github.com/AODiakite) (<abdouloudoussdiakite@gmail.com>),
+
+* [Sanderson Steven](https://github.com/spsanderson)(<spsanderson@gmail.com>)<br>
 
 
-## Creator
-    - Koffi Frederic Sessie [email](mailto:koffisessie@gmail.com), [GitHub](https://github.com/Koffi-Fredysessie)
+**Creator** : Koffi Frederic Sessie
 
     
-## cph (Copyright Holder)
-    - Koffi Frederic Sessie [email](mailto:koffisessie@gmail.com), [GitHub](https://github.com/Koffi-Fredysessie)
+**cph (Copyright Holder)** : Koffi Frederic Sessie
     
-    
-## License
-    - MIT 2023, BRVM authors. All rights reserved.
+**License** : MIT 2023, BRVM authors. All rights reserved.
