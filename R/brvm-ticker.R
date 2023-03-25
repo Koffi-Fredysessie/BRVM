@@ -10,9 +10,13 @@
 #'
 #' @return A tibble
 #'
+#' @importFrom rvest html_table html_elements read_html
+#' @importFrom tibble as.tibble
+#'
 #' @export
 #'
-#' @examples \dontrun{BRVM_tickers()
+#' @examples \dontrun{
+#' BRVM_tickers()
 #' ticks <- BRVM_tickers()
 #' dput(ticks$Ticker) ## Returns the name of all tickers
 #' }

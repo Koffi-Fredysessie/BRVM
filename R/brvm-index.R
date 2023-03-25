@@ -13,8 +13,13 @@
 #'
 #' @description This function will get data from \url{https://www.brvm.org/}.
 #'
+#' @importFrom rvest html_table html_elements read_html
+#' @importFrom stringr str_replace
+#'
 #' @examples
-#' \dontrun{BRVM_index()}
+#' \dontrun{
+#' BRVM_index()
+#' }
 #' @return
 #' A tibble
 #'
@@ -25,7 +30,7 @@ BRVM_index <- function(){
   tryCatch(
     {
       index <- read_html("https://www.brvm.org/en/indices/status/200") %>%
-        html_nodes('table') %>%
+        html_elements('table') %>%
         html_table()
       index <- index[[4]][-6]
       index$`Previous closing`<-gsub(" ", "", index$`Previous closing`)

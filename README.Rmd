@@ -1,11 +1,17 @@
 ---
 title: "Library BRVM"
-author:
-    - Koffi Frederic Sessie
-    - Abdoul Oudouss Diakité
-    - Sanderson Steven
-creator : "Koffi Frederic SESSIE"
-cph: "Koffi Frederic SESSIE"
+
+authors :
+    - Koffi Frederic Sessie [email](mailto:koffisessie@gmail.com), [gitHub](https://github.com/Koffi-Fredysessie)
+    - Abdoul Oudouss Diakité [email](mailto:abdouloudoussdiakite@gmail.com), [gitHub](https://github.com/AODiakite)
+    - Sanderson Steven [email](mailto:spsanderson@gmail.com), [gitHub](https://github.com/spsanderson)
+
+creator :
+    - Koffi Frederic Sessie [email](mailto:koffisessie@gmail.com), [gitHub](https://github.com/Koffi-Fredysessie)
+
+cph (Copyright Holder) : 
+    - Koffi Frederic Sessie [email](mailto:koffisessie@gmail.com), [gitHub](https://github.com/Koffi-Fredysessie)
+
 date: "`r format(Sys.time(),'%d %B,%Y')`"
 output:
   html_document: 
@@ -37,7 +43,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# BRVM <img src="man/figures/brvm-logo.png" width="147" height="170" align="right" />
+<img src="man/figures/brvm-logo.png" width="147" height="170" align="right" />
 
 <!-- badges: start -->
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/BRVM)](https://cran.r-project.org/package=BRVM)
@@ -75,7 +81,7 @@ library(BRVM)
  
 It receives no argument and returns two informations about BRVM exchange companies (ticker and company name). It is important to visualize the tickers. Indeed, they are used by the other functions of the package to obtain data and even plot the OHCL graph of their prices.
 
-```{r, BRVM_tickers}
+```{r BRVM_tickers}
 #' Show tickers
 ticks <- BRVM_tickers()
 dput(ticks[[1]]) # Returns the name of all tickers
@@ -86,19 +92,19 @@ dput(ticks[[1]]) # Returns the name of all tickers
  
 It receives no argument and returns the BRVM ticker information such as its full name, sector and country.
 
-```{r}
+```{r BRVM_ticker_desc}
 BRVM_ticker_desc()
 ```
 
 ## The **BRVM_index()** function :
 It receives no argument and returns a table of updated data (with as table header: indexes, previous closing, closing, change (%), Year to Date Change) on all the indices available on the BRVM exchange.
 
-```{r }
-BRVM_index()
+```{r BRVM_index}
+BRVM_index() 
 ```
 
 
-## The ** BRVM_get(".symbol", ".from", ".to")** function
+## The **BRVM_get(".symbol", ".from", ".to")** function
  
 This function will get data of the companies listed on the BVRM exchange through the Rich Bourse site. The function takes in a single parameter of .symbol(which represents the "Ticker".
 The function will auto-format the tickers you input into all upper case by using toupper() and will next make sure that the ticker passed is inside of a google spreadsheet of allowed tickers.
@@ -113,13 +119,19 @@ library(rlang)
 library(httr2)
 library(dplyr)
 library(stringr)
+
 #' Displaying data of SONATEL Senegal stock
 BRVM_get(.symbol = "snts")
 
 symbols <- c("BiCc","XOM","SlbC")   # We use here three tickers
 data_tbl <- BRVM_get(.symbol = symbols, .from = "2020-01-01", .to = Sys.Date() - 1)
-head(data_tbl, 20) # display the first two tens elements of the table
-tail(data_tbl, 20) # display the two tens of the last elements of the table
+
+# display the first two tens elements of the table
+head(data_tbl, 20)
+
+
+# display the two tens of the last elements of the table
+tail(data_tbl, 20)
 ```
 
 ## The **BRVM_get1("ticker ", "Period", "from", "to")** function
@@ -142,24 +154,33 @@ library(rlang)
 library(httr2)
 library(dplyr)
 library(stringr)
+
 #' Displaying data of SONATEL Senegal stock
 BRVM_get1("snts")
 
 # Get daily data of all indexes
-all_ind <- BRVM_get1("ALL INDEXES", Period = 0, from = "2010-01-04", to = "2022-01-04") 
-head(all_ind, 20) # display the first two tens elements of the table
-tail(all_ind, 20) # display the two tens of the last elements of the table
+all_ind <- BRVM_get1("ALL INDEXES", Period = 0, from = "2020-01-04", to = "2023-03-24") 
+
+# display the first two tens elements of the table
+head(all_ind, 20)
+
+# display the two tens of the last elements of the table
+tail(all_ind, 20)
 
 # To get yearly data
 yearly_data <- BRVM_get1(c("brvmtr", "BiCc", "BOAS"), Period = 365 ) 
-head(yearly_data, 20) # display the first two tens elements of the table
-tail(yearly_data, 20) # display the two tens of the last elements of the table
+
+# display the first two tens elements of the table
+head(yearly_data, 20) 
+
+# display the two tens of the last elements of the table
+tail(yearly_data, 20) 
 ``` 
 
 ## The **BRVM.index()** function :
 It receives no argument and returns the name of all indexes available on BRVM Stock Exchange.
 
-```{r }
+```{r BRVM.index}
 BRVM.index()
 ```
 
@@ -171,7 +192,7 @@ This function will take in the name of sector(s) and returns data for companies 
 
 * .sectors : A vector of sectors you wish to have returned.
 
-```{r}
+```{r BRVM_bySector}
 # Get informations about brvm sectors like other and agriculture sectors
 BRVM_bySector(.sectors = c("Other", "Agriculture"))
 ```
@@ -181,7 +202,14 @@ BRVM_bySector(.sectors = c("Other", "Agriculture"))
 This function receives as input a day of the week (working day) and returns the official quotation revews of that day.
 * .weekday : A quoted date, ie. "2022-01-31" or "2022/01/31". The date must be in ymd format "YYYY-MM-DD" or "YYYY/MM/DD". Must not be a weekend or a holiday.
 
-```{r}
+```{r BRVM_stock_market}
+library(formattable)
+library(httr)
+library(lubridate)
+library(rvest)
+library(stringr)
+library(timeDate)
+
 # The BOC of 2022-02-23
 BRVM_stock_market("2022-02-23")
 ```
@@ -215,23 +243,23 @@ BRVM_plot("BICC") # The default colors for the up and down are green and red res
 
 It receives the ticker of a company listed on the BRVM stock exchange, Turn to upper case the input by using toupper() and returns informations about the company's RSI, Beta, Closing price, etc. .
 
-```{r }
+```{r BRVM_company_info}
 # Get informations such us beta, RSI, Closing, Valorisation, etc. of Bank Of Africa Senegal
 
 BRVM_company_info("BOAS")
 ```
 
-> -**BRVM_cap()** : receives no argument and returns informations about BRVM capitalization
+> - **BRVM_cap()** : receives no argument and returns informations about BRVM capitalization
 
-```{r}
+```{r BRVM_cap}
 BRVM_cap()
 ```
 
 > - **BRVM_company_rank()** : returns companies rank from the BRVM Bourse exchange according to their daily change (variation).
 
 
-```{r}
-comp.rank<-BRVM_company_rank() #Get compnies rank
+```{r BRVM_company_rank}
+comp.rank <- BRVM_company_rank() #Get companies rank
 comp.rank%>%arrange(desc(percent_change)) #Describe in decreasing order
 ```
 
@@ -241,7 +269,7 @@ comp.rank%>%arrange(desc(percent_change)) #Describe in decreasing order
 * .up_or_down : This is a character string set to "Up" It can either be 'Up' or 'Down'.
 
 
-```{r}
+```{r BRVM_direction}
 # Rank in descending order the price of shares listed on the BRVM according to daily variations.
 BRVM_direction("Up")
 ```
@@ -252,18 +280,36 @@ BRVM_direction("Up")
 
 * n : is the number of companies in the classification
 
-```{r}
-BRVM_rank("top", 15) #To get top 15
-BRVM_rank("flop", 5) #To get flop 5
+```{r BRVM_rank}
+#To get top 15
+BRVM_rank("top", 15)
+
+#To get flop 5
+BRVM_rank("flop", 5)
 ```
 
 > - **company_traded_val("company")** : receives one company listed on the BRVM stock exchange, Turn to upper case the input by using toupper() and returns informations about the company's traded value
 
 * company : The name of company listed on the BRVM stock exchange
 
-```{r}
+```{r company_traded_val}
 company_traded_val("ontbf") # Traded value of ONATEL BURKINA FASO
 ```
 
-**License:**
-- MIT 2023, BRVM authors. All rights reserved.
+
+## Authors
+    - Koffi Frederic Sessie [email](mailto:koffisessie@gmail.com), [GitHub](https://github.com/Koffi-Fredysessie)
+    - Abdoul Oudouss Diakité [email](mailto:abdouloudoussdiakite@gmail.com), [GitHub](https://github.com/AODiakite)
+    - Sanderson Steven [email](mailto:spsanderson@gmail.com), [GitHub](https://github.com/spsanderson)
+
+
+## Creator
+    - Koffi Frederic Sessie [email](mailto:koffisessie@gmail.com), [GitHub](https://github.com/Koffi-Fredysessie)
+
+    
+## cph (Copyright Holder)
+    - Koffi Frederic Sessie [email](mailto:koffisessie@gmail.com), [GitHub](https://github.com/Koffi-Fredysessie)
+    
+    
+## License
+    - MIT 2023, BRVM authors. All rights reserved.
