@@ -70,7 +70,7 @@ Since the size of the readme is huge due to the charts, you can visit the html v
 library(BRVM)
 ```
 
-```arduino
+```html
 <iframe src=" https://github.com/Koffi-Fredysessie/BRVM/blob/main/man/figures/Bicc_ohcl.html"></iframe>
 ```
 
