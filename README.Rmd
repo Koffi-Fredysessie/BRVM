@@ -31,7 +31,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-<img src="man/figures/brvm-logo.png" width="147" height="170" align="right" />
+<img src="man/figures/brvm-logo.png" width="147" height="170" align="right"/>
 
 <!-- badges: start -->
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/BRVM)](https://cran.r-project.org/package=BRVM)
@@ -67,6 +67,10 @@ library(dplyr)
 library(formattable)
 library(rvest)      
 library(highcharter)
+<<<<<<< HEAD
+library(htmlwidgets)
+=======
+>>>>>>> 8dc631c1d4ae2452337eb1cd779801915c22c514
 ```
 
 You can install the development version of BRVM from [github](https://github.com/Koffi-Fredysessie/BRVM) with:
@@ -225,16 +229,34 @@ BRVM_stock_market("2022-02-23")
 
 ```{r BRVM_plot}
 
-BRVM_plot("BICC") # The default colors for the up and down are green and red respectively.
+chart <- BRVM_plot("BICC") # The default colors for the up and down are green and red respectively.
 
-#You can specify your color like `BRVM_plot("boas", up.col = "blue", down.col = "pink")` for example
+# You can specify your color like 
+# `BRVM_plot("boas", up.col = "blue", down.col = "pink")` for example
 
 #It is also possible to plot stock data chart for more than one ticker
 #Let's plot BICC, ETIT and BOAM stock data
 
-BRVM_plot(c("BICC","ETIT", "BOAM"))
+chart1 <- BRVM_plot(c("BICC","ETIT", "BOAM"))
 ```
 
+```{r echo=FALSE}
+chart <- BRVM_plot("BICC") # The default colors for the up and down are green and red respectively.
+
+# Save the OHCL chart obtained previously as HTML 
+saveWidget(chart, "man/figures/Bicc_ohcl.html", selfcontained = TRUE)
+```
+
+```{r echo=FALSE}
+chart1 <- BRVM_plot(c("BICC","ETIT", "BOAM"))
+
+# Save chart1 obtained previously as HTML
+saveWidget(chart, "man/figures/tickers_graph.html", selfcontained = TRUE)
+```
+
+<iframe src="man/figures/Bicc_ohcl.html" width="100%" height="500"></iframe>
+
+<iframe src="man/figures/tickers_graph.html" width="100%" height="500"></iframe>
 
 ## The **BRVM_company_info("ticker")** function
 
