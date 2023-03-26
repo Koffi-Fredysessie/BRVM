@@ -42,12 +42,34 @@ knitr::opts_chunk$set(
 <!-- badges: end -->
 
 ## BRVM
+### Description {.tabset}
+#### English
+This R package provides a user-friendly interface for accessing data from the BRVM, which is a regional stock exchange serving multiple West African countries. With this package, users can easily retrieve historical stock price data, trading volumes, and other financial indicators for a variety of stocks traded on the BRVM.
 
-`BRVM` is an R package that provides real-time data from the BRVM (“Regional Securities Exchange SA” call Bourse Régionale des Valeurs Mobilières in french). As a goal, we want to facilitate access to data for all users of the R programming language. This package includes a variety of data accessible just by function call.
+The package is designed to simplify the process of gathering and analyzing financial data, making it easier for researchers, investors, and other users to extract insights and make informed decisions based on the information available. Overall, `BRVM` library is a valuable tool for anyone looking to gain a better understanding of the BRVM and the financial markets in West Africa.
 
-`BRVM` est un package R qui permet d’obtenir des données à temps réel de la BRVM (Bourse Régionale des Valeurs Mobilières). Comme objectif, nous voulons faciliter l’accès aux données à tous les utilisateurs du langage de programmation R. Ce package comporte une diversité de données accessibles juste par appel de fonction.
+#### Français
+Ce package R fournit une interface conviviale pour accéder aux données de la BRVM, qui est une bourse régionale desservant plusieurs pays d'Afrique de l'Ouest. Avec ce package, les utilisateurs peuvent facilement récupérer des données historiques sur les prix des actions, les volumes de transactions et d'autres indicateurs financiers pour une variété d'actions négociées sur la BRVM.
+
+Le package est conçu pour simplifier le processus de collecte et d'analyse de données financières, ce qui facilite la tâche des chercheurs, des investisseurs et d'autres utilisateurs pour extraire des informations et prendre des décisions éclairées en se basant sur les informations disponibles. Dans l'ensemble, votre package R est un outil précieux pour quiconque cherche à mieux comprendre la BRVM et les marchés financiers en Afrique de l'Ouest.
 
 ## Installation guidelines
+
+```{r echo=FALSE, message=TRUE, warning=TRUE,include=FALSE}
+library(lubridate)   
+library(httr2)       
+library(stringr)     
+library(httr)        
+library(timeDate)    
+library(xts)        
+library(rlang)      
+library(dplyr)      
+library(formattable)
+library(rvest)      
+library(highcharter)
+library(htmlwidgets)
+```
+
 You can install the development version of BRVM from [github](https://github.com/Koffi-Fredysessie/BRVM) with:
 
 ```{r, eval=FALSE}
@@ -74,47 +96,42 @@ library(BRVM)
  
 It receives no argument and returns BRVM tickers information such as its full name, sector and country.
 
-```{r BRVM_ticker_desc}
+```{r BRVM_ticker_desc, eval=FALSE}
+# Display tickers of BRVM
+tickers <- BRVM_ticker_desc()
+tickers
+```
+```{r echo=FALSE}
 library(knitr)
 library(kableExtra)
-
-tickers <- BRVM_ticker_desc()
-kable(tickers, "html") %>%
+kable(BRVM_ticker_desc(), "html") %>%
   kable_styling(bootstrap_options = "striped")
-
 ```
+
 
 ## The **BRVM_index()** function :
 It receives no argument and returns a table of updated data (with as table header: indexes, previous closing, closing, change (%), Year to Date Change) on all the indices available on the BRVM exchange.
 
-```{r BRVM_index}
-library(rvest)
-library(stringr)
-library(knitr)
-library(kableExtra)
-
+```{r BRVM_index,eval=FALSE}
 the_index <- BRVM_index() 
-kable(the_index, "html") %>%
+the_index
+```
+```{r echo=FALSE}
+kable(BRVM_index() , "html") %>%
   kable_styling(bootstrap_options = "striped")
-
 ```
 
 
 ## The **BRVM_get(".symbol", ".from", ".to")** function
  
-This function will get data of the companies listed on the BVRM exchange through the Rich Bourse site. The function takes in a single parameter of .symbol(which represents the "Ticker".
-The function will auto-format the tickers you input into all upper case by using toupper() and will next make sure that the ticker passed is inside of a google spreadsheet of allowed tickers.
+This function will get the data of the companies listed on the BVRM stock exchange in Rich Bourse website. The function takes a single parameter, `.symbol` (which represents the "Ticker").
+The function will automatically format tickers you enter in uppercase using toupper() and then ensure that the passed ticker is in a Google spreadsheet of allowed tickers.
 
 * .symbol : A vector of symbols, like: c("BICC","XOM","SlbC") ;
 * .from : A quoted start date, ie. "2020-01-01" or "2020/01/01". The date must be in ymd format "YYYY-MM-DD" or "YYYY/MM/DD" ;
 * .to : A quoted end date, ie. "2022-01-31" or "2022/01/31". The date must be in ymd format "YYYY-MM-DD" or "YYYY/MM/DD".
 
 ```{r BRVM_get}
-library(lubridate)
-library(rlang)
-library(httr2)
-library(dplyr)
-library(stringr)
 
 #' Displaying data of SONATEL Senegal stock
 BRVM_get(.symbol = "snts")
@@ -122,18 +139,18 @@ BRVM_get(.symbol = "snts")
 symbols <- c("BiCc","XOM","SlbC")   # We use here three tickers
 data_tbl <- BRVM_get(.symbol = symbols, .from = "2020-01-01", .to = Sys.Date() - 1)
 
-# display the first two tens elements of the table
+# Display the first twenty observations of the table
 head(data_tbl, 20)
 
 
-# display the two tens of the last elements of the table
+# Display the last twenty elements of the table
 tail(data_tbl, 20)
 ```
 
 ## The **BRVM_get1("ticker ", "Period", "from", "to")** function
 
-This function will get data of the companies listed on the BVRM exchange through the sikafinance site.
-The function takes in a single parameter of ticker and will auto-format the tickers you input into all upper case by using toupper()
+This function will get data of the companies listed on the BVRM stock exchange through the sikafinance site.
+The function takes in a single parameter of ticker and will auto-format the tickers you input into all upper case by using `toupper()`
 
 * ticker : A vector of ticker, like: c("BICC","XOM","SlbC", "BRvm10");
 * Period : Numeric number indicating time period. Valid entries are 0, 1, 5, 30, 91, and 365 representing respectively 'daily', 'one year', 'weekly', 'monthly', 'quarterly' and 'yearly';
@@ -145,12 +162,6 @@ The function takes in a single parameter of ticker and will auto-format the tick
 * But with BRVM_get1, you can download daily, weekly, monthly, annual tickers’ data, indices and even market capitalization.
 
 ```{r BRVM_get1}
-library(lubridate)
-library(rlang)
-library(httr2)
-library(dplyr)
-library(stringr)
-
 #' Displaying data of SONATEL Senegal stock
 BRVM_get1("snts")
 
@@ -199,13 +210,6 @@ This function receives as input a day of the week (working day) and returns the 
 * .weekday : A quoted date, ie. "2022-01-31" or "2022/01/31". The date must be in ymd format "YYYY-MM-DD" or "YYYY/MM/DD". Must not be a weekend or a holiday.
 
 ```{r BRVM_stock_market}
-library(formattable)
-library(httr)
-library(lubridate)
-library(rvest)
-library(stringr)
-library(timeDate)
-
 # The BOC of 2022-02-23
 BRVM_stock_market("2022-02-23")
 ```
@@ -221,30 +225,39 @@ BRVM_stock_market("2022-02-23")
 * down.col : is down color
 
 ```{r BRVM_plot}
-library(highcharter)
-library(lubridate)
-library(rlang)
-library(httr2)
-library(dplyr)
-library(stringr)
-library(xts)
 
-BRVM_plot("BICC") # The default colors for the up and down are green and red respectively.
+chart <- BRVM_plot("BICC") # The default colors for the up and down are green and red respectively.
+
+# Save the OHCL chart obtained previously as HTML 
+saveWidget(chart, "Bicc_ohcl.html", selfcontained = TRUE)
 
 #You can specify your color like `BRVM_plot("boas", up.col = "blue", down.col = "pink")` for example
 
 #It is also possible to plot stock data chart for more than one ticker
 #Let's plot BICC, ETIT and BOAM stock data
 
-BRVM_plot(c("BICC","ETIT", "BOAM"))
-```
+chart1 <- BRVM_plot(c("BICC","ETIT", "BOAM"))
 
+# Save chart1 obtained previously as HTML
+saveWidget(chart, "tickers_graph.html", selfcontained = TRUE)
+
+```
+<iframe src="Bicc_ohcl.html" width="100%" height="500"></iframe>
+
+<iframe src="tickers_graph.html" width="100%" height="500"></iframe>
 
 ## The **BRVM_company_info("ticker")** function
 
 It receives the ticker of a company listed on the BRVM stock exchange, Turn to upper case the input by using toupper() and returns informations about the company's RSI, Beta, Closing price, etc. .
 
-```{r BRVM_company_info}
+```{r BRVM_company_info,eval=FALSE}
+
+# Get informations such us beta, RSI, Closing, Valorisation, etc. of Bank Of Africa Senegal
+inform <- BRVM_company_info("BOAS")
+inform
+```
+
+```{r echo=FALSE}
 library(knitr)
 library(kableExtra)
 
@@ -257,7 +270,11 @@ kable(inform, "html") %>%
 
 > - **BRVM_cap()** : receives no argument and returns informations about BRVM capitalization
 
-```{r BRVM_cap}
+```{r BRVM_cap,eval=FALSE}
+capit_ <- BRVM_cap()
+capit_
+```
+```{r echo=FALSE}
 library(knitr)
 library(kableExtra)
 
@@ -269,7 +286,15 @@ kable(capit_, "html") %>%
 > - **BRVM_company_rank()** : returns companies rank from the BRVM Bourse exchange according to their daily change (variation).
 
 
-```{r BRVM_company_rank}
+```{r BRVM_company_rank, eval=FALSE}
+comp.rank <- BRVM_company_rank() #Get companies rank
+comp.rank <- comp.rank%>%
+    arrange(desc(percent_change)) #Describe in decreasing order
+
+comp.rank
+```
+
+```{r echo=FALSE}
 library(knitr)
 library(kableExtra)
 
@@ -281,13 +306,19 @@ kable(comp.rank, "html")%>%
     kable_styling(bootstrap_options = "striped")
 ```
 
+> - **BRVM_direction(".up_or_down")** : Takes 'Up' or 'Down' and returns respectively n results for the top or flop ranking of the BRVM tickers.
 
-> - **BRVM_direction(".up_or_down")** : will take in 'Up' or 'Down' and returns respectively n results for the top or flop ranking of the BRVM tickers.
-
-* .up_or_down : This is a character string set to "Up" It can either be 'Up' or 'Down'.
+* .up_or_down : This is a character string set to "Up" by default It can either be 'Up' or 'Down'.
 
 
-```{r BRVM_direction}
+```{r BRVM_direction,eval=FALSE}
+
+# Rank in increasing order the price of shares listed on the BRVM according to daily variations.
+brvm_down <- BRVM_direction("Down")
+brvm_down
+```
+
+```{r echo=FALSE}
 library(knitr)
 library(kableExtra)
 
@@ -295,9 +326,8 @@ library(kableExtra)
 brvm_down <- BRVM_direction("Down")
 kable(brvm_down, "html") %>%
     kable_styling(bootstrap_options = "striped")
-
-
 ```
+
 
 > - **BRVM_rank** : receives "top" or "flop" and a number 'n' and returns table of companies classification
 
