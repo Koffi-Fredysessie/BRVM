@@ -2184,7 +2184,7 @@ chart1 <- BRVM_plot(c("BICC","ETIT", "BOAM"))
 
 <div align="center">
 
-<img src="man/figures/Bicc_chart.png" width="100%" height="600" align="center"/>  
+<img src="man/figures/Bicc_chart.png" width="100%" height="500" align="center"/>  
 
 </div>
 
