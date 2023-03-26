@@ -67,10 +67,7 @@ library(dplyr)
 library(formattable)
 library(rvest)      
 library(highcharter)
-<<<<<<< HEAD
 library(htmlwidgets)
-=======
->>>>>>> 8dc631c1d4ae2452337eb1cd779801915c22c514
 ```
 
 You can install the development version of BRVM from [github](https://github.com/Koffi-Fredysessie/BRVM) with:
