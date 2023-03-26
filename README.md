@@ -66,7 +66,7 @@ Since the size of the readme is huge due to the charts, you can visit the html v
 
 
 
-<img src="man/figures/Rplot_bicc.png" width="147" height="170" align="center"/>
+<img src="man/figures/Rplot_bicc.png" width="800" height="600" align="center"/>
 
 ```r
 library(BRVM)
