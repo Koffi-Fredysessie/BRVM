@@ -65,6 +65,7 @@ remotes::install_github("Koffi-Fredysessie/BRVM")
 Since the size of the readme is huge due to the charts, you can visit the html version of the readme on [RPubs](https://rpubs.com/Fredysessie/Readme_BRVM_Stock)
 
 
+<iframe src=" https://github.com/Koffi-Fredysessie/BRVM/g/blob/main/man/figures/Bicc_ohcl.html"></iframe>
 
 ```r
 library(BRVM)
