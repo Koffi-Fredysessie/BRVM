@@ -2169,7 +2169,7 @@ chart <- BRVM_plot("BICC") # The default colors for the up and down are green an
 # You can specify your color like 
 # `BRVM_plot("boas", up.col = "blue", down.col = "pink")` for example
 ```
-<iframe src="man/figures/Bicc_ohcl.html" width="100%" height="500"></iframe>
+<iframe src="https://github.com/Koffi-Fredysessie/BRVM/blob/main/man/figures/Bicc_ohcl.html" width="100%" height="500"></iframe>
 
 
 ```r
@@ -2180,7 +2180,7 @@ BRVM_plot(c("BICC","ETIT", "BOAM"))
 #> [1] "BICC" "ETIT" "BOAM"
 ```
 
-<iframe src="man/figures/tickers_graph.html" width="100%" height="500"></iframe>
+<iframe src="https://github.com/Koffi-Fredysessie/BRVM/blob/main/man/figures/tickers_graph.html" width="100%" height="500"></iframe>
 
 ## The **BRVM_company_info("ticker")** function
 
