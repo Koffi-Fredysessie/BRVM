@@ -2184,8 +2184,10 @@ chart1 <- BRVM_plot(c("BICC","ETIT", "BOAM"))
 
 <div align="center">
 
-https://github.com/Koffi-Fredysessie/BRVM/blob/main/man/figures/OHCL_Bicc_chart_new.mp4
-  
+```ruby
+[![Movie Title](https://github.com/Koffi-Fredysessie/BRVM/blob/main/man/figures/OHCL_Bicc_chart_new.mp4)]
+```
+
 https://github.com/Koffi-Fredysessie/BRVM/tree/main/man/figures/Bicc_chart.gif
 
 <img src="man/figures/Bicc_chart.gif" width="100%" height="500" align="center"/>
