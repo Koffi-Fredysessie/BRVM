@@ -2172,31 +2172,27 @@ chart <- BRVM_plot("BICC") # The default colors for the up and down are green an
 # You can specify your color like 
 # `BRVM_plot("boas", up.col = "blue", down.col = "pink")` for example
 
-
 #It is also possible to plot stock data chart for more than one ticker
 #Let's plot BICC, ETIT and BOAM stock data
 
+```
+
+
+
+<div align="center"> 
+  
+<img src="man/figures/OHCL_Bicc_chart.gif" width="100%" height="100%" align="center"/>
+
+</div>
+
+
+```r
 chart1 <- BRVM_plot(c("BICC","ETIT", "BOAM"))
 #> [1] "BICC" "ETIT" "BOAM"
 
 #chart1
 ```
 
-<div align="center">
-
-```bash
-<video width="320" height="240" controls>
-  <source src="https://github.com/Koffi-Fredysessie/BRVM/blob/main/man/figures/OHCL_Bicc_chart_new.mp4" type="video/mp4">
-</video>
-```
-
-https://github.com/Koffi-Fredysessie/BRVM/tree/main/man/figures/Bicc_chart.gif
-
-<img src="man/figures/OHCL_Bicc_chart.gif" width="100%" height="100%" align="center"/>
-
-<img src="man/figures/Bicc_chart.png" width="100%" height="500" align="center"/>  
-
-</div>
 
 
 
