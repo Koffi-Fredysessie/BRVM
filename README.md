@@ -2172,12 +2172,7 @@ chart <- BRVM_plot("BICC") # The default colors for the up and down are green an
 # You can specify your color like 
 # `BRVM_plot("boas", up.col = "blue", down.col = "pink")` for example
 
-#It is also possible to plot stock data chart for more than one ticker
-#Let's plot BICC, ETIT and BOAM stock data
-
 ```
-
-
 
 <div align="center"> 
   
@@ -2185,15 +2180,21 @@ chart <- BRVM_plot("BICC") # The default colors for the up and down are green an
 
 </div>
 
-
 ```r
+#It is also possible to plot stock data chart for more than one ticker
+#Let's plot BICC, ETIT and BOAM stock data
+
 chart1 <- BRVM_plot(c("BICC","ETIT", "BOAM"))
 #> [1] "BICC" "ETIT" "BOAM"
 
 #chart1
 ```
 
+<div align="center"> 
 
+<img src="man/figures/Tickers_line_chart.gif" width="100%" height="100%" align="center"/>
+
+</div>
 
 
 ## The **BRVM_company_info("ticker")** function
