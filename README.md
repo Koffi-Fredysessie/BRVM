@@ -2269,7 +2269,24 @@ capit_
 ```
 
 ```
-#> [1] "Make sure you have an active internet connection"
+# A tibble: 47 × 7
+# Symbol Name                  Numbe…¹ Daily…² Float…³ Globa…⁴ Globa…⁵
+# <chr>  <chr>                 <chr>   <chr>   <chr>   <chr>   <chr>  
+#> 1 ABJC   SERVAIR ABIDJAN  COT… 10 912… 1 300   2 826 … 14 185… 0.19   
+#> 2 BICC   BICI COTE D'IVOIRE    16 666… 6 300   34 138… 105 00… 1.39   
+#> 3 BNBC   BERNABE COTE D'IVOIRE 6 624 … 1 845   4 267 … 12 221… 0.16   
+#> 4 BOAB   BANK OF AFRICA BENIN  20 280… 6 250   57 323… 126 75… 1.68   
+#> 5 BOABF  BANK OF AFRICA BURKI… 22 000… 5 700   36 496… 125 40… 1.66   
+#> 6 BOAC   BANK OF AFRICA COTE … 20 000… 5 200   28 179… 104 00… 1.38   
+#> 7 BOAM   BANK OF AFRICA MALI   18 300… 1 295   4 290 … 23 698… 0.31   
+#> 8 BOAN   BANK OF AFRICA NIGER  13 000… 6 170   32 476… 80 210… 1.06   
+#> 9 BOAS   BANK OF AFRICA SENEG… 24 000… 2 265   16 353… 54 360… 0.72   
+#>10 CABC   SICABLE COTE D'IVOIRE 5 920 … 1 000   2 897 … 5 920 … 0.08   
+# … with 37 more rows, and abbreviated variable names
+#   ¹​`Number of shares`, ²​`Daily price`, ³​`Floating Capitalization`,
+#   ⁴​`Global capitalization`, ⁵​`Global capitalization (%)`
+
+
 ```
 
 <table class="table table-striped" style="margin-left: auto; margin-right: auto;">
