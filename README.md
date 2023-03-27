@@ -2169,9 +2169,6 @@ chart <- BRVM_plot("BICC") # The default colors for the up and down are green an
 #> [1] "BICC"
 #chart
 
-# You can specify your color like 
-# `BRVM_plot("boas", up.col = "blue", down.col = "pink")` for example
-
 ```
 
 <div align="center"> 
@@ -2196,6 +2193,9 @@ chart1 <- BRVM_plot(c("BICC","ETIT", "BOAM"))
 
 </div>
 
+
+> - `BRVM_plot` : For one ticker, you can also specify your color like 
+* `BRVM_plot("boas", up.col = "blue", down.col = "pink")` for example
 
 ## The **BRVM_company_info("ticker")** function
 
