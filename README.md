@@ -2265,7 +2265,7 @@ inform
 
 ```r
 capit_ <- BRVM_cap()
-#capit_
+capit_
 ```
 
 ```
@@ -2287,18 +2287,6 @@ capit_ <- BRVM_cap()
 #   ⁴​`Global capitalization`, ⁵​`Global capitalization (%)`
 ```
 
-<table class="table table-striped" style="margin-left: auto; margin-right: auto;">
- <thead>
-  <tr>
-   <th style="text-align:left;"> x </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> Make sure you have an active internet connection </td>
-  </tr>
-</tbody>
-</table>
 
 > - **BRVM_company_rank()** : returns companies rank from the BRVM Bourse exchange according to their daily change (variation).
 
