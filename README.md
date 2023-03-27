@@ -2265,7 +2265,7 @@ inform
 
 ```r
 capit_ <- BRVM_cap()
-capit_
+#capit_
 ```
 
 ```
