@@ -2192,7 +2192,7 @@ chart1 <- BRVM_plot(c("BICC","ETIT", "BOAM"))
 
 https://github.com/Koffi-Fredysessie/BRVM/tree/main/man/figures/Bicc_chart.gif
 
-<img src="man/figures/OHCL_Bicc_chart.gif" width="100%" height="500" align="center"/>
+<img src="man/figures/OHCL_Bicc_chart.gif" width="100%" height="100%" align="center"/>
 
 <img src="man/figures/Bicc_chart.png" width="100%" height="500" align="center"/>  
 
