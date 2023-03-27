@@ -2176,7 +2176,7 @@ chart <- BRVM_plot("BICC") # The default colors for the up and down are green an
 
 <div align="center"> 
   
-<img src="man/figures/OHCL_Bicc_chart.gif" width="100%" height="500" align="center"/>
+<img src="man/figures/OHCL_Bicc_chart.gif" width="100%" height="450" align="center"/>
 
 </div>
 
@@ -2192,7 +2192,7 @@ chart1 <- BRVM_plot(c("BICC","ETIT", "BOAM"))
 
 <div align="center"> 
 
-<img src="man/figures/Tickers_line_chart.gif" width="100%" height="500" align="center"/>
+<img src="man/figures/Tickers_line_chart.gif" width="100%" height="450" align="center"/>
 
 </div>
 
