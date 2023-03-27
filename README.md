@@ -2271,7 +2271,7 @@ capit_
 ```
 # A tibble: 47 × 7
 # Symbol Name                  Numbe…¹ Daily…² Float…³ Globa…⁴ Globa…⁵
-# <chr>  <chr>                 <chr>   <chr>   <chr>   <chr>   <chr>  
+# <chr>  <chr>                    <chr>   <chr>   <chr>   <chr>   <chr>  
 #> 1 ABJC   SERVAIR ABIDJAN  COT… 10 912… 1 300   2 826 … 14 185… 0.19   
 #> 2 BICC   BICI COTE D'IVOIRE    16 666… 6 300   34 138… 105 00… 1.39   
 #> 3 BNBC   BERNABE COTE D'IVOIRE 6 624 … 1 845   4 267 … 12 221… 0.16   
@@ -2285,8 +2285,6 @@ capit_
 # … with 37 more rows, and abbreviated variable names
 #   ¹​`Number of shares`, ²​`Daily price`, ³​`Floating Capitalization`,
 #   ⁴​`Global capitalization`, ⁵​`Global capitalization (%)`
-
-
 ```
 
 <table class="table table-striped" style="margin-left: auto; margin-right: auto;">
