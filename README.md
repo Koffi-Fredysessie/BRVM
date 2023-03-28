@@ -2266,9 +2266,6 @@ inform
 ```r
 capit_ <- BRVM_cap()
 capit_
-```
-
-```
 # A tibble: 47 × 7
 # Symbol Name                  Numbe…¹ Daily…² Float…³ Globa…⁴ Globa…⁵
 # <chr>  <chr>                    <chr>   <chr>   <chr>   <chr>   <chr>  
