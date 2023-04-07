@@ -64,6 +64,7 @@ Other Data Retrieval:
 \code{\link{company_cap}()},
 \code{\link{company_country}()},
 \code{\link{company_nbrank}()},
+\code{\link{company_sector}()},
 \code{\link{company_traded_val}()}
 
 Other BRVM: 
@@ -81,6 +82,7 @@ Other BRVM:
 \code{\link{company_cap}()},
 \code{\link{company_country}()},
 \code{\link{company_nbrank}()},
+\code{\link{company_sector}()},
 \code{\link{company_traded_val}()},
 \code{\link{normality_test}()},
 \code{\link{stationarity_test}()}

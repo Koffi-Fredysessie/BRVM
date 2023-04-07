@@ -36,7 +36,8 @@ Other Data Retrieval:
 \code{\link{BRVM_ticker_desc}()},
 \code{\link{company_cap}()},
 \code{\link{company_country}()},
-\code{\link{company_nbrank}()}
+\code{\link{company_nbrank}()},
+\code{\link{company_sector}()}
 
 Other BRVM: 
 \code{\link{BRVM.index}()},
@@ -54,6 +55,7 @@ Other BRVM:
 \code{\link{company_cap}()},
 \code{\link{company_country}()},
 \code{\link{company_nbrank}()},
+\code{\link{company_sector}()},
 \code{\link{normality_test}()},
 \code{\link{stationarity_test}()}
 }

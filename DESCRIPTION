@@ -22,6 +22,8 @@ Imports:
     goftest,
     stringr,
     tibble,
+    highcharter,
+    xts,
     formattable,
     timeDate,
     rvest,
