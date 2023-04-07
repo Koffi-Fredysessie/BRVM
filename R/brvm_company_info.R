@@ -42,26 +42,51 @@ BRVM_company_info<- function(ticker){
                   TOGO = c("ETIT", "ORGT"))
 
 
-  if (ticker %in% all_tickers){
-    # url<-paste0("https://www.sikafinance.com/marches/cotation_", ticker)
-    if (company_country(ticker) %in% names(Countries)){
-        if (company_country(ticker) == "BENIN") {
-            adn<- ".bj"
-        } else if (company_country(ticker) == "BURKINA FASO") {
-            adn<- ".bf"
-        } else if (company_country(ticker) == "IVORY COAST") {
-            adn<- ".ci"
-        } else if (company_country(ticker) == "MALI") {
-            adn<- ".ml"
-        } else if (company_country(ticker) == "NIGER") {
-            adn<- ".ne"
-        } else if (company_country(ticker) == "SENEGAL") {
-            adn<- ".sn"
-        } else if (company_country(ticker) == "TOGO") {
-            adn<- ".tg"
-        }
-        url <-paste0("https://www.sikafinance.com/marches/cotation_", ticker, adn)
-        # print(url)
+  # all_indexes <- c("BRVM10", "BRVMAG", "BRVMC", "BRVMAS", "BRVMDI",
+  #                  "BRVMFI", "BRVMIN", "BRVMSP", "BRVMTR", "BRVMPR",
+  #                  "BRVMPA", "BRVM30", "CAPIBRVM")
+
+  .indexes<-list("BRVM 10" = c("BRVM10"),
+                 AGRICULTURE = c("BRVMAG"),
+                 "BRVM COMPOSITE" =c("BRVMC"),
+                 "OTHER SECTOR" = c("BRVMAS"),
+                 DISTRIBUTION = c("BRVMDI"),
+                 FINANCE = c("BRVMFI"),
+                 INDUSTRY = c("BRVMIN"),
+                 "PUBLIC SERVICES" = c("BRVMSP"),
+                 TRANSPORT = c("BRVMTR"),
+                 "BRVM PRESTIGE" = c("BRVMPR"),
+                 "BRVM PRINCIPAL" = c("BRVMPA"),
+                 "BRVM 30" = c("BRVM30"),
+                 CAPITALISATION = c("CAPIBRVM"))
+
+
+  if (ticker %in% .indexes) {
+      adn_ticker <-  ticker
+      url <-paste0("https://www.sikafinance.com/marches/cotation_", adn_ticker)
+
+  } else if (ticker %in% all_tickers){
+      # url<-paste0("https://www.sikafinance.com/marches/cotation_", ticker)
+      if (company_country(ticker) %in% names(Countries)){
+          if (company_country(ticker) == "BENIN") {
+              adn<- ".bj"
+          } else if (company_country(ticker) == "BURKINA FASO") {
+              adn<- ".bf"
+          } else if (company_country(ticker) == "IVORY COAST") {
+              adn<- ".ci"
+          } else if (company_country(ticker) == "MALI") {
+              adn<- ".ml"
+          } else if (company_country(ticker) == "NIGER") {
+              adn<- ".ne"
+          } else if (company_country(ticker) == "SENEGAL") {
+              adn<- ".sn"
+          } else if (company_country(ticker) == "TOGO") {
+              adn<- ".tg"
+          }
+          # adn_ticker <- paste0(ticker, adn)
+          # url <-paste0("https://www.sikafinance.com/marches/cotation_", adn_ticker)
+          url <-paste0("https://www.sikafinance.com/marches/cotation_", ticker, adn)
+          # print(url)
     } else {
         print(paste0("Be sure that ", ticker, " belong's to BRVM stock market"))
     }
