@@ -30,7 +30,8 @@
 #'@importFrom rlang abort global_env
 #'@importFrom stringr str_sub
 #'
-#' @examples \dontrun{
+#' @examples
+#'
 #' library(lubridate)
 #' library(rlang)
 #' library(httr2)
@@ -39,7 +40,8 @@
 #'
 #' symbols <- c("BiCc","XOM","SlbC")
 #' data_tbl <- BRVM_get(.symbol = symbols)
-#' data_tbl}
+#' data_tbl
+#'
 #'
 #' @return
 #' A tibble

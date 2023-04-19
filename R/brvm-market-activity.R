@@ -1,21 +1,23 @@
 #' BRVM MARKET ACTIVITIES
 #'
-#' @description It receives no argument and returns informations about BRVM market activities 
+#' @description It receives no argument and returns informations about BRVM market activities
 #'
 #' @family Data Retrieval
 #' @family BRVM
-#' 
+#'
 #' @author Koffi Frederic SESSIE
-#' 
+#'
 #' @seealso \url{https://www.brvm.org/en/summary}
-#' 
+#'
 #' @return A tibble
-#' 
+#'
 #' @export
 #'
 #' @examples
-#' \dontrun{BRVM_market_activity()}
-#' 
+#'
+#' BRVM_market_activity()
+#'
+#'
 BRVM_market_activity <- function(){
   tryCatch(
     {
@@ -40,5 +42,5 @@ BRVM_market_activity <- function(){
       print("Make sure you have an active internet connection")
     }
   )
-  
+
 }

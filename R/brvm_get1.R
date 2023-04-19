@@ -28,7 +28,7 @@
 #'@importFrom stringr str_sub
 #'
 #' @examples
-#' \dontrun{
+#'
 #'
 #' library(lubridate)
 #' library(rlang)
@@ -56,7 +56,7 @@
 #'
 #' BRVM_get1(c("brvmtr", "BiCc", "BOAS"), Period = 365 ) # To get yearly data
 #'
-#'}
+#'
 #' @return
 #' A tibble
 #'

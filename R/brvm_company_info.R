@@ -2,7 +2,7 @@
 #'
 #' @author Koffi Frederic SESSIE
 #'
-#' @description It receives the ticker of a company listed on the BRVM stock exchange,
+#' @description It receives the ticker of a company or index listed on the BRVM stock exchange,
 #' Turn to  upper case the input by using `toupper()` and returns informations about the company's RSI, Beta, Closing price, etc. .
 #'
 #' @seealso \url{https://www.sikafinance.com}
@@ -14,9 +14,11 @@
 #'
 #' @importFrom rvest html_elements read_html
 #'
-#' @examples \dontrun{
+#' @examples
 #' BRVM_company_info("BOAS")
-#' BRVM_company_info("BoaM")}
+#' BRVM_company_info("BoaM")
+#' BRVM_company_info("BRVMAG")
+#'
 #'
 BRVM_company_info<- function(ticker){
   ticker<-toupper(ticker)

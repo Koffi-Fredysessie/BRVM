@@ -15,11 +15,12 @@
 #' @importFrom rvest html_elements html_table read_html
 #'
 #' @examples
-#' \dontrun{
+#'
 #' library(rvest)
 #'
 #' company_cap("BICC")
-#' company_cap("ontbf")}
+#' company_cap("ontbf")
+#'
 #'
 #' @export
 

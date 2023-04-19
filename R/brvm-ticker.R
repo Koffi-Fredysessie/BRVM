@@ -15,11 +15,12 @@
 #'
 #' @export
 #'
-#' @examples \dontrun{
+#' @examples
+#'
 #' BRVM_tickers()
 #' ticks <- BRVM_tickers()
 #' dput(ticks$Ticker) ## Returns the name of all tickers
-#' }
+#'
 
 
 BRVM_tickers <- function(){

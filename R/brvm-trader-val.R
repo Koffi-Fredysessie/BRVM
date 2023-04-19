@@ -1,19 +1,21 @@
 #' BRVM traded value - To get the traded volume value data of all companies listed on BRVM stock exchange
-#' 
+#'
 #' @family BRVM
-#' 
+#'
 #' @author Koffi Frederic SESSIE
-#' 
-#' @description This function will get the traded volume value data of all companies listed on the BVRM exchange. 
+#'
+#' @description This function will get the traded volume value data of all companies listed on the BVRM exchange.
 #' The function takes no parameter
-#'  
-#' @return 
+#'
+#' @return
 #' A tibble
 #' @export
 #'
 #' @examples
-#' \dontrun{BRVM_traded_val()}
-#' 
+#'
+#' BRVM_traded_val()
+#'
+#'
 
 BRVM_traded_val <- function(){
   tryCatch({

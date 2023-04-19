@@ -21,7 +21,8 @@
 #'@importFrom stringr str_sub
 #'@importFrom timeDate isWeekday
 #'
-#' @examples \dontrun{
+#' @examples
+#'
 #' library(httr)
 #' library(lubridate)
 #' library(rvest)
@@ -30,7 +31,8 @@
 #' library(stringr)
 #'
 #' BRVM_stock_market("2022-04-25")
-#' BRVM_stock_market("2021-03-25")}
+#' BRVM_stock_market("2021-03-25")
+#'
 #'
 
 BRVM_stock_market <- function(.weekday){

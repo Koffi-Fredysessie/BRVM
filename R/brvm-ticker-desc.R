@@ -16,7 +16,10 @@
 #'
 #' @description It receives no argument and returns informations about BRVM exchange companies.
 #'
-#' @examples \dontrun{BRVM_ticker_desc()}
+#' @examples
+#'
+#' BRVM_ticker_desc()
+#'
 #'
 #' @return A tibble
 #'
