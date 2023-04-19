@@ -14,7 +14,9 @@
 #' @importFrom rvest html_elements html_table read_html
 #'
 #' @examples
-#' \dontrun{BRVM_company_cap()}
+#'
+#' BRVM_company_cap()
+#'
 #'
 BRVM_company_cap <- function(){
   tryCatch({

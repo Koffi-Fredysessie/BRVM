@@ -15,9 +15,10 @@
 #'
 #' @export
 #'
-#' @examples \dontrun{
+#' @examples
 #' company_sector("BICC")
-#' company_sector("SNTS")}
+#' company_sector("SNTS")
+#'
 #'
 company_sector <- function(company){
 

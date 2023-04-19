@@ -1,20 +1,20 @@
 #' BRVM company url
 #'
 #' @description It receives the ticker name and return an URL
-#' 
+#'
 #' @family BRVM
 #' @author Koffi Frederic SESSIE
-#' 
+#'
 #' @param company is the name of the Ticker
 #'
 #' @return
 #' URL
-#' 
+#'
 #' @export
 #'
 #' @examples
-#' \dontrun{BRVM_company_url("BICC")}
-#' 
+#' BRVM_company_url("BICC")
+#'
 BRVM_company_url <- function(company){
   company<-toupper(company)
   if (company_country(company) == "BENIN") {

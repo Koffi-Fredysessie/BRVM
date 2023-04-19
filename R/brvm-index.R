@@ -17,9 +17,9 @@
 #' @importFrom stringr str_replace
 #'
 #' @examples
-#' \dontrun{
+#'
 #' BRVM_index()
-#' }
+#'
 #' @return
 #' A tibble
 #'

@@ -18,7 +18,9 @@
 #' @importFrom tibble as.tibble
 #'
 #' @examples
-#' \dontrun{BRVM_cap()}
+#'
+#' BRVM_cap()
+#'
 #'
 
 BRVM_cap <- function(){

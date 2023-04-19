@@ -14,8 +14,10 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{company_country("BICC")
-#' company_country("SNTS")}
+#'
+#' company_country("BICC")
+#' company_country("SNTS")
+#'
 #'
 company_country <- function(company){
 

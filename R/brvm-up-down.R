@@ -17,7 +17,9 @@
 #' 'Up' or 'Down'.
 #'
 #' @examples
-#' \dontrun{BRVM_direction("Up")}
+#'
+#' BRVM_direction("Up")
+#'
 #'
 #' @return
 #' A tibble

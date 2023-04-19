@@ -15,7 +15,7 @@
 #' @param .sectors A vector of sectors you wish to have returned.
 #'
 #' @examples
-#' \dontrun{
+#'
 #' library(stringr)
 #' library(rlang)
 #' library(xml2)
@@ -26,7 +26,8 @@
 #'             "distribution", 25)
 #' BRVM_bySector(.sectors = sectors)
 #' BRVM_bySector(.sectors = "All")
-#' BRVM_bySector(.sectors = c("Other", "Agriculture"))}
+#' BRVM_bySector(.sectors = c("Other", "Agriculture"))
+#'
 #'
 #' @return
 #' A tibble

@@ -1,23 +1,25 @@
 #' Brvm Company traded volume value - To know the traded volume value of each company
-#' 
+#'
 #' @family Data Retrieval
 #'
 #' @family BRVM
 #'
 #' @author Koffi Frederic SESSIE
-#' 
-#' @description It receives one company listed on the BRVM stock exchange, 
+#'
+#' @description It receives one company listed on the BRVM stock exchange,
 #' Turn to  upper case the input by using `toupper()`  and returns informations about the company's traded value
-#' 
+#'
 #' @param company The name of company listed on the BRVM stock exchange
 #'
 #' @return "character"
 #' @export
 #'
 #' @examples
-#' \dontrun{company_traded_val("ETIT")
-#' company_traded_val("ontbf")}
-#' 
+#'
+#' company_traded_val("ETIT")
+#' company_traded_val("ontbf")
+#'
+#'
 company_traded_val<- function(company){
   company<-toupper(company)
   tryCatch({
@@ -30,9 +32,9 @@ company_traded_val<- function(company){
         trade_value<-paste0(brvm_trade_all[elm,4], "")
       }
     }
-    
+
     return(trade_value)
-    
+
   },
   error = function(e) {
     print("Make sure you have an active internet connection")

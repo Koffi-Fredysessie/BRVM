@@ -9,15 +9,17 @@
 #'
 #' @seealso \url{https://www.brvm.org/en/cours-actions/0}
 #'
-#' @details This function will get the rank of the companies listed on the BVRM exchange through the Rich Bourse site. 
+#' @details This function will get the rank of the companies listed on the BVRM exchange through the Rich Bourse site.
 #' The function takes no parameter
 #'
 #' @description This function returns companies rank from the BRVM Bourse exchange according to their daily change (variation).
 #'
 #' @examples
-#' \dontrun{BRVM_company_rank()
+#'
+#' BRVM_company_rank()
 #' comp.rank<-BRVM_company_rank()
-#' comp.rank%>%arrange(desc(percent_change))}
+#' comp.rank%>%arrange(desc(percent_change))
+#'
 #'
 #' @return
 #' "tbl_df"     "tbl"        "data.frame"

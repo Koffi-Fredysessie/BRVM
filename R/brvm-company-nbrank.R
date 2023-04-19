@@ -10,7 +10,7 @@
 #' @seealso \url{https://www.brvm.org/en/cours-actions/0}
 #' @seealso `BRVM_company_rank()`
 #'
-#' @details This function will get the rank of one companies listed on the BVRM exchange through the Rich Bourse site. 
+#' @details This function will get the rank of one companies listed on the BVRM exchange through the Rich Bourse site.
 #' The function takes as parameter the name of company listed on BRVM
 #'
 #' @description This function returns the given company rank from the BRVM stock exchange according to their daily change (variation).
@@ -22,8 +22,10 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{company_nbrank("BICC")
-#' company_nbrank("SNTS")}
+#'
+#' company_nbrank("BICC")
+#' company_nbrank("SNTS")
+#'
 
 company_nbrank<-function(.company){
   .company<-toupper(.company)
@@ -40,14 +42,14 @@ company_nbrank<-function(.company){
       the_rank<- paste0(the_rank, " nd")
     } else if (the_rank!= 13 & substr(the_rank, nchar(the_rank),nchar(the_rank)) == 3){
       the_rank<- paste0(the_rank, " rd")
-    } else { 
+    } else {
       the_rank<- paste0(the_rank, " th")
     }
     the_rank<-paste0(.company," is the ", the_rank)
-    
-    
+
+
     return(the_rank)
-    
+
   },
   error = function(e) {
     print("Make sure you have an active internet connection")
@@ -55,6 +57,6 @@ company_nbrank<-function(.company){
   warning = function(w) {
     print("Make sure you have an active internet connection")
   })
-  
-  
+
+
 }
