@@ -16,7 +16,7 @@ URL
 It receives the ticker name and return an URL
 }
 \examples{
-\dontrun{BRVM_company_url("BICC")}
+BRVM_company_url("BICC")
 
 }
 \seealso{

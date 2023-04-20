@@ -13,11 +13,11 @@ A tibble
 It receives no argument and returns two informations about BRVM exchange companies (ticker and company name).
 }
 \examples{
-\dontrun{
+
 BRVM_tickers()
 ticks <- BRVM_tickers()
 dput(ticks$Ticker) ## Returns the name of all tickers
-}
+
 }
 \seealso{
 \code{BRVM_ticker_desc()}

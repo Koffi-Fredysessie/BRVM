@@ -29,7 +29,8 @@ be in ymd format "YYYY-MM-DD" or "YYYY/MM/DD"}
 Give a set of indexes and get it/their stock data. Use BRVM.index() function to know all available indexes
 }
 \examples{
-\dontrun{BRVM_index_stock(.ticker = "BRVMAG", from = "2010-01-04", to = "2022-01-04")
+
+BRVM_index_stock(.ticker = "BRVMAG", from = "2010-01-04", to = "2022-01-04")
 
 BRVM_index_stock("BRVM10", Period = 0, from = "2010-01-04", to = "2022-01-04"  ) #To get daily data
 
@@ -41,7 +42,8 @@ BRVM_index_stock("BRVMAG", Period = 30 ) # To get monthly data
 
 BRVM_index_stock("BRVM10", Period = 91 ) # To get quaterly data
 
-BRVM_index_stock("brvmtr", Period = 365 ) # To get yearly data}
+BRVM_index_stock("brvmtr", Period = 365 ) # To get yearly data
+
 }
 \seealso{
 \code{BRVM_get()}, \code{BRVM_get1()}

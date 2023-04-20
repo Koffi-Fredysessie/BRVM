@@ -17,9 +17,11 @@ This function will get the rank of the companies listed on the BVRM exchange thr
 The function takes no parameter
 }
 \examples{
-\dontrun{BRVM_company_rank()
+
+BRVM_company_rank()
 comp.rank<-BRVM_company_rank()
-comp.rank\%>\%arrange(desc(percent_change))}
+comp.rank\%>\%arrange(desc(percent_change))
+
 
 }
 \seealso{

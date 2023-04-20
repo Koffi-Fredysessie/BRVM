@@ -16,7 +16,9 @@ It receives no argument and returns informations about BRVM exchange companies.
 This function gives many informations about each ticker, his full name, sector and his country
 }
 \examples{
-\dontrun{BRVM_ticker_desc()}
+
+BRVM_ticker_desc()
+
 
 }
 \seealso{

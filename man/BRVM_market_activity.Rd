@@ -13,7 +13,9 @@ A tibble
 It receives no argument and returns informations about BRVM market activities
 }
 \examples{
-\dontrun{BRVM_market_activity()}
+
+BRVM_market_activity()
+
 
 }
 \seealso{

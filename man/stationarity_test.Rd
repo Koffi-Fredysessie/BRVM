@@ -18,10 +18,12 @@ a number that indicates the P-value of the stationarity test
 Performs different types of stationarity test.
 }
 \examples{
-\dontrun{
+library(tseries)
+
 #' y <-ts(c(5353.08,5409.24,5315.57,5270.53, # one and a half week stock index
 5211.66,NA,NA,5160.80,5172.37))  # data including a weekend
-stationarity_test(y, "Box-Pierce and Ljung-Box")}
+stationarity_test(y, "Box-Pierce and Ljung-Box")
+
 
 }
 \seealso{

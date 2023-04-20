@@ -14,7 +14,9 @@ This function will get the traded volume value data of all companies listed on t
 The function takes no parameter
 }
 \examples{
-\dontrun{BRVM_traded_val()}
+
+BRVM_traded_val()
+
 
 }
 \seealso{

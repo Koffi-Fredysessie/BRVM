@@ -17,8 +17,10 @@ It receives one company listed on the BRVM stock exchange,
 Turn to  upper case the input by using \code{toupper()}  and returns informations about the company's traded value
 }
 \examples{
-\dontrun{company_traded_val("ETIT")
-company_traded_val("ontbf")}
+
+company_traded_val("ETIT")
+company_traded_val("ontbf")
+
 
 }
 \seealso{

@@ -32,7 +32,7 @@ An interactive chart
 This function will get Ticker(s) data and then plot it.
 }
 \examples{
-\dontrun{
+
 library(highcharter)
 library(lubridate)
 library(rlang)
@@ -43,7 +43,8 @@ library(xts)
 
 BRVM_plot("BICC")
 BRVM_plot("BICC", up.col = "blue", down.col = "pink")
-BRVM_plot(c("BICC","ETIT", "BOAM"))}
+BRVM_plot(c("BICC","ETIT", "BOAM"))
+
 }
 \seealso{
 \code{BRVM_ticker_desc()}

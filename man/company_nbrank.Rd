@@ -21,8 +21,10 @@ This function will get the rank of one companies listed on the BVRM exchange thr
 The function takes as parameter the name of company listed on BRVM
 }
 \examples{
-\dontrun{company_nbrank("BICC")
-company_nbrank("SNTS")}
+
+company_nbrank("BICC")
+company_nbrank("SNTS")
+
 }
 \seealso{
 \url{https://www.brvm.org/en/cours-actions/0}

@@ -20,7 +20,7 @@ This function will take in a vector of sectors provided by the end
 user and return a tibble.
 }
 \examples{
-\dontrun{
+
 library(stringr)
 library(rlang)
 library(xml2)
@@ -31,7 +31,8 @@ sectors <- c("Industry","Administration","PUblic service", "AUtr", "FINANCE",
             "distribution", 25)
 BRVM_bySector(.sectors = sectors)
 BRVM_bySector(.sectors = "All")
-BRVM_bySector(.sectors = c("Other", "Agriculture"))}
+BRVM_bySector(.sectors = c("Other", "Agriculture"))
+
 
 }
 \seealso{

@@ -29,7 +29,7 @@ next make sure that the ticker passed is inside of a google spreadsheet of
 allowed tickers.
 }
 \examples{
-\dontrun{
+
 library(lubridate)
 library(rlang)
 library(httr2)
@@ -38,7 +38,8 @@ library(stringr)
 
 symbols <- c("BiCc","XOM","SlbC")
 data_tbl <- BRVM_get(.symbol = symbols)
-data_tbl}
+data_tbl
+
 
 }
 \seealso{

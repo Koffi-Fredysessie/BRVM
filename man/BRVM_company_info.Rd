@@ -13,13 +13,14 @@ BRVM_company_info(ticker)
 A tibble
 }
 \description{
-It receives the ticker of a company listed on the BRVM stock exchange,
+It receives the ticker of a company or index listed on the BRVM stock exchange,
 Turn to  upper case the input by using \code{toupper()} and returns informations about the company's RSI, Beta, Closing price, etc. .
 }
 \examples{
-\dontrun{
 BRVM_company_info("BOAS")
-BRVM_company_info("BoaM")}
+BRVM_company_info("BoaM")
+BRVM_company_info("BRVMAG")
+
 
 }
 \seealso{
