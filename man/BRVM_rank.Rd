@@ -19,9 +19,10 @@ It receives "top" or "flop" and a number 'n' and
 returns table of companies classification
 }
 \examples{
-\dontrun{
+
 BRVM_rank("top", 15)
-BRVM_rank("flop", 5)}
+BRVM_rank("flop", 5)
+
 }
 \author{
 Koffi Frederic SESSIE

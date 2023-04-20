@@ -17,11 +17,12 @@ It receives one company listed on the BRVM stock exchange,
 Turn to  upper case your input by using \code{toupper()}  and returns informations about the company's capitalization
 }
 \examples{
-\dontrun{
+
 library(rvest)
 
 company_cap("BICC")
-company_cap("ontbf")}
+company_cap("ontbf")
+
 
 }
 \seealso{

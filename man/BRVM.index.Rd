@@ -13,7 +13,9 @@ A character
 It receives no argument and returns BRVM's indexes informations.
 }
 \examples{
-\dontrun{BRVM.index()}
+
+BRVM.index()
+
 
 }
 \seealso{

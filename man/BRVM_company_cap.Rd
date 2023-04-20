@@ -14,7 +14,9 @@ This function will get the capitalization value data of all companies listed on 
 The function takes no parameter
 }
 \examples{
-\dontrun{BRVM_company_cap()}
+
+BRVM_company_cap()
+
 
 }
 \seealso{

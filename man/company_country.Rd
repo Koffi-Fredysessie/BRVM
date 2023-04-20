@@ -17,8 +17,10 @@ It receives one company listed on the BRVM stock exchange,
 Turn to  upper case your input by using \code{toupper()}  and returns informations about the company's country.
 }
 \examples{
-\dontrun{company_country("BICC")
-company_country("SNTS")}
+
+company_country("BICC")
+company_country("SNTS")
+
 
 }
 \seealso{

@@ -13,7 +13,9 @@ A tibble
 It receives no argument and returns informations about BRVM capitalization
 }
 \examples{
-\dontrun{BRVM_cap()}
+
+BRVM_cap()
+
 
 }
 \seealso{
