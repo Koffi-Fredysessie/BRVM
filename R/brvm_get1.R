@@ -40,9 +40,11 @@
 #' data_tbl <- BRVM_get1(ticker = symbols)
 #' data_tbl
 #'
-#'#From three year ago to the present
+#' #From three year ago to the present
+#'
 #' BRVM_get1("ALL INDEXES", from = Sys.Date() - 252*3, to = Sys.Date())
-#' BRVM_get1(.ticker = "BRVMAG", from = "2010-01-04", to = "2022-01-04")
+#'
+#' BRVM_get1(ticker = "BRVMAG", from = "2010-01-04", to = "2022-01-04")
 #'
 #' BRVM_get1("ALL", Period = 0, from = "2010-01-04", to = "2022-01-04"  ) #To get daily data
 #'

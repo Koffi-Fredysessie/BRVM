@@ -20,7 +20,8 @@ The function takes no parameter
 
 BRVM_company_rank()
 comp.rank<-BRVM_company_rank()
-comp.rank\%>\%arrange(desc(percent_change))
+comp.rank<-comp.rank\%>\%dplyr::arrange(desc(percent_change))
+comp.rank
 
 
 }

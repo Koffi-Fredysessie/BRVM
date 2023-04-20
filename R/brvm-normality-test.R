@@ -14,6 +14,11 @@
 #' @return a number that indicates the P-value of the normality test
 #' @export
 #'
+#' @importFrom goftest ad.test cvm.test
+#' @importFrom tseries jarque.bera.test
+#' @importFrom nortest sf.test lillie.test pearson.test
+#' @importFrom fBasics dagoTest
+#'
 #' @examples
 #'library(goftest)
 #'library(tseries)
