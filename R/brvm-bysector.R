@@ -14,6 +14,7 @@
 #'
 #' @param .sectors A vector of sectors you wish to have returned.
 #'
+#' @importFrom xml2 read_html
 #' @examples
 #'
 #' library(stringr)

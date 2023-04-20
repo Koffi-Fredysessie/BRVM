@@ -25,6 +25,7 @@ Imports:
     fBasics,
     stringr,
     tibble,
+    xml2,
     highcharter,
     xts,
     formattable,
