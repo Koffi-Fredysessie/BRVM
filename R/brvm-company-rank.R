@@ -18,7 +18,8 @@
 #'
 #' BRVM_company_rank()
 #' comp.rank<-BRVM_company_rank()
-#' comp.rank<-comp.rank%>%dplyr::arrange(desc(percent_change))
+#' comp.rank<-comp.rank%>%
+#' dplyr::arrange(desc(percent_change))
 #' comp.rank
 #'
 #'
