@@ -40,28 +40,39 @@ BRVM_direction <- function(.up_or_down = "Up") {
     } else {
         # get data ----
         quotes_tbl <- gsheet::gsheet2tbl("https://docs.google.com/spreadsheets/d/1rdjGjlQg7cUzWAEJFikrxOnisk-yQQx-n652sJUL-qc/edit#gid=0")
-        quotes_tbl$`Variation (%)` <- gsub(",", ".", quotes_tbl[,7])
-        quotes_tbl$`Variation (%)` <- as.numeric(quotes_tbl$`Variation (%)`)
+
+        names(quotes_tbl) <- c("Symbol", "Name", "Volume",
+                               "Previous price  (FCFA)", "Opening price (FCFA)",
+                               "Closing price  (FCFA)", "Change_percent")
+
+
+        quotes_tbl$Change_percent <- gsub(",", ".", quotes_tbl$Change_percent)
+        quotes_tbl$Change_percent <- as.numeric(quotes_tbl$Change_percent)
         quotes_tbl <- quotes_tbl[-c(3:6)]
 
         if (up_down == "up") {
-            ret <- dplyr::arrange(quotes_tbl, dplyr::desc(quotes_tbl$`Variation (%)`)) %>%
+            ret <- dplyr::arrange(quotes_tbl, dplyr::desc(quotes_tbl$Change_percent)) %>%
                 dplyr::slice(1:nrow(quotes_tbl))
             ret <- dplyr::as_tibble(ret)
+            names(ret) <- c("Symbole", "Nom", "Variation in percentage")
+            # Return data ----
+
+            return(ret)
         } else if (up_down == "down") {
-            quotes_tbl$rank <- rank(quotes_tbl$`Variation (%)`)
+            quotes_tbl$rank <- rank(quotes_tbl$Change_percent)
             quotes_tbl <- quotes_tbl[order(quotes_tbl$rank), ]
             ret <- quotes_tbl %>%
                 dplyr::slice(1:nrow(quotes_tbl)) %>%
                 dplyr::select(-rank)
             ret <- dplyr::as_tibble(ret)
+            names(ret) <- c("Symbol", "Name", "Variation in percentage")
+            # Return data ----
+
+            return(ret)
+
+        } else{
+            print(paste0("'",up_down, "' is not correct! ","Choose 'Up' or 'Down' instead!"))
         }
 
-        # Return data ----
-        return(ret)
-
     }
-
-
-
 }
