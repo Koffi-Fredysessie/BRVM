@@ -30,7 +30,7 @@ tickers you input into all upper case by using \code{toupper()}
 }
 \examples{
 
-
+\dontrun{
 library(lubridate)
 library(rlang)
 library(httr2)
@@ -58,7 +58,7 @@ BRVM_get1("BRVMAG", Period = 30 ) # To get monthly data
 BRVM_get1("BRVMPR", Period = 91 ) # To get quaterly data
 
 BRVM_get1(c("brvmtr", "BiCc", "BOAS"), Period = 365 ) # To get yearly data
-
+}
 
 }
 \seealso{

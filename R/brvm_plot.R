@@ -27,7 +27,7 @@
 #' @importFrom highcharter highchart hc_title hc_add_series hc_add_yAxis hc_add_series hc_yAxis_multiples hc_colors hc_exporting
 #'
 #' @examples
-#'
+#'\dontrun{
 #' library(highcharter)
 #' library(lubridate)
 #' library(rlang)
@@ -37,9 +37,13 @@
 #' library(xts)
 #'
 #' BRVM_plot("BICC")
-#' BRVM_plot("BICC", up.col = "blue", down.col = "pink")
-#' BRVM_plot(c("BICC","ETIT", "BOAM"))
 #'
+#' # You can change the up and down colors as follow
+#' BRVM_plot("BICC", up.col = "blue", down.col = "pink")
+#'
+#' # Plot the closing price of a group of 3 tickers
+#' BRVM_plot(c("BICC","ETIT", "SNTS"))
+#'}
 
 BRVM_plot<- function(.company,
                      from = Sys.Date() - 365,

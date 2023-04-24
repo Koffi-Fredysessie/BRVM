@@ -29,7 +29,7 @@ y <-ts(c(5353.08,5409.24,5315.57,5270.53, 5211.66,NA,NA,5160.80,5172.37,5160.80,
 
 normality_test(y ,"Shapiro-Wilk")
 
-my_data <- BRVM_get("snts", .from = "2010-02-05", .to = "2022-02-05" )
+my_data <- BRVM_get("snts", .from = "2020-02-05", .to = "2022-02-05" )
 normality_test((my_data$Close), "Agostino")
 normality_test((my_data$Close[1:50]), "Jarque Bera")
 

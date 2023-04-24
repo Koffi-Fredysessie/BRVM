@@ -32,7 +32,7 @@ An interactive chart
 This function will get Ticker(s) data and then plot it.
 }
 \examples{
-
+\dontrun{
 library(highcharter)
 library(lubridate)
 library(rlang)
@@ -42,9 +42,13 @@ library(stringr)
 library(xts)
 
 BRVM_plot("BICC")
-BRVM_plot("BICC", up.col = "blue", down.col = "pink")
-BRVM_plot(c("BICC","ETIT", "BOAM"))
 
+# You can change the up and down colors as follow
+BRVM_plot("BICC", up.col = "blue", down.col = "pink")
+
+# Plot the closing price of a group of 3 tickers
+BRVM_plot(c("BICC","ETIT", "SNTS"))
+}
 }
 \seealso{
 \code{BRVM_ticker_desc()}

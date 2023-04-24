@@ -19,10 +19,10 @@
 #' @export
 #'
 #' @examples
+#'\dontrun{
+#' BRVM_index_stock(.ticker = "BRVMAG", from = "2018-01-04", to = "2022-01-04")
 #'
-#' BRVM_index_stock(.ticker = "BRVMAG", from = "2010-01-04", to = "2022-01-04")
-#'
-#' BRVM_index_stock("BRVM10", Period = 0, from = "2010-01-04", to = "2022-01-04"  ) #To get daily data
+#' BRVM_index_stock("BRVM10", Period = 0, from = "2021-01-04", to = "2022-01-04"  ) #To get daily data
 #'
 #' BRVM_index_stock("BrvmAS", Period = 1 ) # To get daily data for a whole year
 #'
@@ -33,7 +33,7 @@
 #' BRVM_index_stock("BRVM10", Period = 91 ) # To get quaterly data
 #'
 #' BRVM_index_stock("brvmtr", Period = 365 ) # To get yearly data
-#'
+#'}
 
 BRVM_index_stock <- function(.ticker ='BRVM10',
                              Period = 0,
