@@ -18,10 +18,10 @@
 #' @author Steven P. Sanderson II, MPH
 #'
 #' @examples
-#'
+#'\dontrun{
 #' BRVM_rank("top", 15)
 #' BRVM_rank("flop", 5)
-#'
+#'}
 #' @export
 
 BRVM_rank <-function(top_or_flop, n=10){
