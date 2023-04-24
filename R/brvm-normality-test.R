@@ -20,6 +20,7 @@
 #' @importFrom fBasics dagoTest
 #'
 #' @examples
+#' \dontrun{
 #'library(goftest)
 #'library(tseries)
 #'library(nortest)
@@ -34,7 +35,7 @@
 #' my_data <- BRVM_get("snts", .from = "2020-02-05", .to = "2022-02-05" )
 #' normality_test((my_data$Close), "Agostino")
 #' normality_test((my_data$Close[1:50]), "Jarque Bera")
-#'
+#' }
 #'
 normality_test <- function(x, type.test) {
   if (length(unique(x)) != 1) {
