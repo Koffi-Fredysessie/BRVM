@@ -17,7 +17,7 @@ A formatabble table
 This function receives as input a day of the week (working day) and returns the official quotation revews of that day.
 }
 \examples{
-
+\dontrun{
 library(httr)
 library(lubridate)
 library(rvest)
@@ -27,8 +27,7 @@ library(stringr)
 
 BRVM_stock_market("2022-04-25")
 BRVM_stock_market("2021-03-25")
-
-
+}
 }
 \seealso{
 Other Data Retrieval: 

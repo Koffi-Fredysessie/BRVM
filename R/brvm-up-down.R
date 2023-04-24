@@ -16,10 +16,9 @@
 #' @param .up_or_down This is a character string set to "Up" It can either be
 #' 'Up' or 'Down'.
 #'
-#' @examples
-#'
+#' @examples \dontrun{
 #' BRVM_direction("Up")
-#'
+#'}
 #'
 #' @return
 #' A tibble

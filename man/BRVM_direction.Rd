@@ -22,9 +22,9 @@ This function will get any n results for the top or flop ranking
 of the BRVM tickers.
 }
 \examples{
-
+\dontrun{
 BRVM_direction("Up")
-
+}
 
 }
 \author{

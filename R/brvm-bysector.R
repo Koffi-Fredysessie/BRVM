@@ -16,7 +16,7 @@
 #'
 #' @importFrom xml2 read_html
 #' @examples
-#'
+#'\dontrun{
 #' library(stringr)
 #' library(rlang)
 #' library(xml2)
@@ -28,7 +28,7 @@
 #' BRVM_bySector(.sectors = sectors)
 #' BRVM_bySector(.sectors = "All")
 #' BRVM_bySector(.sectors = c("Other", "Agriculture"))
-#'
+#'}
 #'
 #' @return
 #' A tibble

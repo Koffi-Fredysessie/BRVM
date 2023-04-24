@@ -22,7 +22,7 @@
 #'@importFrom timeDate isWeekday
 #'
 #' @examples
-#'
+#'\dontrun{
 #' library(httr)
 #' library(lubridate)
 #' library(rvest)
@@ -32,8 +32,7 @@
 #'
 #' BRVM_stock_market("2022-04-25")
 #' BRVM_stock_market("2021-03-25")
-#'
-#'
+#'}
 
 BRVM_stock_market <- function(.weekday){
   the_date <- lubridate::parse_date_time(.weekday, orders = "ymd")
