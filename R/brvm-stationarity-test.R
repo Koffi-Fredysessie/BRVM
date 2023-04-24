@@ -17,6 +17,7 @@
 #' @importFrom tseries kpss.test adf.test pp.test
 #'
 #' @examples
+#'
 #'library(tseries)
 #'
 #'# one and a half week stock index
