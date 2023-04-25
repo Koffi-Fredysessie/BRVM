@@ -10,7 +10,7 @@ Authors@R: c(
     person("Steven","Sanderson", role = "aut",
             email = "spsanderson@gmail.com")
             )
-Description: This package provides real-time access to data from the Regional Securities Exchange SA, commonly known as the 'BRVM' stock exchange. The goal is to facilitate data access for users of the R programming language. The package includes a variety of data that can be accessed by calling functions.
+Description: Provide real-time access to data from the Regional Securities Exchange SA, commonly known as the 'BRVM' stock exchange. The goal is to facilitate data access for users of the R programming language. The package includes a variety of data that can be accessed by calling functions.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
@@ -41,3 +41,4 @@ Suggests:
     roxygen2
 VignetteBuilder: knitr
 RoxygenNote: 7.2.3
+
