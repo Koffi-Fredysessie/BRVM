@@ -69,6 +69,12 @@ library(rvest)
 library(highcharter)
 library(htmlwidgets)
 ```
+You can install using CRAN version
+
+```{r, eval=FALSE}
+install.packages("BRVM")
+```
+
 
 You can install the development version of BRVM from [github](https://github.com/Koffi-Fredysessie/BRVM) with:
 
