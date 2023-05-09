@@ -20,7 +20,7 @@ This function will take in a vector of sectors provided by the end
 user and return a tibble.
 }
 \examples{
-\dontrun{
+\donttest{
 library(stringr)
 library(rlang)
 library(xml2)

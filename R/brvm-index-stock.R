@@ -19,7 +19,7 @@
 #' @export
 #'
 #' @examples
-#'\dontrun{
+#'\donttest{
 #' BRVM_index_stock(.ticker = "BRVMAG", from = "2018-01-04", to = "2022-01-04")
 #'
 #' BRVM_index_stock("BRVM10", Period = 0, from = "2021-01-04", to = "2022-01-04"  ) #To get daily data
@@ -189,7 +189,7 @@ BRVM_index_stock <- function(.ticker ='BRVM10',
                                 Low= mean(Low),
                                 Close= mean(Close)),
                     stock.data)
-            print(paste0("We obtained ",Tick,  " data from ",
+            message(paste0("We obtained ",Tick,  " data from ",
                          min(stock.data$Date),
                          " to ",
                          max(stock.data$Date)))
@@ -201,7 +201,7 @@ BRVM_index_stock <- function(.ticker ='BRVM10',
             index_stock <- rbind(index_stock, stock.data )
 
           } else {
-            print(paste0(Tick,"data aren't available between ",
+            message(paste0(Tick,"data aren't available between ",
                          first_date,
                          " and ",
                          end_date))
@@ -220,15 +220,15 @@ BRVM_index_stock <- function(.ticker ='BRVM10',
       }
 
       else {
-        print("Choose the best period between 0, 1, 5, 30, 91 and 365")
+        message("Choose the best period between 0, 1, 5, 30, 91 and 365")
       }
 
     },
     error = function(e) {
-      print("Make sure you have an active internet connection")
+      message("Make sure you have an active internet connection")
     },
     warning = function(w) {
-      print("Make sure you have an active internet connection")
+      message("Make sure you have an active internet connection")
     }
   )
 

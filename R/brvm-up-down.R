@@ -16,7 +16,7 @@
 #' @param .up_or_down This is a character string set to "Up" It can either be
 #' 'Up' or 'Down'.
 #'
-#' @examples \dontrun{
+#' @examples \donttest{
 #' BRVM_direction("Up")
 #'}
 #'
@@ -70,7 +70,7 @@ BRVM_direction <- function(.up_or_down = "Up") {
             return(ret)
 
         } else{
-            print(paste0("'",up_down, "' is not correct! ","Choose 'Up' or 'Down' instead!"))
+            message(paste0("'",up_down, "' is not correct! ","Choose 'Up' or 'Down' instead!"))
         }
 
     }

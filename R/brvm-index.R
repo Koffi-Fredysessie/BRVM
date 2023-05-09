@@ -57,10 +57,10 @@ BRVM_index <- function(){
       return(index)
     },
     error = function(e) {
-      print("Make sure you have an active internet connection")
+      message("Make sure you have an active internet connection")
     },
     warning = function(w) {
-      print("Make sure you have an active internet connection")
+      message("Make sure you have an active internet connection")
     }
   )
 

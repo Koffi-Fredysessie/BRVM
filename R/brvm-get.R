@@ -31,7 +31,7 @@
 #'@importFrom stringr str_sub
 #'
 #' @examples
-#'\dontrun{
+#'\donttest{
 #' library(lubridate)
 #' library(rlang)
 #' library(httr2)
@@ -197,14 +197,14 @@ BRVM_get <- function(.symbol, .from = Sys.Date() - 365, .to = Sys.Date() - 1) {
       } else {
         returns<- returns[, -7]
       }
-      print(symbol_vec)
+      message(symbol_vec)
       return(returns)
     },
     error = function(e) {
-      print("Make sure you have an active internet connection")
+      message("Make sure you have an active internet connection")
     },
     warning = function(w) {
-      print("Make sure you have an active internet connection")
+      message("Make sure you have an active internet connection")
     }
   )
 

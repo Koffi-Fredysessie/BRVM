@@ -29,7 +29,7 @@ next make sure that the ticker passed is inside of a google spreadsheet of
 allowed tickers.
 }
 \examples{
-\dontrun{
+\donttest{
 library(lubridate)
 library(rlang)
 library(httr2)

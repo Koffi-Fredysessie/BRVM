@@ -59,10 +59,10 @@ BRVM_company_rank <- function(){
       return(quotes_tbl[c(1,2,7,8)])
     },
     error = function(e) {
-      print("Make sure you have an active internet connection")
+      message("Make sure you have an active internet connection")
     },
     warning = function(w) {
-      print("Make sure you have an active internet connection")
+      message("Make sure you have an active internet connection")
     }
   )
 }

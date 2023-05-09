@@ -17,7 +17,7 @@ A formatabble table
 This function receives as input a day of the week (working day) and returns the official quotation revews of that day.
 }
 \examples{
-\dontrun{
+\donttest{
 library(httr)
 library(lubridate)
 library(rvest)

@@ -18,6 +18,7 @@ a number that indicates the P-value of the normality test
 Performs different types of normality test.
 }
 \examples{
+\donttest{
 library(goftest)
 library(tseries)
 library(nortest)
@@ -32,7 +33,7 @@ normality_test(y ,"Shapiro-Wilk")
 my_data <- BRVM_get("snts", .from = "2020-02-05", .to = "2022-02-05" )
 normality_test((my_data$Close), "Agostino")
 normality_test((my_data$Close[1:50]), "Jarque Bera")
-
+}
 
 }
 \seealso{

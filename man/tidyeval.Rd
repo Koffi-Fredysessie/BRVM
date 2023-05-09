@@ -9,6 +9,9 @@
 \alias{as_name}
 \alias{as_label}
 \title{Tidy eval helpers}
+\value{
+"tibble"
+}
 \description{
 This page lists the tidy eval tools reexported in this package from
 rlang. To learn about using tidy eval in scripts and packages at a

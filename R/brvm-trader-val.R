@@ -28,9 +28,9 @@ BRVM_traded_val <- function(){
     return(brvm_trade_all)
   },
   error = function(e) {
-    print("Make sure you have an active internet connection")
+    message("Make sure you have an active internet connection")
   },
   warning = function(w) {
-    print("Make sure you have an active internet connection")
+    message("Make sure you have an active internet connection")
   })
 }

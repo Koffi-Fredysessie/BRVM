@@ -88,13 +88,13 @@ BRVM_company_info<- function(ticker){
           # adn_ticker <- paste0(ticker, adn)
           # url <-paste0("https://www.sikafinance.com/marches/cotation_", adn_ticker)
           url <-paste0("https://www.sikafinance.com/marches/cotation_", ticker, adn)
-          # print(url)
+          # message(url)
     } else {
-        print(paste0("Be sure that ", ticker, " belong's to BRVM stock market"))
+        message(paste0("Be sure that ", ticker, " belong's to BRVM stock market"))
     }
 
   } else {
-      print(paste0("Be sure that ", ticker, " belong's to BRVM stock market"))
+      message(paste0("Be sure that ", ticker, " belong's to BRVM stock market"))
   }
 
 
@@ -117,9 +117,9 @@ BRVM_company_info<- function(ticker){
     return(ticker_info)
   },
   error = function(e) {
-    print("Make sure you have an active internet connection")
+    message("Make sure you have an active internet connection")
   },
   warning = function(w) {
-    print("Make sure you have an active internet connection")
+    message("Make sure you have an active internet connection")
   })
 }
