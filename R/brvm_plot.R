@@ -119,13 +119,13 @@ BRVM_plot<- function(.company,
   }
 
   else if (length(Global.returns) > 6) {
-
+    .company = paste0(.company, collapse = ", ")
     brvm.plot<- highchart(type = "stock") %>%
       hc_add_series(data = Global.returns,
                     type = "line",
                     hcaes(x =Date, y= Close, group= Ticker))%>%
       hc_xAxis(title = list(text = ""))%>%
-      hc_title(text = paste0("Tickers (", paste0(.company, collapse = ", "), ") line chart from ", date1, " to ", date2)) %>%
+      hc_title(text = paste0("Tickers (", .company, ") line chart from ", date1, " to ", date2)) %>%
       hc_exporting(
         enabled = TRUE, # always enabled,
         filename = paste0("Tickers line chart from ", date1, " to ", date2)
