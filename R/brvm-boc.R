@@ -22,7 +22,7 @@
 #'@importFrom timeDate isWeekday
 #'
 #' @examples
-#'\dontrun{
+#'\donttest{
 #' library(httr)
 #' library(lubridate)
 #' library(rvest)
@@ -185,21 +185,21 @@ BRVM_stock_market <- function(.weekday){
             return(stock_data)
 
           } else {
-            print("The date to be entered must not be a public holiday")
+            message("The date to be entered must not be a public holiday")
           }
         } else {
-          print("The date to be entered must not be a weekend")
+          message("The date to be entered must not be a weekend")
         }
       },
       error = function(e) {
-        print("Make sure you have an active internet connection")
+        message("Make sure you have an active internet connection")
       },
       warning = function(w) {
-        print("Make sure you have an active internet connection")
+        message("Make sure you have an active internet connection")
       }
     )
 
   } else {
-    print("The date to be entered must not be greater than or equal to today's date")
+    message("The date to be entered must not be greater than or equal to today's date")
   }
 }

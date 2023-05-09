@@ -20,7 +20,7 @@
 #' @importFrom fBasics dagoTest
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #'library(goftest)
 #'library(tseries)
 #'library(nortest)

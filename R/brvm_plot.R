@@ -27,7 +27,7 @@
 #' @importFrom highcharter highchart hc_title hc_add_series hc_add_yAxis hc_add_series hc_yAxis_multiples hc_colors hc_exporting
 #'
 #' @examples
-#'\dontrun{
+#'\donttest{
 #' library(highcharter)
 #' library(lubridate)
 #' library(rlang)
@@ -50,7 +50,7 @@ BRVM_plot<- function(.company,
                      to = Sys.Date() - 1,
                      up.col = "darkgreen",
                      down.col = "red") {
-  #  print('It possible to plot each sector chart line. You can use as argument .sectors$Agriculture to plot. Example BRVM_plot(.sector$Agriculture)')
+  #  message('It possible to plot each sector chart line. You can use as argument .sectors$Agriculture to plot. Example BRVM_plot(.sector$Agriculture)')
   date1<- from
   date2 = to
   # Evaluate input parameters ----

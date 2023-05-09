@@ -16,7 +16,7 @@
 #'
 #' @importFrom xml2 read_html
 #' @examples
-#'\dontrun{
+#'\donttest{
 #' library(stringr)
 #' library(rlang)
 #' library(xml2)
@@ -134,11 +134,11 @@ BRVM_bySector <- function(.sectors=NULL){
                 for(.elem in sector_vec) {
                     dt.sector<-dplyr::filter(Brvm.all, Sector == .elem)
                     if(nrow(dt.sector)>1){
-                        print(paste0("There are ", nrow(dt.sector), " companies that belong to ", .elem, "'s sector"))
+                        message(paste0("There are ", nrow(dt.sector), " companies that belong to ", .elem, "'s sector"))
                     } else {
-                        print(paste0("There is ", nrow(dt.sector), " company that belongs to ", .elem, "'s sector"))
+                        message(paste0("There is ", nrow(dt.sector), " company that belongs to ", .elem, "'s sector"))
                     }
-                    print(dt.sector[-c(2,8)])
+                    message(dt.sector[-c(2,8)])
                     sector.data<-rbind(sector.data, dt.sector)
                 }
                 return(sector.data)
@@ -146,10 +146,10 @@ BRVM_bySector <- function(.sectors=NULL){
 
         },
         error = function(e) {
-            print("Make sure you have an active internet connection")
+            message("Make sure you have an active internet connection")
         },
         warning = function(w) {
-            print("Make sure you have an active internet connection")
+            message("Make sure you have an active internet connection")
         }
     )
 

@@ -16,7 +16,7 @@
 #' @export
 #'
 #' @examples
-#'\dontrun{
+#'\donttest{
 #' BRVM_tickers()
 #' ticks <- BRVM_tickers()
 #' dput(ticks$Ticker) ## Returns the name of all tickers
@@ -32,7 +32,7 @@ BRVM_tickers <- function(){
             #   rvest::html_table()
             # all.tickers <- all.tickers[[4]][1:2]
             all.tickers <- all.tickers[1:2]
-            # print(all.tickers)
+            # message(all.tickers)
             colnames(all.tickers)<-c(
                 "Ticker",
                 "Company name")
@@ -40,10 +40,10 @@ BRVM_tickers <- function(){
             return(all.tickers)
         },
         error = function(e) {
-            print("Make sure you have an active internet connection")
+            message("Make sure you have an active internet connection")
         },
         warning = function(w) {
-            print("Make sure you have an active internet connection")
+            message("Make sure you have an active internet connection")
         }
     )
 

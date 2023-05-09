@@ -18,7 +18,7 @@
 #' @author Steven P. Sanderson II, MPH
 #'
 #' @examples
-#'\dontrun{
+#'\donttest{
 #' BRVM_rank("top", 15)
 #' BRVM_rank("flop", 5)
 #'}
@@ -26,10 +26,10 @@
 
 BRVM_rank <-function(top_or_flop, n=10){
   if (n > 46) {
-    print("Please choose a number lower than or equal to 46")
+    message("Please choose a number lower than or equal to 46")
     # return("Please choose a number lower than or equal to 46")
   } else if (stringr::str_to_title(top_or_flop) !="Top" && stringr::str_to_title(top_or_flop) !="Flop"){
-    print("Please choose between Top and Flop")
+    message("Please choose between Top and Flop")
     # return("Please choose between Top and Flop")
 
   } else {
@@ -60,7 +60,7 @@ BRVM_rank <-function(top_or_flop, n=10){
             quotes.df <- tibble::as.tibble(quotes.df[-4][1:n,])
             return(quotes.df)
           }   else {
-            print("BRVM_rank('Top', 5) or BRVM_rank('Flop', 5)")
+            message("BRVM_rank('Top', 5) or BRVM_rank('Flop', 5)")
           }
 
 
@@ -68,10 +68,10 @@ BRVM_rank <-function(top_or_flop, n=10){
 
       },
       error = function(e) {
-        print("Make sure you have an active internet connection")
+        message("Make sure you have an active internet connection")
       },
       warning = function(w) {
-        print("Make sure you have an active internet connection")
+        message("Make sure you have an active internet connection")
       }
     )
   }

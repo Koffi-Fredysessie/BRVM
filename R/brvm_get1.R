@@ -27,7 +27,7 @@
 #'@importFrom rlang abort
 #'@importFrom stringr str_sub
 #'
-#' @examples \dontrun{
+#' @examples \donttest{
 #' library(lubridate)
 #' library(rlang)
 #' library(httr2)
@@ -262,7 +262,7 @@ BRVM_get1 <- function(ticker ='BICC',
                                 Close= mean(Close)),
                     stock.data)
 
-            print(paste0("We obtained ",Tick1,  " data from ",
+            message(paste0("We obtained ",Tick1,  " data from ",
                          min(stock.data$Date),
                          " to ",
                          max(stock.data$Date)))
@@ -278,7 +278,7 @@ BRVM_get1 <- function(ticker ='BICC',
             #        return(index_stock[, -6]))
 
           } else {
-            print(paste0(Tick1," data aren't available between ",
+            message(paste0(Tick1," data aren't available between ",
                          first_date,
                          " and ",
                          end_date))
@@ -296,15 +296,15 @@ BRVM_get1 <- function(ticker ='BICC',
       }
 
       else {
-        print("Choose the best period between 0, 1, 5, 30, 91 and 365")
+        message("Choose the best period between 0, 1, 5, 30, 91 and 365")
       }
 
     },
     error = function(e) {
-      print("Make sure you have an active internet connection")
+      message("Make sure you have an active internet connection")
     },
     warning = function(w) {
-      print("Make sure you have an active internet connection")
+      message("Make sure you have an active internet connection")
     }
   )
 

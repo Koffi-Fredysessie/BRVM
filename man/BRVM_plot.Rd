@@ -32,7 +32,7 @@ An interactive chart
 This function will get Ticker(s) data and then plot it.
 }
 \examples{
-\dontrun{
+\donttest{
 library(highcharter)
 library(lubridate)
 library(rlang)

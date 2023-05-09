@@ -29,8 +29,7 @@ takes in a single parameter of \code{ticker} The function will auto-format the
 tickers you input into all upper case by using \code{toupper()}
 }
 \examples{
-
-\dontrun{
+\donttest{
 library(lubridate)
 library(rlang)
 library(httr2)

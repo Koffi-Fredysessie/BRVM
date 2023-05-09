@@ -18,6 +18,7 @@ a number that indicates the P-value of the stationarity test
 Performs different types of stationarity test.
 }
 \examples{
+
 library(tseries)
 
 # one and a half week stock index
