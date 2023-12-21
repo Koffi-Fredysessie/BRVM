@@ -54,8 +54,11 @@ BRVM_company_rank <- function(){
         "close",
         "percent_change")
       quotes_tbl$rank <- rank(-quotes_tbl$`percent_change`)
-      quotes_tbl <-dplyr::arrange(quotes_tbl, dplyr::desc(quotes_tbl$`percent_change`))
-      #      quotes_tbl <- quotes_tbl[sort(quotes_tbl$rank), ]
+
+      # Use order() instead
+      quotes_tbl <- quotes_tbl[order(-quotes_tbl$`percent_change`),]
+      #quotes_tbl <-dplyr::arrange(quotes_tbl, dplyr::desc(quotes_tbl$`percent_change`))
+      # quotes_tbl <- quotes_tbl[sort(quotes_tbl$rank), ]
       return(quotes_tbl[c(1,2,7,8)])
     },
     error = function(e) {
