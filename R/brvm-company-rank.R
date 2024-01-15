@@ -14,14 +14,6 @@
 #'
 #' @description This function returns companies rank from the BRVM Bourse exchange according to their daily change (variation).
 #'
-#' @examples
-#'
-#' BRVM_company_rank()
-#' comp.rank<-BRVM_company_rank()
-#' comp.rank<-comp.rank%>%
-#' dplyr::arrange(desc(percent_change))
-#' comp.rank
-#'
 #'
 #' @return
 #' "tbl_df"     "tbl"        "data.frame"
@@ -29,7 +21,15 @@
 #' @export
 #'
 #' @examples
+#' \donttest{
+#' library(dplyr)
 #' BRVM_company_rank()
+#' comp.rank <- BRVM_company_rank()
+#' comp.rank<-comp.rank%>%
+#' dplyr::arrange(desc(percent_change))
+#' comp.rank
+#'}
+
 
 BRVM_company_rank <- function(){
   tryCatch(
@@ -38,16 +38,28 @@ BRVM_company_rank <- function(){
         rvest::html_nodes('table') %>%
         rvest::html_table()
       quotes_tbl <- quotes_tbl[[4]]
-      quotes_tbl$`Change (%)`<-gsub(",", ".", quotes_tbl$`Change (%)`)
-      quotes_tbl$`Change (%)`<-as.numeric(quotes_tbl$`Change (%)`)
-      quotes_tbl$Volume<-gsub(" ", "", quotes_tbl$Volume)
-      quotes_tbl$Volume<-as.numeric(quotes_tbl$Volume)
-      quotes_tbl$`Previous price`<-gsub(" ", "", quotes_tbl$`Previous price`)
-      quotes_tbl$`Previous price`<-as.numeric(quotes_tbl$`Previous price`)
-      quotes_tbl$`Opening price`<-gsub(" ", "", quotes_tbl$`Opening price`)
-      quotes_tbl$`Opening price`<-as.numeric(quotes_tbl$`Opening price`)
-      quotes_tbl$`Closing price`<-gsub(" ", "", quotes_tbl$`Closing price`)
-      quotes_tbl$`Closing price`<-as.numeric(quotes_tbl$`Closing price`)
+
+      # quotes_tbl$`Change (%)`<-gsub(",", ".", quotes_tbl$`Change (%)`)
+      # quotes_tbl$`Change (%)`<-as.numeric(quotes_tbl$`Change (%)`)
+      # quotes_tbl$Volume<-gsub(" ", "", quotes_tbl$Volume)
+      # quotes_tbl$Volume<-as.numeric(quotes_tbl$Volume)
+      # quotes_tbl$`Previous price`<-gsub(" ", "", quotes_tbl$`Previous price`)
+      # quotes_tbl$`Previous price`<-as.numeric(quotes_tbl$`Previous price`)
+      # quotes_tbl$`Opening price`<-gsub(" ", "", quotes_tbl$`Opening price`)
+      # quotes_tbl$`Opening price`<-as.numeric(quotes_tbl$`Opening price`)
+      # quotes_tbl$`Closing price`<-gsub(" ", "", quotes_tbl$`Closing price`)
+      # quotes_tbl$`Closing price`<-as.numeric(quotes_tbl$`Closing price`)
+
+      # Mes colonnes numeriques
+      numeric_columns <- c("Change (%)", "Volume", "Previous price", "Opening price", "Closing price")
+
+      # Enlever les espaces vides
+      quotes_tbl <- quotes_tbl %>%
+          dplyr::mutate(across(numeric_columns, ~(gsub(" ", "", .))))
+
+      quotes_tbl <- quotes_tbl %>%
+          dplyr::mutate(across(all_of(numeric_columns), ~as.numeric(gsub(",", ".", .))))
+
       colnames(quotes_tbl)<-c(
         "ticker",
         "company_name",
