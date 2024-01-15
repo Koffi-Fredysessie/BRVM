@@ -1,6 +1,6 @@
 ---
 title: "Library BRVM"
-date: "09 mai,2023"
+date: "15 janvier,2024"
 output:
   html_document: 
     toc: yes
@@ -405,80 +405,80 @@ the_index
 <tbody>
   <tr>
    <td style="text-align:left;"> BRVM-30 </td>
-   <td style="text-align:right;"> 99.45 </td>
-   <td style="text-align:right;"> 99.83 </td>
-   <td style="text-align:right;"> 0.38 </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 105.11 </td>
+   <td style="text-align:right;"> 105.20 </td>
+   <td style="text-align:right;"> 0.09 </td>
+   <td style="text-align:right;"> -0.36 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> BRVM - AGRICULTURE </td>
-   <td style="text-align:right;"> 263.37 </td>
-   <td style="text-align:right;"> 260.09 </td>
-   <td style="text-align:right;"> -1.25 </td>
-   <td style="text-align:right;"> -0.66 </td>
+   <td style="text-align:right;"> 159.12 </td>
+   <td style="text-align:right;"> 162.36 </td>
+   <td style="text-align:right;"> 2.04 </td>
+   <td style="text-align:right;"> 2.09 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> BRVM - OTHER SECTOR </td>
+   <td style="text-align:right;"> 1091.99 </td>
    <td style="text-align:right;"> 1098.16 </td>
-   <td style="text-align:right;"> 1110.49 </td>
-   <td style="text-align:right;"> 1.12 </td>
-   <td style="text-align:right;"> -7.32 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> BRVM - COMPOSITE </td>
-   <td style="text-align:right;"> 198.88 </td>
-   <td style="text-align:right;"> 199.59 </td>
-   <td style="text-align:right;"> 0.36 </td>
-   <td style="text-align:right;"> 0.85 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> BRVM - DISTRIBUTION </td>
-   <td style="text-align:right;"> 341.73 </td>
-   <td style="text-align:right;"> 345.62 </td>
-   <td style="text-align:right;"> 1.14 </td>
-   <td style="text-align:right;"> 0.69 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> BRVM - FINANCE </td>
-   <td style="text-align:right;"> 74.79 </td>
-   <td style="text-align:right;"> 75.11 </td>
-   <td style="text-align:right;"> 0.43 </td>
-   <td style="text-align:right;"> -0.66 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> BRVM - INDUSTRY </td>
-   <td style="text-align:right;"> 101.70 </td>
-   <td style="text-align:right;"> 101.77 </td>
-   <td style="text-align:right;"> 0.07 </td>
-   <td style="text-align:right;"> 0.92 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> BRVM - PRESTIGE </td>
-   <td style="text-align:right;"> 101.85 </td>
-   <td style="text-align:right;"> 101.98 </td>
-   <td style="text-align:right;"> 0.13 </td>
-   <td style="text-align:right;"> 0.00 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> BRVM - PRINCIPAL </td>
-   <td style="text-align:right;"> 94.15 </td>
-   <td style="text-align:right;"> 94.69 </td>
    <td style="text-align:right;"> 0.57 </td>
    <td style="text-align:right;"> 0.00 </td>
   </tr>
   <tr>
+   <td style="text-align:left;"> BRVM - COMPOSITE </td>
+   <td style="text-align:right;"> 208.94 </td>
+   <td style="text-align:right;"> 209.33 </td>
+   <td style="text-align:right;"> 0.19 </td>
+   <td style="text-align:right;"> -0.36 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> BRVM - DISTRIBUTION </td>
+   <td style="text-align:right;"> 316.60 </td>
+   <td style="text-align:right;"> 306.90 </td>
+   <td style="text-align:right;"> -3.06 </td>
+   <td style="text-align:right;"> 1.12 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> BRVM - FINANCE </td>
+   <td style="text-align:right;"> 84.89 </td>
+   <td style="text-align:right;"> 85.49 </td>
+   <td style="text-align:right;"> 0.71 </td>
+   <td style="text-align:right;"> 0.45 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> BRVM - INDUSTRY </td>
+   <td style="text-align:right;"> 99.86 </td>
+   <td style="text-align:right;"> 101.28 </td>
+   <td style="text-align:right;"> 1.42 </td>
+   <td style="text-align:right;"> -0.65 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> BRVM - PRESTIGE </td>
+   <td style="text-align:right;"> 97.70 </td>
+   <td style="text-align:right;"> 98.39 </td>
+   <td style="text-align:right;"> 0.71 </td>
+   <td style="text-align:right;"> 1.05 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> BRVM - PRINCIPAL </td>
+   <td style="text-align:right;"> 102.82 </td>
+   <td style="text-align:right;"> 102.85 </td>
+   <td style="text-align:right;"> 0.03 </td>
+   <td style="text-align:right;"> -1.06 </td>
+  </tr>
+  <tr>
    <td style="text-align:left;"> BRVM - PUBLIC SERVICES </td>
-   <td style="text-align:right;"> 479.45 </td>
-   <td style="text-align:right;"> 481.66 </td>
-   <td style="text-align:right;"> 0.46 </td>
-   <td style="text-align:right;"> 2.23 </td>
+   <td style="text-align:right;"> 514.37 </td>
+   <td style="text-align:right;"> 513.55 </td>
+   <td style="text-align:right;"> -0.16 </td>
+   <td style="text-align:right;"> -1.18 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> BRVM - TRANSPORT </td>
    <td style="text-align:right;"> 342.90 </td>
-   <td style="text-align:right;"> 341.70 </td>
-   <td style="text-align:right;"> -0.35 </td>
-   <td style="text-align:right;"> 0.35 </td>
+   <td style="text-align:right;"> 342.90 </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> -3.48 </td>
   </tr>
 </tbody>
 </table>
@@ -498,20 +498,20 @@ The function will automatically format tickers you enter in uppercase using toup
 
 #' Displaying data of SONATEL Senegal stock
 BRVM_get(.symbol = "snts")
-#> # A tibble: 250 × 6
+#> # A tibble: 246 × 6
 #>    Date        Open  High   Low Close Volume
 #>    <date>     <dbl> <dbl> <dbl> <dbl>  <dbl>
-#>  1 2022-05-09 16100 16485 16000 16000  10588
-#>  2 2022-05-10 16000 16100 15950 16000  10314
-#>  3 2022-05-11 16000 16000 15975 16000   1835
-#>  4 2022-05-12 15995 15995 15800 15980   7678
-#>  5 2022-05-13 15985 16430 15900 16430  86136
-#>  6 2022-05-16 15995 15995 15565 15565    249
-#>  7 2022-05-17 15500 15500 14400 15000   3211
-#>  8 2022-05-18 15000 15000 14400 14725    610
-#>  9 2022-05-19 14790 14790 14500 14720   1833
-#> 10 2022-05-20 14690 14690 14400 14500   6944
-#> # ℹ 240 more rows
+#>  1 2023-01-16 14895 14900 14895 14900   4032
+#>  2 2023-01-17 14850 14850 14840 14840   2962
+#>  3 2023-01-18 14800 14900 14800 14900    953
+#>  4 2023-01-19 14780 14800 14780 14800  12539
+#>  5 2023-01-20 14900 14900 14850 14850  26471
+#>  6 2023-01-23 14895 15000 14895 15000  11817
+#>  7 2023-01-24 15000 15200 15000 15200  14636
+#>  8 2023-01-25 15100 15200 15100 15200  32697
+#>  9 2023-01-26 15200 15200 15200 15200    805
+#> 10 2023-01-27 15200 15200 15200 15200   1703
+#> # ℹ 236 more rows
 
 symbols <- c("BiCc","XOM","SlbC")   # We use here three tickers
 data_tbl <- BRVM_get(.symbol = symbols, .from = "2020-01-01", .to = Sys.Date() - 1)
@@ -548,26 +548,26 @@ tail(data_tbl, 20)
 #> # A tibble: 20 × 7
 #>    Date        Open  High   Low Close Volume Ticker
 #>    <date>     <dbl> <dbl> <dbl> <dbl>  <dbl> <chr> 
-#>  1 2023-03-13 80005 80005 80000 80000     12 SLBC  
-#>  2 2023-03-14 80000 80000 80000 80000      1 SLBC  
-#>  3 2023-03-20 80000 80000 80000 80000      3 SLBC  
-#>  4 2023-03-21 80000 80000 80000 80000      4 SLBC  
-#>  5 2023-03-27 78000 80000 78000 80000    169 SLBC  
-#>  6 2023-03-28 80000 80000 80000 80000    435 SLBC  
-#>  7 2023-03-30 80000 80000 80000 80000      3 SLBC  
-#>  8 2023-03-31 80000 80000 80000 80000      1 SLBC  
-#>  9 2023-04-04 80000 86000 80000 86000      3 SLBC  
-#> 10 2023-04-05 85950 86000 85950 86000      6 SLBC  
-#> 11 2023-04-11 86000 86000 86000 86000      2 SLBC  
-#> 12 2023-04-12 87000 87000 86000 86000     10 SLBC  
-#> 13 2023-04-13 86000 86000 86000 86000     15 SLBC  
-#> 14 2023-04-14 86000 86000 86000 86000    234 SLBC  
-#> 15 2023-04-20 80000 80000 80000 80000      1 SLBC  
-#> 16 2023-04-24 75900 75900 75900 75900      3 SLBC  
-#> 17 2023-04-25 70210 70210 70210 70210     40 SLBC  
-#> 18 2023-05-04 75000 75000 75000 75000      1 SLBC  
-#> 19 2023-05-05 75900 80625 75900 80625      2 SLBC  
-#> 20 2023-05-08 85995 85995 85995 85995      1 SLBC
+#>  1 2023-11-21 89500 90000 90000 90000     21 SLBC  
+#>  2 2023-11-22 83250 90000 83250 90000     90 SLBC  
+#>  3 2023-11-24 90000 90000 90000 90000      3 SLBC  
+#>  4 2023-12-01 89990 90000 89990 89990      2 SLBC  
+#>  5 2023-12-05 89950 89990 89990 89990      4 SLBC  
+#>  6 2023-12-06 90000 90000 89990 90000     25 SLBC  
+#>  7 2023-12-08 90000 90000 90000 90000      3 SLBC  
+#>  8 2023-12-14 88200 90000 88200 90000      4 SLBC  
+#>  9 2023-12-15 90000 90000 90000 90000      5 SLBC  
+#> 10 2023-12-18 89000 90000 89000 89000      1 SLBC  
+#> 11 2023-12-19 89000 89000 85000 85000    716 SLBC  
+#> 12 2023-12-20 79000 90000 85000 89900     10 SLBC  
+#> 13 2023-12-22 90000 90000 89900 90000      1 SLBC  
+#> 14 2023-12-26 83300 90000 83300 88495      3 SLBC  
+#> 15 2023-12-27 88500 88500 88495 88500      1 SLBC  
+#> 16 2023-12-28 83300 88500 83300 87000     13 SLBC  
+#> 17 2024-01-02 87000 90000 87000 90000      2 SLBC  
+#> 18 2024-01-04 89500 90000 89500 89500      5 SLBC  
+#> 19 2024-01-11 88000 89500 88000 88000    160 SLBC  
+#> 20 2024-01-12 88000 89500 88000 89500     11 SLBC
 ```
 
 ## The **BRVM_get1("ticker ", "Period", "from", "to")** function
@@ -588,6 +588,20 @@ The function takes in a single parameter of ticker and will auto-format the tick
 ```r
 #' Displaying data of SONATEL Senegal stock
 BRVM_get1("snts")
+#> # A tibble: 63 × 5
+#>    Date        Open  High   Low Close
+#>    <date>     <int> <int> <int> <int>
+#>  1 2023-10-18 16250 16300 16250 16300
+#>  2 2023-10-19 16400 16400 16400 16400
+#>  3 2023-10-20 16400 16400 16300 16300
+#>  4 2023-10-23 16300 16300 16300 16300
+#>  5 2023-10-24 16300 16300 16300 16300
+#>  6 2023-10-25 16300 16300 16300 16300
+#>  7 2023-10-26 16265 16845 16265 16845
+#>  8 2023-10-27 16800 16800 16500 16500
+#>  9 2023-10-30 16300 16300 16300 16300
+#> 10 2023-10-31 16305 16950 16305 16950
+#> # ℹ 53 more rows
 
 # Get daily data of all indexes
 all_ind <- BRVM_get1("ALL INDEXES", Period = 0, from = "2020-01-04", to = "2023-03-24") 
@@ -597,26 +611,26 @@ head(all_ind, 20)
 #> # A tibble: 20 × 7
 #>    Date        Open  High   Low Close Volume Ticker
 #>    <date>     <dbl> <dbl> <dbl> <dbl>  <dbl> <chr> 
-#>  1 2022-12-26  169.  169.  169.  169.      0 BRVM10
-#>  2 2022-12-27  169.  169.  169.  169.      0 BRVM10
-#>  3 2022-12-28  167.  167.  167.  167.      0 BRVM10
-#>  4 2022-12-29  167.  167.  167.  167.      0 BRVM10
-#>  5 2022-12-30  166.  166.  166.  166.      0 BRVM10
-#>  6 2023-01-02  166.  166.  166.  166.      0 BRVM10
-#>  7 2023-01-03  166.  166.  166.  166.      0 BRVM10
-#>  8 2023-01-04  166.  166.  166.  166.      0 BRVM10
-#>  9 2022-09-26  163.  163.  163.  163.      0 BRVM10
-#> 10 2022-09-27  162.  162.  162.  162.      0 BRVM10
-#> 11 2022-09-28  162.  162.  162.  162.      0 BRVM10
-#> 12 2022-09-29  163.  163.  163.  163.      0 BRVM10
-#> 13 2022-09-30  164.  164.  164.  164.      0 BRVM10
-#> 14 2022-10-03  162.  162.  162.  162.      0 BRVM10
-#> 15 2022-10-04  162.  162.  162.  162.      0 BRVM10
-#> 16 2022-10-05  161.  161.  161.  161.      0 BRVM10
-#> 17 2022-10-06  161.  161.  161.  161.      0 BRVM10
-#> 18 2022-10-07  161.  161.  161.  161.      0 BRVM10
-#> 19 2022-10-10  160.  160.  160.  160.      0 BRVM10
-#> 20 2022-10-11  160.  160.  160.  160.      0 BRVM10
+#>  1 2022-12-26  293.  293.  293.  293.      0 BRVMAG
+#>  2 2022-12-27  292.  292.  292.  292.      0 BRVMAG
+#>  3 2022-12-28  285.  285.  285.  285.      0 BRVMAG
+#>  4 2022-12-29  285.  285.  285.  285.      0 BRVMAG
+#>  5 2022-12-30  284.  284.  284.  284.      0 BRVMAG
+#>  6 2023-01-02  283.  283.  283.  283.      0 BRVMAG
+#>  7 2023-01-03  281.  281.  281.  281.      0 BRVMAG
+#>  8 2023-01-04  275.  275.  275.  275.      0 BRVMAG
+#>  9 2023-01-05  279.  279.  279.  279.      0 BRVMAG
+#> 10 2023-01-06  269.  269.  269.  269.      0 BRVMAG
+#> 11 2023-01-09  276.  276.  276.  276.      0 BRVMAG
+#> 12 2023-01-10  276.  276.  276.  276.      0 BRVMAG
+#> 13 2023-01-11  276.  276.  276.  276.      0 BRVMAG
+#> 14 2023-01-12  275.  275.  275.  275.      0 BRVMAG
+#> 15 2023-01-13  275.  275.  275.  275.      0 BRVMAG
+#> 16 2023-01-16  273.  273.  273.  273.      0 BRVMAG
+#> 17 2023-01-17  273.  273.  273.  273.      0 BRVMAG
+#> 18 2023-01-18  271.  271.  271.  271.      0 BRVMAG
+#> 19 2023-01-19  281.  281.  281.  281.      0 BRVMAG
+#> 20 2023-01-20  281.  281.  281.  281.      0 BRVMAG
 
 # display the two tens of the last elements of the table
 tail(all_ind, 20)
@@ -652,52 +666,52 @@ head(yearly_data, 20)
 #> # A tibble: 20 × 6
 #>    Date         Open   High    Low  Close Ticker
 #>    <date>      <dbl>  <dbl>  <dbl>  <dbl> <chr> 
-#>  1 2003-05-14   76     88.6   73.6   88.6 BRVMTR
-#>  2 2004-01-02   88.6   89.2   72.9   89.2 BRVMTR
-#>  3 2005-01-03   89.2  107.    70.7  104.  BRVMTR
-#>  4 2006-01-02  104.   158.   104.   153.  BRVMTR
-#>  5 2007-01-02  153.   275.   149.   249.  BRVMTR
-#>  6 2008-01-02  249.   386.   226.   296.  BRVMTR
-#>  7 2009-01-02  275.   296.   227.   236.  BRVMTR
-#>  8 2010-01-04  236.   259.   224.   238.  BRVMTR
-#>  9 2011-01-03  238.   249.   204.   239   BRVMTR
-#> 10 2012-01-02  239    349.   201.   349.  BRVMTR
-#> 11 2013-01-02  349.   794.   339.   789.  BRVMTR
-#> 12 2014-01-02  789.  1213.   601.  1213.  BRVMTR
-#> 13 2015-01-02 1213.  1525.   653.  1525.  BRVMTR
-#> 14 2016-01-04 1525.  1525.  1216.  1432.  BRVMTR
-#> 15 2017-01-02 1432.  1433.   764.  1203.  BRVMTR
-#> 16 2018-01-02 1114.  1193.   966.   966.  BRVMTR
-#> 17 2019-06-03  403.   429.   311.   367.  BRVMTR
-#> 18 2020-01-01  367.   475.   292.   379.  BRVMTR
-#> 19 2021-01-04  376.   622.   325    622.  BRVMTR
-#> 20 2022-01-03  667.   667.   295.   342.  BRVMTR
+#>  1 2004-01-20   88.6   89.2   72.9   89.2 BRVMTR
+#>  2 2005-01-03   89.2  107.    70.7  104.  BRVMTR
+#>  3 2006-01-02  104.   158.   104.   153.  BRVMTR
+#>  4 2007-01-02  153.   275.   149.   249.  BRVMTR
+#>  5 2008-01-02  249.   386.   226.   296.  BRVMTR
+#>  6 2009-01-02  275.   296.   227.   236.  BRVMTR
+#>  7 2010-01-04  236.   259.   224.   238.  BRVMTR
+#>  8 2011-01-03  238.   249.   204.   239   BRVMTR
+#>  9 2012-01-02  239    349.   201.   349.  BRVMTR
+#> 10 2013-01-02  349.   794.   339.   789.  BRVMTR
+#> 11 2014-01-02  789.  1213.   601.  1213.  BRVMTR
+#> 12 2015-01-02 1213.  1525.   653.  1525.  BRVMTR
+#> 13 2016-01-04 1525.  1525.  1216.  1432.  BRVMTR
+#> 14 2017-01-02 1432.  1433.   764.  1203.  BRVMTR
+#> 15 2018-01-02 1114.  1193.   966.   966.  BRVMTR
+#> 16 2019-06-03  403.   429.   311.   367.  BRVMTR
+#> 17 2020-01-01  367.   475.   292.   379.  BRVMTR
+#> 18 2021-01-04  376.   622.   325    622.  BRVMTR
+#> 19 2022-01-03  667.   667.   295.   342.  BRVMTR
+#> 20 2023-01-02  341.   414.   307.   331.  BRVMTR
 
 # display the two tens of the last elements of the table
 tail(yearly_data, 20) 
 #> # A tibble: 20 × 6
 #>    Date        Open  High   Low Close Ticker
 #>    <date>     <dbl> <dbl> <dbl> <dbl> <chr> 
-#>  1 2014-01-02  5650  7848  5650  7800 BICC  
-#>  2 2015-01-02  8385 10750  7800 10100 BICC  
-#>  3 2016-01-04 10000 10700  8566  9890 BICC  
-#>  4 2017-01-05  9750 10000  6440  8490 BICC  
-#>  5 2018-01-02  8700  8750  3795  7900 BICC  
-#>  6 2019-01-04  7550  7550  3710  6800 BICC  
-#>  7 2020-01-01  6800  6890  2855  6680 BICC  
-#>  8 2021-01-04  6680  7525  4280  7400 BICC  
-#>  9 2022-01-03  7250  7250  5550  6850 BICC  
-#> 10 2023-01-02  6500  6850  5785  6200 BICC  
-#> 11 2014-12-10  1613  3225  1613  3225 BOAS  
-#> 12 2015-01-02  3370  4300  2900  3950 BOAS  
-#> 13 2016-01-04  3700  4101  2000  2350 BOAS  
-#> 14 2017-01-02  2325  3875  2035  2500 BOAS  
-#> 15 2018-01-02  2400  3250  1700  2020 BOAS  
-#> 16 2019-01-02  1900  2000  1500  1545 BOAS  
-#> 17 2020-01-01  1550  1700  1295  1495 BOAS  
-#> 18 2021-01-04  1480  2750  1340  2350 BOAS  
-#> 19 2022-01-03  2350  2780  2200  2450 BOAS  
-#> 20 2023-01-02  2580  2585  2175  2380 BOAS
+#>  1 2016-01-04 10000 10700  8566  9890 BICC  
+#>  2 2017-01-05  9750 10000  6440  8490 BICC  
+#>  3 2018-01-02  8700  8750  3795  7900 BICC  
+#>  4 2019-01-04  7550  7550  3710  6800 BICC  
+#>  5 2020-01-01  6800  6890  2855  6680 BICC  
+#>  6 2021-01-04  6680  7525  4280  7400 BICC  
+#>  7 2022-01-03  7250  7250  5550  6850 BICC  
+#>  8 2023-01-02  6500  7495  5785  7490 BICC  
+#>  9 2024-01-04  7450  7485  7300  7395 BICC  
+#> 10 2014-12-10  1613  3225  1613  3225 BOAS  
+#> 11 2015-01-02  3370  4300  2900  3950 BOAS  
+#> 12 2016-01-04  3700  4101  2000  2350 BOAS  
+#> 13 2017-01-02  2325  3875  2035  2500 BOAS  
+#> 14 2018-01-02  2400  3250  1700  2020 BOAS  
+#> 15 2019-01-02  1900  2000  1500  1545 BOAS  
+#> 16 2020-01-01  1550  1700  1295  1495 BOAS  
+#> 17 2021-01-04  1480  2750  1340  2350 BOAS  
+#> 18 2022-01-03  2350  2780  2200  2450 BOAS  
+#> 19 2023-01-02  2580  3650  2175  3200 BOAS  
+#> 20 2024-01-01  3200  3200  3005  3165 BOAS
 ```
 
 ## The **BRVM.index()** function :
@@ -725,12 +739,12 @@ BRVM_bySector(.sectors = c("Other", "Agriculture"))
 #> # A tibble: 6 × 8
 #>   Ticker `Company name`  Volume `Previous price`  Open Close `Change (%)` Sector
 #>   <chr>  <chr>            <dbl>            <dbl> <dbl> <dbl>        <dbl> <chr> 
-#> 1 STAC   SETAO COTE D'I…      2              890   900   900         1.12 Other 
-#> 2 PALC   PALM COTE D'IV…   6362             9610  9805  9600        -2.34 Agric…
-#> 3 SCRC   SUCRIVOIRE COT…   1089              650   660   655         0.77 Agric…
-#> 4 SICC   SICOR COTE D'I…      0             6320     0  6320         0    Agric…
-#> 5 SOGC   SOGB COTE D'IV…     20             5370  5370  5305        -1.21 Agric…
-#> 6 SPHC   SAPH COTE D'IV…     46             4570  4565  4565        -0.11 Agric…
+#> 1 STAC   SETAO COTE D'I…     23              885   890   890         0.56 Other 
+#> 2 PALC   PALM COTE D'IV…   6150             6885  6890  6885        -0.15 Agric…
+#> 3 SCRC   SUCRIVOIRE COT…    106              450   450   450         3.45 Agric…
+#> 4 SICC   SICOR COTE D'I…     41             3260  3525  3260        -6.59 Agric…
+#> 5 SOGC   SOGB COTE D'IV…  10315             3240  3195  3240         1.41 Agric…
+#> 6 SPHC   SAPH COTE D'IV…   7981             2355  2200  2355         7.05 Agric…
 ```
 
  
@@ -2183,43 +2197,43 @@ inform
 <tbody>
   <tr>
    <td style="text-align:left;"> Volume (titres) </td>
-   <td style="text-align:left;"> 1 732 </td>
+   <td style="text-align:left;"> 936 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Volume (XOF ) </td>
-   <td style="text-align:left;"> 4 330 000 </td>
+   <td style="text-align:left;"> 2 962 440 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Ouverture </td>
-   <td style="text-align:left;"> 2 500 </td>
+   <td style="text-align:left;"> 3 165 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Plus haut </td>
-   <td style="text-align:left;"> 2 500 </td>
+   <td style="text-align:left;"> 3 165 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Plus bas </td>
-   <td style="text-align:left;"> 2 500 </td>
+   <td style="text-align:left;"> 3 165 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Clôture veille </td>
-   <td style="text-align:left;"> 2 500 </td>
+   <td style="text-align:left;"> 3 165 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Beta 1 an </td>
-   <td style="text-align:left;"> 0,09 </td>
+   <td style="text-align:left;"> 0,10 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> RSI </td>
-   <td style="text-align:left;"> 68,76 </td>
+   <td style="text-align:left;"> 47,82 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Capital échangé </td>
-   <td style="text-align:left;"> 0,01% </td>
+   <td style="text-align:left;"> 0,00% </td>
   </tr>
   <tr>
    <td style="text-align:left;"> Valorisation </td>
-   <td style="text-align:left;"> 60 000 MXOF </td>
+   <td style="text-align:left;"> 75 960 MXOF </td>
   </tr>
 </tbody>
 </table>
@@ -2267,286 +2281,286 @@ comp.rank
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:left;"> TTLS </td>
-   <td style="text-align:left;"> TOTAL SENEGAL </td>
-   <td style="text-align:right;"> 7.11 </td>
-   <td style="text-align:right;"> 1 </td>
-  </tr>
-  <tr>
    <td style="text-align:left;"> ORGT </td>
    <td style="text-align:left;"> ORAGROUP TOGO </td>
-   <td style="text-align:right;"> 6.82 </td>
-   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:right;"> 7.45 </td>
+   <td style="text-align:right;"> 1.0 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> UNXC </td>
-   <td style="text-align:left;"> UNIWAX COTE D'IVOIRE </td>
-   <td style="text-align:right;"> 3.01 </td>
-   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> SPHC </td>
+   <td style="text-align:left;"> SAPH COTE D'IVOIRE </td>
+   <td style="text-align:right;"> 7.05 </td>
+   <td style="text-align:right;"> 2.0 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> STAC </td>
-   <td style="text-align:left;"> SETAO COTE D'IVOIRE </td>
-   <td style="text-align:right;"> 1.12 </td>
-   <td style="text-align:right;"> 4 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ORAC </td>
-   <td style="text-align:left;"> ORANGE COTE D'IVOIRE </td>
-   <td style="text-align:right;"> 1.06 </td>
-   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:left;"> STBC </td>
+   <td style="text-align:left;"> SITAB COTE D'IVOIRE </td>
+   <td style="text-align:right;"> 6.19 </td>
+   <td style="text-align:right;"> 3.0 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> SCRC </td>
    <td style="text-align:left;"> SUCRIVOIRE COTE D'IVOIRE </td>
-   <td style="text-align:right;"> 0.77 </td>
-   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:right;"> 3.45 </td>
+   <td style="text-align:right;"> 4.0 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> ONTBF </td>
-   <td style="text-align:left;"> ONATEL BURKINA FASO </td>
-   <td style="text-align:right;"> 0.36 </td>
-   <td style="text-align:right;"> 7 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> SIBC </td>
-   <td style="text-align:left;"> SOCIETE IVOIRIENNE DE BANQUE COTE D'IVOIRE </td>
-   <td style="text-align:right;"> 0.20 </td>
-   <td style="text-align:right;"> 8 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ECOC </td>
-   <td style="text-align:left;"> ECOBANK COTE D'IVOIRE </td>
-   <td style="text-align:right;"> 0.18 </td>
-   <td style="text-align:right;"> 9 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> NTLC </td>
-   <td style="text-align:left;"> NESTLE COTE D'IVOIRE </td>
-   <td style="text-align:right;"> 0.06 </td>
-   <td style="text-align:right;"> 10 </td>
+   <td style="text-align:left;"> TTLS </td>
+   <td style="text-align:left;"> TOTAL SENEGAL </td>
+   <td style="text-align:right;"> 2.13 </td>
+   <td style="text-align:right;"> 5.0 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> SLBC </td>
    <td style="text-align:left;"> SOLIBRA COTE D'IVOIRE </td>
-   <td style="text-align:right;"> 0.01 </td>
-   <td style="text-align:right;"> 11 </td>
+   <td style="text-align:right;"> 1.70 </td>
+   <td style="text-align:right;"> 6.0 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> ABJC </td>
-   <td style="text-align:left;"> SERVAIR ABIDJAN  COTE D'IVOIRE </td>
-   <td style="text-align:right;"> 0.00 </td>
-   <td style="text-align:right;"> 23 </td>
+   <td style="text-align:left;"> SOGC </td>
+   <td style="text-align:left;"> SOGB COTE D'IVOIRE </td>
+   <td style="text-align:right;"> 1.41 </td>
+   <td style="text-align:right;"> 7.0 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> BICC </td>
-   <td style="text-align:left;"> BICI COTE D'IVOIRE </td>
-   <td style="text-align:right;"> 0.00 </td>
-   <td style="text-align:right;"> 23 </td>
+   <td style="text-align:left;"> SGBC </td>
+   <td style="text-align:left;"> SOCIETE GENERALE COTE D'IVOIRE </td>
+   <td style="text-align:right;"> 1.27 </td>
+   <td style="text-align:right;"> 8.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> BOAM </td>
+   <td style="text-align:left;"> BANK OF AFRICA MALI </td>
+   <td style="text-align:right;"> 1.03 </td>
+   <td style="text-align:right;"> 9.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> UNXC </td>
+   <td style="text-align:left;"> UNIWAX COTE D'IVOIRE </td>
+   <td style="text-align:right;"> 0.88 </td>
+   <td style="text-align:right;"> 10.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> BOAB </td>
+   <td style="text-align:left;"> BANK OF AFRICA BENIN </td>
+   <td style="text-align:right;"> 0.78 </td>
+   <td style="text-align:right;"> 11.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> BOAC </td>
+   <td style="text-align:left;"> BANK OF AFRICA COTE D'IVOIRE </td>
+   <td style="text-align:right;"> 0.74 </td>
+   <td style="text-align:right;"> 12.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> SHEC </td>
+   <td style="text-align:left;"> VIVO ENERGY COTE D'IVOIRE </td>
+   <td style="text-align:right;"> 0.67 </td>
+   <td style="text-align:right;"> 13.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> STAC </td>
+   <td style="text-align:left;"> SETAO COTE D'IVOIRE </td>
+   <td style="text-align:right;"> 0.56 </td>
+   <td style="text-align:right;"> 14.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> SIBC </td>
+   <td style="text-align:left;"> SOCIETE IVOIRIENNE DE BANQUE COTE D'IVOIRE </td>
+   <td style="text-align:right;"> 0.09 </td>
+   <td style="text-align:right;"> 15.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ORAC </td>
+   <td style="text-align:left;"> ORANGE COTE D'IVOIRE </td>
+   <td style="text-align:right;"> 0.05 </td>
+   <td style="text-align:right;"> 16.0 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> BNBC </td>
    <td style="text-align:left;"> BERNABE COTE D'IVOIRE </td>
    <td style="text-align:right;"> 0.00 </td>
-   <td style="text-align:right;"> 23 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> BOAB </td>
-   <td style="text-align:left;"> BANK OF AFRICA BENIN </td>
-   <td style="text-align:right;"> 0.00 </td>
-   <td style="text-align:right;"> 23 </td>
+   <td style="text-align:right;"> 25.5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> BOAS </td>
    <td style="text-align:left;"> BANK OF AFRICA SENEGAL </td>
    <td style="text-align:right;"> 0.00 </td>
-   <td style="text-align:right;"> 23 </td>
+   <td style="text-align:right;"> 25.5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> CABC </td>
    <td style="text-align:left;"> SICABLE COTE D'IVOIRE </td>
    <td style="text-align:right;"> 0.00 </td>
-   <td style="text-align:right;"> 23 </td>
+   <td style="text-align:right;"> 25.5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> CBIBF </td>
    <td style="text-align:left;"> CORIS BANK INTERNATIONAL BURKINA FASO </td>
    <td style="text-align:right;"> 0.00 </td>
-   <td style="text-align:right;"> 23 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> CFAC </td>
-   <td style="text-align:left;"> CFAO MOTORS COTE D'IVOIRE </td>
-   <td style="text-align:right;"> 0.00 </td>
-   <td style="text-align:right;"> 23 </td>
+   <td style="text-align:right;"> 25.5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> CIEC </td>
    <td style="text-align:left;"> CIE COTE D'IVOIRE </td>
    <td style="text-align:right;"> 0.00 </td>
-   <td style="text-align:right;"> 23 </td>
+   <td style="text-align:right;"> 25.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ECOC </td>
+   <td style="text-align:left;"> ECOBANK COTE D'IVOIRE </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 25.5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ETIT </td>
    <td style="text-align:left;"> Ecobank Transnational Incorporated TOGO </td>
    <td style="text-align:right;"> 0.00 </td>
-   <td style="text-align:right;"> 23 </td>
+   <td style="text-align:right;"> 25.5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> FTSC </td>
    <td style="text-align:left;"> FILTISAC COTE D'IVOIRE </td>
    <td style="text-align:right;"> 0.00 </td>
-   <td style="text-align:right;"> 23 </td>
+   <td style="text-align:right;"> 25.5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> NEIC </td>
    <td style="text-align:left;"> NEI-CEDA COTE D'IVOIRE </td>
    <td style="text-align:right;"> 0.00 </td>
-   <td style="text-align:right;"> 23 </td>
+   <td style="text-align:right;"> 25.5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> NSBC </td>
    <td style="text-align:left;"> NSIA BANQUE COTE D'IVOIRE </td>
    <td style="text-align:right;"> 0.00 </td>
-   <td style="text-align:right;"> 23 </td>
+   <td style="text-align:right;"> 25.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> NTLC </td>
+   <td style="text-align:left;"> NESTLE COTE D'IVOIRE </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 25.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> SAFC </td>
+   <td style="text-align:left;"> SAFCA COTE D'IVOIRE </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 25.5 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> SDSC </td>
+   <td style="text-align:left;"> BOLLORE TRANSPORT &amp; LOGISTICS COTE D'IVOIRE </td>
+   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> 25.5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> SEMC </td>
    <td style="text-align:left;"> CROWN SIEM COTE D'IVOIRE </td>
    <td style="text-align:right;"> 0.00 </td>
-   <td style="text-align:right;"> 23 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> SGBC </td>
-   <td style="text-align:left;"> SOCIETE GENERALE COTE D'IVOIRE </td>
-   <td style="text-align:right;"> 0.00 </td>
-   <td style="text-align:right;"> 23 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> SICC </td>
-   <td style="text-align:left;"> SICOR COTE D'IVOIRE </td>
-   <td style="text-align:right;"> 0.00 </td>
-   <td style="text-align:right;"> 23 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> SMBC </td>
-   <td style="text-align:left;"> SMB COTE D'IVOIRE </td>
-   <td style="text-align:right;"> 0.00 </td>
-   <td style="text-align:right;"> 23 </td>
+   <td style="text-align:right;"> 25.5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> SNTS </td>
    <td style="text-align:left;"> SONATEL SENEGAL </td>
    <td style="text-align:right;"> 0.00 </td>
-   <td style="text-align:right;"> 23 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> STBC </td>
-   <td style="text-align:left;"> SITAB COTE D'IVOIRE </td>
-   <td style="text-align:right;"> 0.00 </td>
-   <td style="text-align:right;"> 23 </td>
+   <td style="text-align:right;"> 25.5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> SVOC </td>
    <td style="text-align:left;"> MOVIS COTE D'IVOIRE </td>
    <td style="text-align:right;"> 0.00 </td>
-   <td style="text-align:right;"> 23 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> TTLC </td>
-   <td style="text-align:left;"> TOTAL COTE D'IVOIRE </td>
-   <td style="text-align:right;"> 0.00 </td>
-   <td style="text-align:right;"> 23 </td>
+   <td style="text-align:right;"> 25.5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> TTRC </td>
    <td style="text-align:left;"> TRITURAF Ste en Liquid </td>
    <td style="text-align:right;"> 0.00 </td>
-   <td style="text-align:right;"> 23 </td>
+   <td style="text-align:right;"> 25.5 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> UNLC </td>
    <td style="text-align:left;"> UNILEVER COTE D'IVOIRE </td>
    <td style="text-align:right;"> 0.00 </td>
-   <td style="text-align:right;"> 23 </td>
+   <td style="text-align:right;"> 25.5 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> BOAC </td>
-   <td style="text-align:left;"> BANK OF AFRICA COTE D'IVOIRE </td>
-   <td style="text-align:right;"> -0.10 </td>
-   <td style="text-align:right;"> 35 </td>
+   <td style="text-align:left;"> BICC </td>
+   <td style="text-align:left;"> BICI COTE D'IVOIRE </td>
+   <td style="text-align:right;"> -0.07 </td>
+   <td style="text-align:right;"> 35.0 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> SPHC </td>
-   <td style="text-align:left;"> SAPH COTE D'IVOIRE </td>
-   <td style="text-align:right;"> -0.11 </td>
-   <td style="text-align:right;"> 36 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> SDSC </td>
-   <td style="text-align:left;"> BOLLORE TRANSPORT &amp; LOGISTICS COTE D'IVOIRE </td>
-   <td style="text-align:right;"> -0.36 </td>
-   <td style="text-align:right;"> 37 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> BOAM </td>
-   <td style="text-align:left;"> BANK OF AFRICA MALI </td>
-   <td style="text-align:right;"> -0.37 </td>
-   <td style="text-align:right;"> 38 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> BOAN </td>
-   <td style="text-align:left;"> BANK OF AFRICA NIGER </td>
-   <td style="text-align:right;"> -0.41 </td>
-   <td style="text-align:right;"> 39 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> BOABF </td>
-   <td style="text-align:left;"> BANK OF AFRICA BURKINA FASO </td>
-   <td style="text-align:right;"> -0.45 </td>
-   <td style="text-align:right;"> 40 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> SDCC </td>
-   <td style="text-align:left;"> SODE COTE D'IVOIRE </td>
-   <td style="text-align:right;"> -0.49 </td>
-   <td style="text-align:right;"> 41 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> PRSC </td>
-   <td style="text-align:left;"> TRACTAFRIC MOTORS COTE D'IVOIRE </td>
-   <td style="text-align:right;"> -0.70 </td>
-   <td style="text-align:right;"> 42 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> SHEC </td>
-   <td style="text-align:left;"> VIVO ENERGY COTE D'IVOIRE </td>
-   <td style="text-align:right;"> -0.71 </td>
-   <td style="text-align:right;"> 43 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> SOGC </td>
-   <td style="text-align:left;"> SOGB COTE D'IVOIRE </td>
-   <td style="text-align:right;"> -1.21 </td>
-   <td style="text-align:right;"> 44 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> SAFC </td>
-   <td style="text-align:left;"> SAFCA COTE D'IVOIRE </td>
-   <td style="text-align:right;"> -1.60 </td>
-   <td style="text-align:right;"> 45 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> SIVC </td>
-   <td style="text-align:left;"> AIR LIQUIDE COTE D'IVOIRE </td>
-   <td style="text-align:right;"> -1.64 </td>
-   <td style="text-align:right;"> 46 </td>
+   <td style="text-align:left;"> SMBC </td>
+   <td style="text-align:left;"> SMB COTE D'IVOIRE </td>
+   <td style="text-align:right;"> -0.14 </td>
+   <td style="text-align:right;"> 36.0 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> PALC </td>
    <td style="text-align:left;"> PALM COTE D'IVOIRE </td>
-   <td style="text-align:right;"> -2.34 </td>
-   <td style="text-align:right;"> 47 </td>
+   <td style="text-align:right;"> -0.15 </td>
+   <td style="text-align:right;"> 37.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> BOABF </td>
+   <td style="text-align:left;"> BANK OF AFRICA BURKINA FASO </td>
+   <td style="text-align:right;"> -0.48 </td>
+   <td style="text-align:right;"> 38.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> BOAN </td>
+   <td style="text-align:left;"> BANK OF AFRICA NIGER </td>
+   <td style="text-align:right;"> -0.56 </td>
+   <td style="text-align:right;"> 39.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> SIVC </td>
+   <td style="text-align:left;"> AIR LIQUIDE COTE D'IVOIRE </td>
+   <td style="text-align:right;"> -0.60 </td>
+   <td style="text-align:right;"> 40.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> PRSC </td>
+   <td style="text-align:left;"> TRACTAFRIC MOTORS COTE D'IVOIRE </td>
+   <td style="text-align:right;"> -1.84 </td>
+   <td style="text-align:right;"> 41.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ONTBF </td>
+   <td style="text-align:left;"> ONATEL BURKINA FASO </td>
+   <td style="text-align:right;"> -2.27 </td>
+   <td style="text-align:right;"> 42.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> CFAC </td>
+   <td style="text-align:left;"> CFAO MOTORS COTE D'IVOIRE </td>
+   <td style="text-align:right;"> -4.46 </td>
+   <td style="text-align:right;"> 43.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ABJC </td>
+   <td style="text-align:left;"> SERVAIR ABIDJAN  COTE D'IVOIRE </td>
+   <td style="text-align:right;"> -5.80 </td>
+   <td style="text-align:right;"> 44.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> TTLC </td>
+   <td style="text-align:left;"> TOTAL COTE D'IVOIRE </td>
+   <td style="text-align:right;"> -6.53 </td>
+   <td style="text-align:right;"> 45.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> SICC </td>
+   <td style="text-align:left;"> SICOR COTE D'IVOIRE </td>
+   <td style="text-align:right;"> -6.59 </td>
+   <td style="text-align:right;"> 46.0 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> SDCC </td>
+   <td style="text-align:left;"> SODE COTE D'IVOIRE </td>
+   <td style="text-align:right;"> -7.43 </td>
+   <td style="text-align:right;"> 47.0 </td>
   </tr>
 </tbody>
 </table>
@@ -2574,88 +2588,73 @@ brvm_down
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:left;"> PALC </td>
-   <td style="text-align:left;"> PALM COTE D'IVOIRE </td>
-   <td style="text-align:right;"> -2.34 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> SIVC </td>
-   <td style="text-align:left;"> AIR LIQUIDE COTE D'IVOIRE </td>
-   <td style="text-align:right;"> -1.64 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> SAFC </td>
-   <td style="text-align:left;"> SAFCA COTE D'IVOIRE </td>
-   <td style="text-align:right;"> -1.60 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> SOGC </td>
-   <td style="text-align:left;"> SOGB COTE D'IVOIRE </td>
-   <td style="text-align:right;"> -1.21 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> SHEC </td>
-   <td style="text-align:left;"> VIVO ENERGY COTE D'IVOIRE </td>
-   <td style="text-align:right;"> -0.71 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> PRSC </td>
-   <td style="text-align:left;"> TRACTAFRIC MOTORS COTE D'IVOIRE </td>
-   <td style="text-align:right;"> -0.70 </td>
-  </tr>
-  <tr>
    <td style="text-align:left;"> SDCC </td>
    <td style="text-align:left;"> SODE COTE D'IVOIRE </td>
-   <td style="text-align:right;"> -0.49 </td>
+   <td style="text-align:right;"> -7.43 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> BOABF </td>
-   <td style="text-align:left;"> BANK OF AFRICA BURKINA FASO </td>
-   <td style="text-align:right;"> -0.45 </td>
+   <td style="text-align:left;"> SICC </td>
+   <td style="text-align:left;"> SICOR COTE D'IVOIRE </td>
+   <td style="text-align:right;"> -6.59 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> BOAN </td>
-   <td style="text-align:left;"> BANK OF AFRICA NIGER </td>
-   <td style="text-align:right;"> -0.41 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> BOAM </td>
-   <td style="text-align:left;"> BANK OF AFRICA MALI </td>
-   <td style="text-align:right;"> -0.37 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> SDSC </td>
-   <td style="text-align:left;"> BOLLORE TRANSPORT &amp; LOGISTICS COTE D'IVOIRE </td>
-   <td style="text-align:right;"> -0.36 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> SPHC </td>
-   <td style="text-align:left;"> SAPH COTE D'IVOIRE </td>
-   <td style="text-align:right;"> -0.11 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> BOAC </td>
-   <td style="text-align:left;"> BANK OF AFRICA COTE D'IVOIRE </td>
-   <td style="text-align:right;"> -0.10 </td>
+   <td style="text-align:left;"> TTLC </td>
+   <td style="text-align:left;"> TOTAL COTE D'IVOIRE </td>
+   <td style="text-align:right;"> -6.53 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> ABJC </td>
    <td style="text-align:left;"> SERVAIR ABIDJAN COTE D'IVOIRE </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> -5.80 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> CFAC </td>
+   <td style="text-align:left;"> CFAO MOTORS COTE D'IVOIRE </td>
+   <td style="text-align:right;"> -4.46 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ONTBF </td>
+   <td style="text-align:left;"> ONATEL BURKINA FASO </td>
+   <td style="text-align:right;"> -2.27 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> PRSC </td>
+   <td style="text-align:left;"> TRACTAFRIC MOTORS COTE D'IVOIRE </td>
+   <td style="text-align:right;"> -1.84 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> SIVC </td>
+   <td style="text-align:left;"> AIR LIQUIDE COTE D'IVOIRE </td>
+   <td style="text-align:right;"> -0.60 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> BOAN </td>
+   <td style="text-align:left;"> BANK OF AFRICA NIGER </td>
+   <td style="text-align:right;"> -0.56 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> BOABF </td>
+   <td style="text-align:left;"> BANK OF AFRICA BURKINA FASO </td>
+   <td style="text-align:right;"> -0.48 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> PALC </td>
+   <td style="text-align:left;"> PALM COTE D'IVOIRE </td>
+   <td style="text-align:right;"> -0.15 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> SMBC </td>
+   <td style="text-align:left;"> SMB COTE D'IVOIRE </td>
+   <td style="text-align:right;"> -0.14 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> BICC </td>
    <td style="text-align:left;"> BICI COTE D'IVOIRE </td>
-   <td style="text-align:right;"> 0.00 </td>
+   <td style="text-align:right;"> -0.07 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> BNBC </td>
    <td style="text-align:left;"> BERNABE COTE D'IVOIRE </td>
-   <td style="text-align:right;"> 0.00 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> BOAB </td>
-   <td style="text-align:left;"> BANK OF AFRICA BENIN </td>
    <td style="text-align:right;"> 0.00 </td>
   </tr>
   <tr>
@@ -2674,13 +2673,13 @@ brvm_down
    <td style="text-align:right;"> 0.00 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> CFAC </td>
-   <td style="text-align:left;"> CFAO MOTORS COTE D'IVOIRE </td>
+   <td style="text-align:left;"> CIEC </td>
+   <td style="text-align:left;"> CIE COTE D'IVOIRE </td>
    <td style="text-align:right;"> 0.00 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> CIEC </td>
-   <td style="text-align:left;"> CIE COTE D'IVOIRE </td>
+   <td style="text-align:left;"> ECOC </td>
+   <td style="text-align:left;"> ECOBANK COTE D'IVOIRE </td>
    <td style="text-align:right;"> 0.00 </td>
   </tr>
   <tr>
@@ -2704,23 +2703,23 @@ brvm_down
    <td style="text-align:right;"> 0.00 </td>
   </tr>
   <tr>
+   <td style="text-align:left;"> NTLC </td>
+   <td style="text-align:left;"> NESTLE COTE D'IVOIRE </td>
+   <td style="text-align:right;"> 0.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> SAFC </td>
+   <td style="text-align:left;"> SAFCA COTE D'IVOIRE </td>
+   <td style="text-align:right;"> 0.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> SDSC </td>
+   <td style="text-align:left;"> BOLLORE TRANSPORT &amp; LOGISTICS COTE D'IVOIRE </td>
+   <td style="text-align:right;"> 0.00 </td>
+  </tr>
+  <tr>
    <td style="text-align:left;"> SEMC </td>
    <td style="text-align:left;"> CROWN SIEM COTE D'IVOIRE </td>
-   <td style="text-align:right;"> 0.00 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> SGBC </td>
-   <td style="text-align:left;"> SOCIETE GENERALE COTE D'IVOIRE </td>
-   <td style="text-align:right;"> 0.00 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> SICC </td>
-   <td style="text-align:left;"> SICOR COTE D'IVOIRE </td>
-   <td style="text-align:right;"> 0.00 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> SMBC </td>
-   <td style="text-align:left;"> SMB COTE D'IVOIRE </td>
    <td style="text-align:right;"> 0.00 </td>
   </tr>
   <tr>
@@ -2729,18 +2728,8 @@ brvm_down
    <td style="text-align:right;"> 0.00 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> STBC </td>
-   <td style="text-align:left;"> SITAB COTE D'IVOIRE </td>
-   <td style="text-align:right;"> 0.00 </td>
-  </tr>
-  <tr>
    <td style="text-align:left;"> SVOC </td>
    <td style="text-align:left;"> MOVIS COTE D'IVOIRE </td>
-   <td style="text-align:right;"> 0.00 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> TTLC </td>
-   <td style="text-align:left;"> TOTAL COTE D'IVOIRE </td>
    <td style="text-align:right;"> 0.00 </td>
   </tr>
   <tr>
@@ -2754,59 +2743,84 @@ brvm_down
    <td style="text-align:right;"> 0.00 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> SLBC </td>
-   <td style="text-align:left;"> SOLIBRA COTE D'IVOIRE </td>
-   <td style="text-align:right;"> 0.01 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> NTLC </td>
-   <td style="text-align:left;"> NESTLE COTE D'IVOIRE </td>
-   <td style="text-align:right;"> 0.06 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ECOC </td>
-   <td style="text-align:left;"> ECOBANK COTE D'IVOIRE </td>
-   <td style="text-align:right;"> 0.18 </td>
+   <td style="text-align:left;"> ORAC </td>
+   <td style="text-align:left;"> ORANGE COTE D'IVOIRE </td>
+   <td style="text-align:right;"> 0.05 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> SIBC </td>
    <td style="text-align:left;"> SOCIETE IVOIRIENNE DE BANQUE COTE D'IVOIRE </td>
-   <td style="text-align:right;"> 0.20 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ONTBF </td>
-   <td style="text-align:left;"> ONATEL BURKINA FASO </td>
-   <td style="text-align:right;"> 0.36 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> SCRC </td>
-   <td style="text-align:left;"> SUCRIVOIRE COTE D'IVOIRE </td>
-   <td style="text-align:right;"> 0.77 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> ORAC </td>
-   <td style="text-align:left;"> ORANGE COTE D'IVOIRE </td>
-   <td style="text-align:right;"> 1.06 </td>
+   <td style="text-align:right;"> 0.09 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> STAC </td>
    <td style="text-align:left;"> SETAO COTE D'IVOIRE </td>
-   <td style="text-align:right;"> 1.12 </td>
+   <td style="text-align:right;"> 0.56 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> SHEC </td>
+   <td style="text-align:left;"> VIVO ENERGY COTE D'IVOIRE </td>
+   <td style="text-align:right;"> 0.67 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> BOAC </td>
+   <td style="text-align:left;"> BANK OF AFRICA COTE D'IVOIRE </td>
+   <td style="text-align:right;"> 0.74 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> BOAB </td>
+   <td style="text-align:left;"> BANK OF AFRICA BENIN </td>
+   <td style="text-align:right;"> 0.78 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> UNXC </td>
    <td style="text-align:left;"> UNIWAX COTE D'IVOIRE </td>
-   <td style="text-align:right;"> 3.01 </td>
+   <td style="text-align:right;"> 0.88 </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> ORGT </td>
-   <td style="text-align:left;"> ORAGROUP TOGO </td>
-   <td style="text-align:right;"> 6.82 </td>
+   <td style="text-align:left;"> BOAM </td>
+   <td style="text-align:left;"> BANK OF AFRICA MALI </td>
+   <td style="text-align:right;"> 1.03 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> SGBC </td>
+   <td style="text-align:left;"> SOCIETE GENERALE COTE D'IVOIRE </td>
+   <td style="text-align:right;"> 1.27 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> SOGC </td>
+   <td style="text-align:left;"> SOGB COTE D'IVOIRE </td>
+   <td style="text-align:right;"> 1.41 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> SLBC </td>
+   <td style="text-align:left;"> SOLIBRA COTE D'IVOIRE </td>
+   <td style="text-align:right;"> 1.70 </td>
   </tr>
   <tr>
    <td style="text-align:left;"> TTLS </td>
    <td style="text-align:left;"> TOTAL SENEGAL </td>
-   <td style="text-align:right;"> 7.11 </td>
+   <td style="text-align:right;"> 2.13 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> SCRC </td>
+   <td style="text-align:left;"> SUCRIVOIRE COTE D'IVOIRE </td>
+   <td style="text-align:right;"> 3.45 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> STBC </td>
+   <td style="text-align:left;"> SITAB COTE D'IVOIRE </td>
+   <td style="text-align:right;"> 6.19 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> SPHC </td>
+   <td style="text-align:left;"> SAPH COTE D'IVOIRE </td>
+   <td style="text-align:right;"> 7.05 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ORGT </td>
+   <td style="text-align:left;"> ORAGROUP TOGO </td>
+   <td style="text-align:right;"> 7.45 </td>
   </tr>
 </tbody>
 </table>
@@ -2825,32 +2839,32 @@ BRVM_rank("top", 15)
 #> # A tibble: 15 × 3
 #>    Ticker Name                                       `Change (%)`
 #>    <chr>  <chr>                                             <dbl>
-#>  1 TTLS   TOTAL SENEGAL                                      7.11
-#>  2 ORGT   ORAGROUP TOGO                                      6.82
-#>  3 UNXC   UNIWAX COTE D'IVOIRE                               3.01
-#>  4 STAC   SETAO COTE D'IVOIRE                                1.12
-#>  5 ORAC   ORANGE COTE D'IVOIRE                               1.06
-#>  6 SCRC   SUCRIVOIRE COTE D'IVOIRE                           0.77
-#>  7 ONTBF  ONATEL BURKINA FASO                                0.36
-#>  8 SIBC   SOCIETE IVOIRIENNE DE BANQUE COTE D'IVOIRE         0.2 
-#>  9 ECOC   ECOBANK COTE D'IVOIRE                              0.18
-#> 10 NTLC   NESTLE COTE D'IVOIRE                               0.06
-#> 11 SLBC   SOLIBRA COTE D'IVOIRE                              0.01
-#> 12 ABJC   SERVAIR ABIDJAN  COTE D'IVOIRE                     0   
-#> 13 BICC   BICI COTE D'IVOIRE                                 0   
-#> 14 BNBC   BERNABE COTE D'IVOIRE                              0   
-#> 15 BOAB   BANK OF AFRICA BENIN                               0
+#>  1 ORGT   ORAGROUP TOGO                                      7.45
+#>  2 SPHC   SAPH COTE D'IVOIRE                                 7.05
+#>  3 STBC   SITAB COTE D'IVOIRE                                6.19
+#>  4 SCRC   SUCRIVOIRE COTE D'IVOIRE                           3.45
+#>  5 TTLS   TOTAL SENEGAL                                      2.13
+#>  6 SLBC   SOLIBRA COTE D'IVOIRE                              1.7 
+#>  7 SOGC   SOGB COTE D'IVOIRE                                 1.41
+#>  8 SGBC   SOCIETE GENERALE COTE D'IVOIRE                     1.27
+#>  9 BOAM   BANK OF AFRICA MALI                                1.03
+#> 10 UNXC   UNIWAX COTE D'IVOIRE                               0.88
+#> 11 BOAB   BANK OF AFRICA BENIN                               0.78
+#> 12 BOAC   BANK OF AFRICA COTE D'IVOIRE                       0.74
+#> 13 SHEC   VIVO ENERGY COTE D'IVOIRE                          0.67
+#> 14 STAC   SETAO COTE D'IVOIRE                                0.56
+#> 15 SIBC   SOCIETE IVOIRIENNE DE BANQUE COTE D'IVOIRE         0.09
 
 #To get flop 5
 BRVM_rank("flop", 5)
 #> # A tibble: 5 × 3
-#>   Ticker Name                      `Change (%)`
-#>   <chr>  <chr>                            <dbl>
-#> 1 PALC   PALM COTE D'IVOIRE               -2.34
-#> 2 SIVC   AIR LIQUIDE COTE D'IVOIRE        -1.64
-#> 3 SAFC   SAFCA COTE D'IVOIRE              -1.6 
-#> 4 SOGC   SOGB COTE D'IVOIRE               -1.21
-#> 5 SHEC   VIVO ENERGY COTE D'IVOIRE        -0.71
+#>   Ticker Name                           `Change (%)`
+#>   <chr>  <chr>                                 <dbl>
+#> 1 SDCC   SODE COTE D'IVOIRE                    -7.43
+#> 2 SICC   SICOR COTE D'IVOIRE                   -6.59
+#> 3 TTLC   TOTAL COTE D'IVOIRE                   -6.53
+#> 4 ABJC   SERVAIR ABIDJAN  COTE D'IVOIRE        -5.8 
+#> 5 CFAC   CFAO MOTORS COTE D'IVOIRE             -4.46
 ```
 
 > - **company_traded_val("company")** : receives one company listed on the BRVM stock exchange, Turn to upper case the input by using toupper() and returns informations about the company's traded value
@@ -2860,7 +2874,7 @@ BRVM_rank("flop", 5)
 
 ```r
 company_traded_val("ontbf") # Traded value of ONATEL BURKINA FASO
-#> [1] "7 666 205"
+#> [1] "5 615 180"
 ```
 
 

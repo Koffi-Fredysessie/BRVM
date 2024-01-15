@@ -28,6 +28,9 @@
 #'
 #' @export
 #'
+#' @examples
+#' BRVM_company_rank()
+
 BRVM_company_rank <- function(){
   tryCatch(
     {

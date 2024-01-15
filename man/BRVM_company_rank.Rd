@@ -25,6 +25,7 @@ dplyr::arrange(desc(percent_change))
 comp.rank
 
 
+BRVM_company_rank()
 }
 \seealso{
 \url{https://www.brvm.org/en/cours-actions/0}
