@@ -19,6 +19,7 @@ The function takes no parameter
 \examples{
 \donttest{
 library(httr)
+library(dplyr)
 library(rvest)
 BRVM_company_rank()
 comp.rank <- BRVM_company_rank()
