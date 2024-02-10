@@ -34,7 +34,8 @@
 BRVM_company_rank <- function(){
   tryCatch(
     {
-      quotes_tbl <- rvest::read_html("https://www.brvm.org/en/cours-actions/0/status/200") %>%
+      quotes_tbl <- rvest::read_html("https://www.brvm.org/en/cours-actions/0") %>%
+      # quotes_tbl <- rvest::read_html("https://www.brvm.org/en/cours-actions/0/status/200") %>%
         rvest::html_nodes('table') %>%
         rvest::html_table()
       quotes_tbl <- quotes_tbl[[4]]

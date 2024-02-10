@@ -17,15 +17,14 @@ This function will get the rank of the companies listed on the BVRM exchange thr
 The function takes no parameter
 }
 \examples{
-
+\donttest{
+library(dplyr)
 BRVM_company_rank()
-comp.rank<-BRVM_company_rank()
+comp.rank <- BRVM_company_rank()
 comp.rank<-comp.rank\%>\%
 dplyr::arrange(desc(percent_change))
 comp.rank
-
-
-BRVM_company_rank()
+}
 }
 \seealso{
 \url{https://www.brvm.org/en/cours-actions/0}

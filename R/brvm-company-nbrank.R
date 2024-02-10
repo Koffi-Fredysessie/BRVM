@@ -19,12 +19,15 @@
 #' @param .company The company name
 #'
 #' @return "character"
+#'
 #' @export
 #'
 #' @examples
-#'
+#' \donttest{
+#' library(dplyr)
 #' company_nbrank("BICC")
 #' company_nbrank("SNTS")
+#'}
 #'
 
 company_nbrank<-function(.company){
