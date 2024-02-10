@@ -18,13 +18,15 @@ The function takes no parameter
 }
 \examples{
 \donttest{
-library(dplyr)
+library(httr)
+library(rvest)
 BRVM_company_rank()
 comp.rank <- BRVM_company_rank()
 comp.rank<-comp.rank\%>\%
 dplyr::arrange(desc(percent_change))
 comp.rank
 }
+
 }
 \seealso{
 \url{https://www.brvm.org/en/cours-actions/0}

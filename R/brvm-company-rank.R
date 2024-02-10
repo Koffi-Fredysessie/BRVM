@@ -19,7 +19,7 @@
 #' "tbl_df"     "tbl"        "data.frame"
 #'
 #' @importFrom rvest read_html html_elements html_table
-#'
+#' @import dplyr
 #' @examples
 #' \donttest{
 #' library(httr)
