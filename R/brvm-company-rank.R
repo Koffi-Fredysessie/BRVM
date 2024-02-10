@@ -18,17 +18,20 @@
 #' @return
 #' "tbl_df"     "tbl"        "data.frame"
 #'
-#' @export
+#' @importFrom rvest read_html html_elements html_table
 #'
 #' @examples
 #' \donttest{
-#' library(dplyr)
+#' library(httr)
+#' library(rvest)
 #' BRVM_company_rank()
 #' comp.rank <- BRVM_company_rank()
 #' comp.rank<-comp.rank%>%
 #' dplyr::arrange(desc(percent_change))
 #' comp.rank
 #'}
+#'
+#' @export
 
 
 BRVM_company_rank <- function(){
@@ -36,20 +39,21 @@ BRVM_company_rank <- function(){
     {
       quotes_tbl <- rvest::read_html("https://www.brvm.org/en/cours-actions/0") %>%
       # quotes_tbl <- rvest::read_html("https://www.brvm.org/en/cours-actions/0/status/200") %>%
-        rvest::html_nodes('table') %>%
+        rvest::html_elements('table') %>%
         rvest::html_table()
+
       quotes_tbl <- quotes_tbl[[4]]
 
       # quotes_tbl$`Change (%)`<-gsub(",", ".", quotes_tbl$`Change (%)`)
       # quotes_tbl$`Change (%)`<-as.numeric(quotes_tbl$`Change (%)`)
       # quotes_tbl$Volume<-gsub(" ", "", quotes_tbl$Volume)
       # quotes_tbl$Volume<-as.numeric(quotes_tbl$Volume)
-      # quotes_tbl$`Previous price`<-gsub(" ", "", quotes_tbl$`Previous price`)
-      # quotes_tbl$`Previous price`<-as.numeric(quotes_tbl$`Previous price`)
-      # quotes_tbl$`Opening price`<-gsub(" ", "", quotes_tbl$`Opening price`)
-      # quotes_tbl$`Opening price`<-as.numeric(quotes_tbl$`Opening price`)
-      # quotes_tbl$`Closing price`<-gsub(" ", "", quotes_tbl$`Closing price`)
-      # quotes_tbl$`Closing price`<-as.numeric(quotes_tbl$`Closing price`)
+      # quotes_tbl$`Previous price`<- gsub(" ", "", quotes_tbl$`Previous price`)
+      # quotes_tbl$`Previous price`<- as.numeric(quotes_tbl$`Previous price`)
+      # quotes_tbl$`Opening price`<- gsub(" ", "", quotes_tbl$`Opening price`)
+      # quotes_tbl$`Opening price`<- as.numeric(quotes_tbl$`Opening price`)
+      # quotes_tbl$`Closing price`<- gsub(" ", "", quotes_tbl$`Closing price`)
+      # quotes_tbl$`Closing price`<- as.numeric(quotes_tbl$`Closing price`)
 
       # Mes colonnes numeriques
       numeric_columns <- c("Change (%)", "Volume", "Previous price", "Opening price", "Closing price")
@@ -69,10 +73,10 @@ BRVM_company_rank <- function(){
         "open",
         "close",
         "percent_change")
-      quotes_tbl$rank <- rank(-quotes_tbl$`percent_change`)
+      quotes_tbl$rank <- base::rank(-quotes_tbl$`percent_change`)
 
       # Use order() instead
-      quotes_tbl <- quotes_tbl[order(-quotes_tbl$`percent_change`),]
+      quotes_tbl <- quotes_tbl[base::order(-quotes_tbl$`percent_change`),]
       #quotes_tbl <-dplyr::arrange(quotes_tbl, dplyr::desc(quotes_tbl$`percent_change`))
       # quotes_tbl <- quotes_tbl[sort(quotes_tbl$rank), ]
       return(quotes_tbl[c(1,2,7,8)])
