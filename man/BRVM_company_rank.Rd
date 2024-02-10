@@ -19,13 +19,13 @@ The function takes no parameter
 \examples{
 \donttest{
 library(httr)
-library(dplyr)
+#library(dplyr)
 library(rvest)
 BRVM_company_rank()
 comp.rank <- BRVM_company_rank()
-comp.rank<-comp.rank\%>\%
-dplyr::arrange(desc(percent_change))
-comp.rank
+# comp.rank<-comp.rank\%>\%
+# dplyr::arrange(desc(percent_change))
+comp.rank #in case the connexion is worse it will return error
 }
 
 }
