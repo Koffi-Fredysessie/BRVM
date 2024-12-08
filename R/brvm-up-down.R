@@ -21,6 +21,7 @@
 #'
 #' @importFrom rvest read_html html_elements html_table
 #'
+#'
 #' @export
 #'
 #' @examples \donttest{
