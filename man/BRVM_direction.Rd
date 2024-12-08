@@ -23,6 +23,8 @@ of the BRVM tickers.
 }
 \examples{
 \donttest{
+library(rvest)
+
 BRVM_direction("Up")
 }
 

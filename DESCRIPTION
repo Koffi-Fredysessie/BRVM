@@ -20,7 +20,6 @@ Imports:
     rlang (>= 0.4.11),
     tidyr,
     dplyr,
-    gsheet,
     httr,
     httr2,
     tseries,

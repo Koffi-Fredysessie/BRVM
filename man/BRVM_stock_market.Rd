@@ -23,10 +23,12 @@ library(lubridate)
 library(rvest)
 library(timeDate)
 library(formattable)
+
 library(stringr)
 
 BRVM_stock_market("2022-04-25")
 BRVM_stock_market("2021-03-25")
+BRVM_stock_market("2024-12-06")
 }
 }
 \seealso{

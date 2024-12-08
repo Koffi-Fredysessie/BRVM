@@ -3,9 +3,13 @@
 #' @param input is a parameter representing one the category in ("All", "State", "Private", "Regional") and returns a processed dataframe bonds_brvm. The function also uses the separate function to split the "Last payment (Date/Value)" column into "Date" and "Value" columns.
 #'
 #' @return dataframe
+#' @importFrom tidyr separate
+#' @importFrom rvest read_html html_elements html_table html_nodes
 #' @export
 #'
 #' @examples
+#' library(tidyr)
+#' library(rvest)
 #' all_bonds = BRVM_Bonds("All")
 #' head(all_bonds)
 #'
