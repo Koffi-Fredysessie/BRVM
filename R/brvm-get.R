@@ -197,7 +197,7 @@ BRVM_get <- function(.symbol, .from = Sys.Date() - 365, .to = Sys.Date() - 1) {
       } else {
         returns<- returns[, -7]
       }
-      message(symbol_vec)
+      message(paste(symbol_vec, collapse = ", "))
       return(returns)
     },
     error = function(e) {

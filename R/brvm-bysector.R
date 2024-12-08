@@ -60,15 +60,12 @@ BRVM_bySector <- function(.sectors=NULL){
             All.sector<-as.data.frame(matrix(NA, ncol = 3, nrow = 0))
             for (elem in url.all){
                 brvm.sect <- read_html(elem) %>% html_elements('table') %>% html_table()
-                All.sector <-rbind(All.sector, brvm.sect[[1]][-c(1,5)])
+                brvm.sect <- brvm.sect[[1]][-c(1,5)]
+                brvm.sect <- brvm.sect[, c(1:3)]
 
+                All.sector <- rbind(All.sector, brvm.sect)
             }
-
-            if(ncol(All.sector)!= 3){
-                All.sector = All.sector[, -4]
-            }
-
-            names(All.sector) <- c("Company name", "Ticker", "Sector")
+            names(All.sector)<-c("Company name", "Ticker", "Sector")
             All.sector$Sector<-str_replace(All.sector$Sector, "Industrie", "Industry")
             All.sector$Sector<-str_replace(All.sector$Sector, "Finances", "Finance")
             All.sector$Sector<-str_replace(All.sector$Sector, "Autres", "Other")
