@@ -92,7 +92,7 @@ BRVM_get1 <- function(ticker ='BICC',
                 "SCRC", "SDCC", "SDSC", "SEMC", "SGBC", "SHEC",
                 "SIBC", "SICC", "SIVC", "SLBC", "SMBC", "SNTS",
                 "SOGC", "SPHC", "STAC", "STBC", "TTLC",
-                "TTLS", "UNLC", "UNXC"
+                "TTLS", "UNLC", "UNXC", "LNBB"
                 #, "TTRC", "SVOC"
   )
 

@@ -27,7 +27,7 @@
 #'
 
 BRVM_ticker_desc<- function(){
-    Countries<-list(BENIN =c("BOAB"), "BURKINA FASO" = c("BOABF", "CBIBF", "ONTBF"),
+    Countries<-list(BENIN =c("BOAB", "LNBB"), "BURKINA FASO" = c("BOABF", "CBIBF", "ONTBF"),
                     "IVORY COAST" = c("ABJC", "BICC", "BNBC","BOAC", "CABC", "CFAC", "CIEC", "ECOC", "FTSC", "NEIC",
                                       "NSBC","NTLC", "ORAC", "PALC", "PRSC", "SAFC", "SCRC", "SDCC", "SDSC", "SEMC","SGBC",
                                       "SHEC", "SIBC", "SICC", "SIVC", "SLBC", "SMBC", "SOGC","SPHC", "STAC", "STBC",
