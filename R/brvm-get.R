@@ -102,7 +102,7 @@ BRVM_get <- function(.symbol, .from = Sys.Date() - 365, .to = Sys.Date() - 1) {
         page <- unlist(strsplit(page, split = "\n"))
         vect.data<- NULL
 
-        for (i in 600:650){
+        for (i in 600:700){
           if (length(unlist(strsplit(page[[i]], split = ":")))==2) {
             if ((unlist(strsplit(page[[i]], split = ":")))[[1]] == "                data") {
               vect.data<- c(vect.data, i)
@@ -114,7 +114,7 @@ BRVM_get <- function(.symbol, .from = Sys.Date() - 365, .to = Sys.Date() - 1) {
 
         if (length(vect.data) < 2) {
           vect.data<- NULL
-          for (i in 550:700){
+          for (i in 550:800){
             if (length(unlist(strsplit(page[[i]], split = ":")))==2) {
               if ((unlist(strsplit(page[[i]], split = ":")))[[1]] == "                data") {
                 vect.data<- c(vect.data, i)
