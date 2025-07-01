@@ -9,6 +9,7 @@ globalVariables(
               'request', 'resp_body_json', 'sf.test', 'shapiro.test', 'str_replace', 'str_sub',
               'str_to_title', 'summarise', 'html_elements', 'adn_ticker',
               # 'across', 'all_of',
-              'numeric_columns', 'Last payment (Date/Value)'
+              'numeric_columns', 'Last payment (Date/Value)',
+               'across', 'all_of'
               )
     )
