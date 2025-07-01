@@ -39,6 +39,7 @@ BRVM_rank <-function(top_or_flop, n=10){
         quotes.df <- rvest::read_html("https://www.brvm.org/en/cours-actions/0/status/200") %>%
           rvest::html_elements('table') %>%
           rvest::html_table()
+
         quotes.df <- quotes.df[[4]]    #[1:2]
         quotes.df <- tibble::as.tibble(quotes.df)
         quotes.df$`Change (%)`<-gsub(",", ".", quotes.df$`Change (%)`)

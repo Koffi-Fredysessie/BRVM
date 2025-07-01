@@ -31,7 +31,9 @@ knitr::opts_chunk$set(
 )
 ```
 
-<img src="man/figures/brvm-logo.png" width="147" height="170" align="right"/>
+<img src="https://raw.githubusercontent.com/Fredysessie/Draft_gif/main/figures/brvm-logo.png" width="147" height="170" align="right"/>
+
+<!-- <img src="man/figures/brvm-logo.png" width="147" height="170" align="right"/> -->
 
 <!-- badges: start -->
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/BRVM)](https://cran.r-project.org/package=BRVM)
@@ -241,8 +243,10 @@ chart <- BRVM_plot("BICC") # The default colors for the up and down are green an
 ```
 
 <div align="center"> 
+
+<img src="https://raw.githubusercontent.com/Fredysessie/Draft_gif/main/figures/OHCL_Bicc_chart.gif" width="100%" height="480" align="center"/>
   
-<img src="man/figures/OHCL_Bicc_chart.gif" width="100%" height="480" align="center"/>
+<!-- <img src="man/figures/OHCL_Bicc_chart.gif" width="100%" height="480" align="center"/> -->
 
 </div>
 
@@ -259,7 +263,9 @@ chart1 <- BRVM_plot(c("BICC","ETIT", "BOAM"))
 
 <div align="center"> 
 
-<img src="man/figures/Tickers_line_chart.gif" width="100%" height="480" align="center"/>
+<img src="https://raw.githubusercontent.com/Fredysessie/Draft_gif/main/figures/Tickers_line_chart.gif" width="100%" height="480" align="center"/>
+
+<!-- <img src="man/figures/Tickers_line_chart.gif" width="100%" height="480" align="center"/> -->
 
 </div>
 

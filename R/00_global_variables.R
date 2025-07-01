@@ -7,6 +7,9 @@ globalVariables(
               'isWeekday', 'jarque.bera.test', 'kpss.test', 'left_join', 'lillie.test', 'na.omit',
               'na.remove', 'pearson.test', 'pp.test', 'read_html', 'req_body_json', 'req_perform',
               'request', 'resp_body_json', 'sf.test', 'shapiro.test', 'str_replace', 'str_sub',
-              'str_to_title', 'summarise', 'html_elements', 'adn_ticker', 'numeric_columns', 'across', 'all_of'
+              'str_to_title', 'summarise', 'html_elements', 'adn_ticker',
+              # 'across', 'all_of',
+              'numeric_columns', 'Last payment (Date/Value)',
+               'across', 'all_of'
               )
     )

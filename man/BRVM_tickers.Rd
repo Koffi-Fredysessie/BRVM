@@ -14,6 +14,7 @@ It receives no argument and returns two informations about BRVM exchange compani
 }
 \examples{
 \donttest{
+library(rvest)
 BRVM_tickers()
 ticks <- BRVM_tickers()
 dput(ticks$Ticker) ## Returns the name of all tickers

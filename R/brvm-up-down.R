@@ -16,15 +16,21 @@
 #' @param .up_or_down This is a character string set to "Up" It can either be
 #' 'Up' or 'Down'.
 #'
-#' @examples \donttest{
-#' BRVM_direction("Up")
-#'}
-#'
 #' @return
 #' A tibble
 #'
+#' @importFrom rvest read_html html_elements html_table
+#'
+#'
 #' @export
 #'
+#' @examples \donttest{
+#' library(rvest)
+#'
+#' BRVM_direction("Up")
+#'}
+#'
+
 
 BRVM_direction <- function(.up_or_down = "Up") {
 
@@ -38,7 +44,14 @@ BRVM_direction <- function(.up_or_down = "Up") {
         )
     } else {
         # get data ----
-        quotes_tbl <- gsheet::gsheet2tbl("https://docs.google.com/spreadsheets/d/1rdjGjlQg7cUzWAEJFikrxOnisk-yQQx-n652sJUL-qc/edit#gid=0")
+        # quotes_tbl <- gsheet::gsheet2tbl("https://docs.google.com/spreadsheets/d/1rdjGjlQg7cUzWAEJFikrxOnisk-yQQx-n652sJUL-qc/edit#gid=0")
+
+        quotes_tbl <- rvest::read_html("https://www.brvm.org/fr/cours-actions/0") %>%
+            rvest::html_elements('table') %>%
+            rvest::html_table()
+
+        quotes_tbl <- quotes_tbl[[4]]
+
 
         names(quotes_tbl) <- c("Symbol", "Name", "Volume",
                                "Previous price  (FCFA)", "Opening price (FCFA)",

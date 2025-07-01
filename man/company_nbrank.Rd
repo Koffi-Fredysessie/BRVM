@@ -21,9 +21,11 @@ This function will get the rank of one companies listed on the BVRM exchange thr
 The function takes as parameter the name of company listed on BRVM
 }
 \examples{
-
+\donttest{
+library(dplyr)
 company_nbrank("BICC")
 company_nbrank("SNTS")
+}
 
 }
 \seealso{
