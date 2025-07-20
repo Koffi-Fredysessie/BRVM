@@ -62,6 +62,7 @@ BRVM_plot<- function(.company,
   #        .company<- companies,
   #        .company)
 
+  # Nouveau Test
   Global.returns<- BRVM_get(.symbol = .company, .from = date1, .to = date2 )
 
   if (length(Global.returns)== 6){
