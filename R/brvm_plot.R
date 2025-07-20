@@ -78,7 +78,7 @@ BRVM_plot<- function(.company,
               Global.returns1[i, "direction"] <- "down")
     }
 
-    brvm.plot<-     highchart (type="stock") %>%
+    brvm.plot<-     highchart(type="stock") %>%
       hc_title(text = paste0(ticker.name," chart : from ", date1, " to ", date2),
                style = list(fontWeight = "bold", fontSize = "25px"),
                align = "center") %>%
