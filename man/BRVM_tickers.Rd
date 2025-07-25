@@ -25,7 +25,7 @@ dput(ticks$Ticker) ## Returns the name of all tickers
 \author{
 Koffi Frederic SESSIE
 
-Oudouss Diakité Abdoul
+Oudouss Diakite Abdoul
 
 Steven P. Sanderson II, MPH
 }

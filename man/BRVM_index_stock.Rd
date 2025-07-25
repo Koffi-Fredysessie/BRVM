@@ -14,7 +14,7 @@ BRVM_index_stock(
 \arguments{
 \item{.ticker}{Must be at least one index between c("BRVM10","BRVMAG","BRVMC","BRVMAS","BRVMDI","BRVMFI", "BRVMIN", "BRVMSP", "BRVMTR")}
 
-\item{Period}{Numeric number indicating time period. Valid entries are 0, 1, 5, 30, 91, and 365 representing respectively ‘daily’, 'one year', ‘weekly’, ‘monthly’, ‘quarterly’ and ‘yearly’ .}
+\item{Period}{Numeric number indicating time period. Valid entries are 0, 1, 5, 30, 91, and 365 representing respectively 'daily', 'one year', 'weekly', 'monthly', 'quarterly' and 'yearly'.}
 
 \item{from}{A quoted start date, ie. "2020-01-01" or "2020/01/01". The date
 must be in ymd format "YYYY-MM-DD" or "YYYY/MM/DD".}

@@ -36,7 +36,7 @@ BRVM_bySector(.sectors = c("Other", "Agriculture"))
 
 }
 \seealso{
-Other Data Retrieval:
+Other Data Retrieval: 
 \code{\link{BRVM_cap}()},
 \code{\link{BRVM_company_rank}()},
 \code{\link{BRVM_get1}()},
@@ -56,7 +56,7 @@ Other Data Retrieval:
 \author{
 Koffi Frederic SESSIE
 
-#' @author Oudouss Diakite Abdoul
+Oudouss Diakite Abdoul
 
 Steven P. Sanderson II, MPH
 }

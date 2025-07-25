@@ -29,7 +29,7 @@ comp.rank
 \seealso{
 \url{https://www.brvm.org/en/cours-actions/0}
 
-Other Data Retrieval:
+Other Data Retrieval: 
 \code{\link{BRVM_bySector}()},
 \code{\link{BRVM_cap}()},
 \code{\link{BRVM_get1}()},
@@ -46,7 +46,7 @@ Other Data Retrieval:
 \code{\link{company_sector}()},
 \code{\link{company_traded_val}()}
 
-Other BRVM:
+Other BRVM: 
 \code{\link{BRVM.index}()},
 \code{\link{BRVM_cap}()},
 \code{\link{BRVM_company_cap}()},
@@ -69,7 +69,7 @@ Other BRVM:
 \author{
 Koffi Frederic SESSIE
 
-#' @author Oudouss Diakite Abdoul
+Oudouss Diakite Abdoul
 
 Steven P. Sanderson II, MPH
 }
