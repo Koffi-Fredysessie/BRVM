@@ -4,7 +4,7 @@
 #' @family Data Retrieval
 #'
 #' @author Koffi Frederic SESSIE
-#' @author Oudouss Diakité Abdoul
+#' @author Oudouss Diakite Abdoul
 #' @author Steven P. Sanderson II, MPH
 #'
 #' @details This function will take in a vector of sectors provided by the end
