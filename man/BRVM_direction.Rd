@@ -30,7 +30,7 @@ BRVM_direction("Up")
 \author{
 Koffi Frederic SESSIE
 
-Oudouss Diakité Abdoul
+Oudouss Diakite Abdoul
 
 Steven P. Sanderson II, MPH
 }

@@ -1,7 +1,7 @@
 #' BRVM Tickers - Information about listed companies on BRVM Stock exchange
 #'
 #' @author Koffi Frederic SESSIE
-#' @author Oudouss Diakité Abdoul
+#' @author Oudouss Diakite Abdoul
 #' @author Steven P. Sanderson II, MPH
 #'
 #' @description It receives no argument and returns two informations about BRVM exchange companies (ticker and company name).

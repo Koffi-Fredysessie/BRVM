@@ -4,7 +4,7 @@
 #' @family Richbourse
 #'
 #' @author Koffi Frederic SESSIE
-#' @author Oudouss Diakité Abdoul
+#' @author Oudouss Diakite Abdoul
 #' @author Steven P. Sanderson II, MPH
 #'
 #' @seealso \url{https://www.richbourse.com}
