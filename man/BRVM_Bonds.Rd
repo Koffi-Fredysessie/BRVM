@@ -4,7 +4,7 @@
 \alias{BRVM_Bonds}
 \title{Get BRVM Bonds info}
 \usage{
-BRVM_Bonds(input = "All")
+BRVM_Bonds(input = "State")
 }
 \arguments{
 \item{input}{Character string. One of "All", "State", "Private", "Regional". Returns a dataframe of bonds from BRVM. The function also uses the separate function to split the "Last payment (Date/Value)" column into "Date" and "Value" columns.}
@@ -16,7 +16,7 @@ dataframe
 Get BRVM Bonds info
 }
 \examples{
-\donttest{
+\dontrun{
 library(tidyr)
 library(rvest)
 all_bonds = BRVM_Bonds("All")

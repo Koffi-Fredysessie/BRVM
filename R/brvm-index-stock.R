@@ -35,7 +35,7 @@
 #' BRVM_index_stock("brvmtr", Period = 365 ) # To get yearly data
 #'}
 
-BRVM_index_stock <- function(.ticker ='BRVM10',
+BRVM_index_stock <- function(.ticker ='BRVM30',
                              Period = 0,
                              from = Sys.Date() - 89,
                              to = Sys.Date() ) {

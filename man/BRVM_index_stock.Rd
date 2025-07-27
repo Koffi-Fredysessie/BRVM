@@ -5,7 +5,7 @@
 \title{BRVM index stock - Given a set of indexes, return their stock data}
 \usage{
 BRVM_index_stock(
-  .ticker = "BRVM10",
+  .ticker = "BRVM30",
   Period = 0,
   from = Sys.Date() - 89,
   to = Sys.Date()

@@ -8,7 +8,7 @@
 #' @export
 #'
 #' @examples
-#' \donttest{
+#' \dontrun{
 #' library(tidyr)
 #' library(rvest)
 #' all_bonds = BRVM_Bonds("All")
@@ -25,7 +25,7 @@
 #'
 #'}
 
-BRVM_Bonds <- function(input = "All") {
+BRVM_Bonds <- function(input = "State") {
     # Convert input to title case
     category <- str_to_title(input)
 
