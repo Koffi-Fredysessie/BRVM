@@ -11,3 +11,5 @@
 ^README\.html$
 ^\.github$
 ^BRVM-manual\.tex$
+^doc$
+^Meta$

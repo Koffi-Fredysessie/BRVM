@@ -7,8 +7,6 @@
 #'
 #' @author Koffi Frederic SESSIE
 #'
-#' @seealso \url{https://www.brvm.org/en/summary}
-#'
 #' @return A tibble
 #'
 #' @export

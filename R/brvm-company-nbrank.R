@@ -7,7 +7,6 @@
 #' @author Oudouss Diakite Abdoul
 #' @author Steven P. Sanderson II, MPH
 #'
-#' @seealso \url{https://www.brvm.org/en/cours-actions/0}
 #' @seealso `BRVM_company_rank()`
 #'
 #' @details This function will get the rank of one companies listed on the BVRM exchange through the Rich Bourse site.

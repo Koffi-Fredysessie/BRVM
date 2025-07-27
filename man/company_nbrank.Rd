@@ -27,8 +27,6 @@ company_nbrank("SNTS")
 
 }
 \seealso{
-\url{https://www.brvm.org/en/cours-actions/0}
-
 \code{BRVM_company_rank()}
 
 Other Data Retrieval: 

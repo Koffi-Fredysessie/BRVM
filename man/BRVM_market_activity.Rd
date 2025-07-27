@@ -19,8 +19,6 @@ BRVM_market_activity()
 
 }
 \seealso{
-\url{https://www.brvm.org/en/summary}
-
 Other Data Retrieval: 
 \code{\link{BRVM_bySector}()},
 \code{\link{BRVM_cap}()},

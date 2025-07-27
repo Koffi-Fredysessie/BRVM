@@ -6,8 +6,6 @@
 #' @family BRVM
 #' @author Koffi Frederic SESSIE
 #'
-#' @seealso \url{https://www.brvm.org/en/capitalisations/0}
-#'
 #' @return
 #' A tibble
 #'

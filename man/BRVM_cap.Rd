@@ -19,8 +19,6 @@ BRVM_cap()
 
 }
 \seealso{
-\url{https://www.brvm.org/en/capitalisations/0}
-
 Other Data Retrieval: 
 \code{\link{BRVM_bySector}()},
 \code{\link{BRVM_company_rank}()},

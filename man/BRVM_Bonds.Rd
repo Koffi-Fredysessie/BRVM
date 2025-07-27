@@ -7,7 +7,7 @@
 BRVM_Bonds(input = "All")
 }
 \arguments{
-\item{input}{is a parameter representing one the category in ("All", "State", "Private", "Regional") and returns a processed dataframe bonds_brvm. The function also uses the separate function to split the "Last payment (Date/Value)" column into "Date" and "Value" columns.}
+\item{input}{Character string. One of "All", "State", "Private", "Regional". Returns a dataframe of bonds from BRVM. The function also uses the separate function to split the "Last payment (Date/Value)" column into "Date" and "Value" columns.}
 }
 \value{
 dataframe
@@ -16,6 +16,7 @@ dataframe
 Get BRVM Bonds info
 }
 \examples{
+\donttest{
 library(tidyr)
 library(rvest)
 all_bonds = BRVM_Bonds("All")
@@ -30,4 +31,5 @@ head(prv_bonds)
 reg_bonds = BRVM_Bonds("Regional")
 head(reg_bonds)
 
+}
 }

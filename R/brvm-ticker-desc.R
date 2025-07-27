@@ -8,8 +8,6 @@
 #' @author Oudouss Diakite Abdoul
 #' @author Steven P. Sanderson II, MPH
 #'
-#' @seealso \url{https://www.brvm.org/en/cours-actions/0}
-#'
 #' @seealso `BRVM_tickers()`
 #'
 #' @details This function gives many informations about each ticker, his full name, sector and his country

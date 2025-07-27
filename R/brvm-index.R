@@ -7,11 +7,9 @@
 #' @author Oudouss Diakite Abdoul
 #' @author Steven P. Sanderson II, MPH
 #'
-#' @seealso \url{https://www.brvm.org/en/indices/status/200}
+#' @details This function will get index data from the BRVM website.
 #'
-#' @details This function will get index data from \url{https://www.brvm.org/}
-#'
-#' @description This function will get data from \url{https://www.brvm.org/}.
+#' @description This function will get data from the BRVM exchange.
 #'
 #' @importFrom rvest html_table html_elements read_html
 #' @importFrom stringr str_replace

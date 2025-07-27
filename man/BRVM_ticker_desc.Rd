@@ -22,8 +22,6 @@ BRVM_ticker_desc()
 
 }
 \seealso{
-\url{https://www.brvm.org/en/cours-actions/0}
-
 \code{BRVM_tickers()}
 
 Other Data Retrieval: 

@@ -27,8 +27,6 @@ comp.rank
 }
 }
 \seealso{
-\url{https://www.brvm.org/en/cours-actions/0}
-
 Other Data Retrieval: 
 \code{\link{BRVM_bySector}()},
 \code{\link{BRVM_cap}()},

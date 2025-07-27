@@ -10,10 +10,10 @@ BRVM_index()
 A tibble
 }
 \description{
-This function will get data from \url{https://www.brvm.org/}.
+This function will get data from the BRVM exchange.
 }
 \details{
-This function will get index data from \url{https://www.brvm.org/}
+This function will get index data from the BRVM website.
 }
 \examples{
 
@@ -21,8 +21,6 @@ BRVM_index()
 
 }
 \seealso{
-\url{https://www.brvm.org/en/indices/status/200}
-
 Other Data Retrieval: 
 \code{\link{BRVM_bySector}()},
 \code{\link{BRVM_cap}()},
