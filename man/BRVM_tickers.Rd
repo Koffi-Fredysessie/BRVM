@@ -4,7 +4,7 @@
 \alias{BRVM_tickers}
 \title{BRVM Tickers - Information about listed companies on BRVM Stock exchange}
 \usage{
-BRVM_tickers()
+BRVM_tickers(object)
 }
 \value{
 A tibble
